@@ -368,6 +368,9 @@ function pk_post_qrcode($url, $base_dir = '/cache/qrcode')
 // request url: {host}/wp-admin/admin-ajax.php?action=puock_comment_captcha
 function pk_captcha()
 {
+    if (pk_get_option('vd_type') === 'gt') {
+        return; 
+    }
     $type = $_GET['type'] ?? '';
     if (!in_array($type, ['comment', 'login', 'register', 'forget-password'])) {
         wp_die();
