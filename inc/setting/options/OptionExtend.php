@@ -27,7 +27,7 @@ class OptionExtend extends BaseOptionItem
                     'type' => 'switch',
                     'sdt' => false,
                     'badge' => ['value' => 'New'],
-                    'tips' => __('使用前请先配置wordpress伪静态规则：<code>try_files $uri $uri/ /index.php?$args</code>', PUOCK)
+                    'tips' => __('启用后请重新保存一下“固定链接”以更新伪静态', PUOCK)
                 ],
                 [
                     'id' => 'strawberry_icon',
