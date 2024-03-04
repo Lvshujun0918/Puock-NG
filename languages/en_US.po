@@ -1,0 +1,1400 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Puock\n"
+"POT-Creation-Date: 2023-01-20 14:15+0800\n"
+"PO-Revision-Date: 2023-01-20 14:16+0800\n"
+"Last-Translator: Licoy <licoycn@gmail.com>\n"
+"Language-Team: Licoy <licoycn@gmail.com>\n"
+"Language: en_US\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.2.2\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-Flags-xgettext: --add-comments=translators:\n"
+"X-Poedit-WPHeader: style.css\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.min.js\n"
+"X-Poedit-SearchPathExcluded-1: vendor\n"
+"X-Poedit-SearchPathExcluded-2: node_modules\n"
+
+#: 404.php:12
+msgid "你访问的资源不存在！"
+msgstr "The resource you visited does not exist!"
+
+#: 404.php:13
+msgid "秒后即将跳转至首页"
+msgstr "Jump to the homepage in seconds"
+
+#: 404.php:15 error.php:26
+msgid "返回首页"
+msgstr "To homepage"
+
+#: comments.php:9
+msgid "评论"
+msgstr "Comment"
+
+#: comments.php:16
+msgid "您必须要登录之后才可以进行评论"
+msgstr "You must be logged in to comment"
+
+#: comments.php:28 comments.php:101 inc/setting/options/OptionAuth.php:17
+msgid "快捷登录"
+msgstr "Quick login"
+
+#: comments.php:38
+msgid "世界这么大发表一下你的看法~"
+msgstr "The world is so big and express your opinion~"
+
+#: comments.php:48
+msgid "昵称（必填）"
+msgstr "Nickname (required)"
+
+#: comments.php:53
+msgid "邮箱（必填）"
+msgstr "Email (required)"
+
+#: comments.php:58
+msgid "网站"
+msgstr "Website"
+
+#: comments.php:90
+msgid "登出"
+msgstr "Sign out"
+
+#: comments.php:108
+msgid "取消"
+msgstr "Cancel"
+
+#: comments.php:114
+msgid "发布评论"
+msgstr "Publish"
+
+#: error.php:13
+msgid "无错误信息"
+msgstr "No error message"
+
+#: functions.php:86
+msgid "评论达人"
+msgstr "Commentator"
+
+#: functions.php:96
+msgid "博主"
+msgstr "Blogger"
+
+#: functions.php:134
+msgid "无分类"
+msgstr "none"
+
+#: functions.php:293 functions.php:294
+msgid "添加表情"
+msgstr "Add emoticons"
+
+#: functions.php:375
+msgid "首页"
+msgstr "Home"
+
+#: functions.php:394
+msgid "正文"
+msgstr "Text"
+
+#: functions.php:396
+msgid "文章列表"
+msgstr "Article list"
+
+#: functions.php:400
+msgid "搜索结果"
+msgstr "Search results"
+
+#: functions.php:410
+msgid "标签"
+msgstr "Tag"
+
+#: functions.php:415
+msgid "你访问的资源不存在"
+msgstr "The resource you are accessing does not exist"
+
+#: header.php:73
+msgid "请输入搜索关键字"
+msgstr "Please enter keyword to search"
+
+#: header.php:77
+msgid "搜索"
+msgstr "Search"
+
+#: inc/fun/opt.php:186 inc/fun/opt.php:187
+msgid "添加短代码"
+msgstr "Add a shortcode"
+
+#: inc/setting/PuockSetting.php:62 inc/setting/PuockSetting.php:63
+msgid "Puock主题配置"
+msgstr "Puock Theme"
+
+#: inc/setting/PuockSetting.php:75
+msgid "权限不足"
+msgstr "Permission Denied"
+
+#: inc/setting/options/OptionAbout.php:12
+msgid "关于及指引"
+msgstr "About & Guide"
+
+#: inc/setting/options/OptionAd.php:11
+msgid "广告设置"
+msgstr "Ad Setting"
+
+#: inc/setting/options/OptionAd.php:16
+msgid "全站顶部广告"
+msgstr "Site-wide top-of-the-line ads"
+
+#: inc/setting/options/OptionAd.php:22
+msgid "全站顶部广告内容"
+msgstr "Site-wide top-of-the-line ad content"
+
+#: inc/setting/options/OptionAd.php:29
+msgid "全站底部广告"
+msgstr "Ads at the bottom of the site"
+
+#: inc/setting/options/OptionAd.php:35
+msgid "全站底部广告内容"
+msgstr "Advertising content at the bottom of the site"
+
+#: inc/setting/options/OptionAd.php:42
+msgid "文章内顶部广告"
+msgstr "Ads at the top of the article"
+
+#: inc/setting/options/OptionAd.php:48
+msgid "文章内顶部广告内容"
+msgstr "Top-of-the-line ad content within an article"
+
+#: inc/setting/options/OptionAd.php:56
+msgid "文章内容底部广告"
+msgstr "Ads at the bottom of the article content"
+
+#: inc/setting/options/OptionAd.php:62
+msgid "文章内容底部广告内容"
+msgstr "Advertising content at the bottom of article content"
+
+#: inc/setting/options/OptionAd.php:70
+msgid "评论上方广告"
+msgstr "Comment on the ad above"
+
+#: inc/setting/options/OptionAd.php:76
+msgid "评论上方广告内容"
+msgstr "Comment on the ad content above"
+
+#: inc/setting/options/OptionAuth.php:12
+msgid "登录与授权"
+msgstr "Login & Auth"
+
+#: inc/setting/options/OptionAuth.php:23
+msgid "开启快捷登录"
+msgstr "Turn on Express Login"
+
+#: inc/setting/options/OptionAuth.php:29
+msgid "仅允许第三方登录"
+msgstr "Only third parties are allowed to sign in"
+
+#: inc/setting/options/OptionAuth.php:35
+msgid "启用登录最大尝试次数限制"
+msgstr "Enable the maximum login attempt limit"
+
+#: inc/setting/options/OptionAuth.php:36
+msgid "超过此次数后，对应的IP将会被禁止登录"
+msgstr ""
+"After this number of times, the corresponding IP address will be blocked "
+"from logging in"
+
+#: inc/setting/options/OptionAuth.php:42
+msgid "登录最大尝试次数"
+msgstr "Maximum number of login attempts"
+
+#: inc/setting/options/OptionAuth.php:48
+msgid "登录尝试次数达到后禁止时间（分）"
+msgstr ""
+"Prohibition time after the number of login attempts is reached (minutes)"
+
+#: inc/setting/options/OptionAuth.php:54
+msgid "启用忘记密码找回"
+msgstr "Enable Forgot Password Recovery"
+
+#: inc/setting/options/OptionAuth.php:63
+msgid "后台登录保护"
+msgstr "Background login protection"
+
+#: inc/setting/options/OptionAuth.php:68
+msgid "启用后台登录保护"
+msgstr "Enable background sign-in protection"
+
+#: inc/setting/options/OptionAuth.php:78
+msgid "后台登录保护参数"
+msgstr "Background login protection parameters"
+
+#: inc/setting/options/OptionAuth.php:84
+msgid "后台登录保护密码"
+msgstr "Background login protection password"
+
+#: inc/setting/options/OptionAuth.php:92
+msgid "第三方登录回调地址提示"
+msgstr "Third-party login callback address hint"
+
+#: inc/setting/options/OptionAuth.php:99
+msgid "关闭第三方登录直接注册"
+msgstr "Turn off third-party login for direct registration"
+
+#: inc/setting/options/OptionAuth.php:101
+msgid "开启后，若用户未绑定过账户进行第三方登录时则不会自动创建新的账户"
+msgstr ""
+"After it is enabled, if the user has not bound an account for third-party "
+"login, the account will not be automatically created"
+
+#: inc/setting/options/OptionAuth.php:106
+#: inc/setting/options/OptionAuth.php:133
+#: inc/setting/options/OptionAuth.php:160
+#: inc/setting/options/OptionAuth.php:187
+msgid "登录配置"
+msgstr "Login configuration"
+
+#: inc/setting/options/OptionAuth.php:109
+#: inc/setting/options/OptionAuth.php:136
+#: inc/setting/options/OptionAuth.php:163
+#: inc/setting/options/OptionAuth.php:190
+msgid "申请步骤及说明"
+msgstr "Application steps and instructions"
+
+#: inc/setting/options/OptionAuth.php:113
+#: inc/setting/options/OptionAuth.php:140
+#: inc/setting/options/OptionAuth.php:167
+#: inc/setting/options/OptionAuth.php:194
+msgid "登录"
+msgstr "Login"
+
+#: inc/setting/options/OptionAuth.php:119
+#: inc/setting/options/OptionAuth.php:125
+msgid "QQ互联"
+msgstr "QQ interconnection"
+
+#: inc/setting/options/OptionAuth.php:160
+#: inc/setting/options/OptionAuth.php:167
+#: inc/setting/options/OptionAuth.php:173
+#: inc/setting/options/OptionAuth.php:179
+msgid "微博"
+msgstr "Weibo"
+
+#: inc/setting/options/OptionBasic.php:12
+msgid "基础设置"
+msgstr "Basic Settings"
+
+#: inc/setting/options/OptionBasic.php:17
+msgid "图片懒加载"
+msgstr "Images lazy to load"
+
+#: inc/setting/options/OptionBasic.php:23
+msgid "正文图片懒加载"
+msgstr "The body image is lazy to load"
+
+#: inc/setting/options/OptionBasic.php:29
+msgid "留言头像懒加载"
+msgstr "Comment avatar lazy loading"
+
+#: inc/setting/options/OptionBasic.php:35
+msgid "正文内容首行缩进"
+msgstr "The body content is indented on the first line"
+
+#: inc/setting/options/OptionBasic.php:41
+msgid "正文内容链接新标签页打开"
+msgstr "The body content link opens in a new tab"
+
+#: inc/setting/options/OptionBasic.php:47
+msgid "正文内容侧边目录菜单生成"
+msgstr "The body content side table of contents menu is generated"
+
+#: inc/setting/options/OptionBasic.php:50
+msgid "勾选此项会在正文目录显示文章目录"
+msgstr ""
+"Tick this option to display the article table of contents in the body "
+"directory"
+
+#: inc/setting/options/OptionBasic.php:54
+msgid "评论ajax翻页"
+msgstr "Comment on ajax to turn the page"
+
+#: inc/setting/options/OptionBasic.php:60
+msgid "页面无刷新加载"
+msgstr "No refresh load of the page"
+
+#: inc/setting/options/OptionBasic.php:67
+msgid "异步浏览量统计"
+msgstr "Asynchronous page count counts"
+
+#: inc/setting/options/OptionBasic.php:70
+msgid "此选项为开启缓存后浏览量不自增问题解决方案"
+msgstr ""
+"This option is the solution to the problem that the number of views does not "
+"increase after caching is enabled"
+
+#: inc/setting/options/OptionBasic.php:74
+msgid "页面模块载入动画"
+msgstr "Page modules load animations"
+
+#: inc/setting/options/OptionBasic.php:80
+msgid "页面内容链接前显示图标"
+msgstr "Displays an icon before the page content link"
+
+#: inc/setting/options/OptionBasic.php:88
+msgid "评论相关"
+msgstr "Comment related"
+
+#: inc/setting/options/OptionBasic.php:92
+msgid "评论等级"
+msgstr "Comment level"
+
+#: inc/setting/options/OptionBasic.php:98
+msgid "评论回复邮件通知"
+msgstr "Comment reply email notification"
+
+#: inc/setting/options/OptionBasic.php:104
+msgid "评论@功能"
+msgstr "Comment @ features"
+
+#: inc/setting/options/OptionBasic.php:110
+msgid "评论显示用户UA"
+msgstr "Comments show user UA"
+
+#: inc/setting/options/OptionBasic.php:116
+msgid "评论显示IP归属地及运营商"
+msgstr "The comment shows the IP origin and carrier"
+
+#: inc/setting/options/OptionBasic.php:122
+msgid "不显示站长IP归属地及运营商"
+msgstr "The webmaster's IP address location and operator are not displayed"
+
+#: inc/setting/options/OptionBasic.php:130
+msgid "文章海报生成"
+msgstr "Article poster generation"
+
+#: inc/setting/options/OptionBasic.php:131
+msgid "使用此功能如果出现图片无法生成，请检查图片是否符合跨域要求"
+msgstr ""
+"If an image cannot be generated using this feature, check whether the image "
+"meets the cross-domain requirements"
+
+#: inc/setting/options/OptionBasic.php:137
+msgid "显示正文版权说明"
+msgstr "Displays the body copyright statement"
+
+#: inc/setting/options/OptionBasic.php:143
+msgid "显示正文底部相关推荐"
+msgstr "Displays relevant recommendations at the bottom of the text"
+
+#: inc/setting/options/OptionBasic.php:149
+msgid "正文底部相关推荐文章数量"
+msgstr "The number of relevant recommended articles at the bottom of the text"
+
+#: inc/setting/options/OptionBasic.php:150
+msgid "建议是4的倍数，不然会出现空缺位置"
+msgstr ""
+"It is recommended to be a multiple of 4, otherwise there will be vacant "
+"positions"
+
+#: inc/setting/options/OptionBasic.php:156
+msgid "友情链接页面"
+msgstr "Links page"
+
+#: inc/setting/options/OptionBasic.php:162
+msgid "首页友情链接目录ID"
+msgstr "Home link directory ID"
+
+#: inc/setting/options/OptionBasic.php:168
+msgid "Gravatar头像源"
+msgstr "Gravatar source"
+
+#: inc/setting/options/OptionBasic.php:175
+msgid "WordPress默认"
+msgstr "WordPress defaults"
+
+#: inc/setting/options/OptionBasic.php:179
+msgid "WordPress国内默认"
+msgstr "WordPress China default"
+
+#: inc/setting/options/OptionBasic.php:183
+msgid "WordPress国内默认SSL"
+msgstr "WordPress China default SSL"
+
+#: inc/setting/options/OptionBasic.php:201
+msgid "文章赞赏"
+msgstr "Article appreciated"
+
+#: inc/setting/options/OptionBasic.php:207
+msgid "文章赞赏支付宝二维码"
+msgstr "The article appreciates the Alipay QR code"
+
+#: inc/setting/options/OptionBasic.php:210
+#: inc/setting/options/OptionBasic.php:217
+#: inc/setting/options/OptionBasic.php:224
+msgid "请选择宽高比例为1:1的图片"
+msgstr "Please select an image with a 1:1 aspect ratio"
+
+#: inc/setting/options/OptionBasic.php:214
+msgid "文章赞赏微信二维码"
+msgstr "The article appreciates the WeChat QR code"
+
+#: inc/setting/options/OptionBasic.php:221
+#: inc/setting/options/OptionBasic.php:234
+msgid "文章正文底部二维码"
+msgstr "QR code at the bottom of the body of the article"
+
+#: inc/setting/options/OptionBasic.php:228
+msgid "文章正文底部二维码标题"
+msgstr "QR code title at the bottom of the article body"
+
+#: inc/setting/options/OptionBasic.php:240
+msgid "文章转载说明"
+msgstr "Article reprint instructions"
+
+#: inc/setting/options/OptionBasic.php:242
+msgid "除特殊说明外本站文章皆由CC-4.0协议发布，转载请注明出处。"
+msgstr ""
+"Unless otherwise specified, all articles are published by cc-4.0 protocol. "
+"Please indicate the source of reprint."
+
+#: inc/setting/options/OptionCache.php:11
+msgid "缓存与性能"
+msgstr "Cache & Performance"
+
+#: inc/setting/options/OptionCache.php:16
+msgid "缓存过期秒数"
+msgstr "The number of seconds for the cache to expire"
+
+#: inc/setting/options/OptionCache.php:19
+msgid "0为不过期"
+msgstr "0 is not expired"
+
+#: inc/setting/options/OptionCarousel.php:41
+msgid "幻灯与公告"
+msgstr "Slides & Notice"
+
+#: inc/setting/options/OptionCarousel.php:47
+msgid "首页幻灯片"
+msgstr "Home slideshow"
+
+#: inc/setting/options/OptionCarousel.php:53
+msgid ""
+"说明：幻灯片尺寸建议统一为2:1的比例，例如800*400，另外所有的幻灯片尺寸必须完"
+"全一致，否则会出现高度不一的情况！"
+msgstr ""
+"Note: The slide size is recommended to be unified to a 2:1 ratio, such as "
+"800*400, in addition, all slide sizes must be exactly the same, otherwise "
+"there will be different heights!"
+
+#: inc/setting/options/OptionCarousel.php:57
+#: inc/setting/options/OptionCarousel.php:124
+#: inc/setting/options/OptionScript.php:70
+#: inc/setting/options/OptionScript.php:96
+msgid "启用"
+msgstr "Enable"
+
+#: inc/setting/options/OptionCarousel.php:63
+msgid "鼠标滚轮切换"
+msgstr "Mouse wheel switching"
+
+#: inc/setting/options/OptionCarousel.php:69
+msgid "隐藏标题"
+msgstr "Hide the title"
+
+#: inc/setting/options/OptionCarousel.php:75
+msgid "循环播放"
+msgstr "Loop playback"
+
+#: inc/setting/options/OptionCarousel.php:81
+#: inc/setting/options/OptionCarousel.php:130
+msgid "自动播放速度（毫秒）"
+msgstr "Autoplay speed (ms)"
+
+#: inc/setting/options/OptionCarousel.php:82
+#: inc/setting/options/OptionCarousel.php:131
+msgid "0为不自动播放"
+msgstr "0 is not autoplayed"
+
+#: inc/setting/options/OptionCarousel.php:88
+msgid "切换效果"
+msgstr "Transition effects"
+
+#: inc/setting/options/OptionCarousel.php:92
+msgid "默认"
+msgstr "Default"
+
+#: inc/setting/options/OptionCarousel.php:93
+msgid "淡入淡出"
+msgstr "Fade in and out"
+
+#: inc/setting/options/OptionCarousel.php:94
+msgid "立方体"
+msgstr "cube"
+
+#: inc/setting/options/OptionCarousel.php:95
+msgid "快速翻转"
+msgstr "Quick flip"
+
+#: inc/setting/options/OptionCarousel.php:96
+msgid "覆盖流"
+msgstr "Overlay the stream"
+
+#: inc/setting/options/OptionCarousel.php:97
+msgid "卡片"
+msgstr "card"
+
+#: inc/setting/options/OptionCarousel.php:102
+msgid "幻灯片列表"
+msgstr "A list of slides"
+
+#: inc/setting/options/OptionCarousel.php:107
+msgid "幻灯标题"
+msgstr "Slide title"
+
+#: inc/setting/options/OptionCarousel.php:108
+msgid "幻灯图片"
+msgstr "Slide pictures"
+
+#: inc/setting/options/OptionCarousel.php:108
+msgid "建议尺寸2:1，所有图片大小必须一致"
+msgstr "The recommended size is 2:1, and all images must be the same size"
+
+#: inc/setting/options/OptionCarousel.php:109
+msgid "指向链接"
+msgstr "Point to a link"
+
+#: inc/setting/options/OptionCarousel.php:110
+msgid "新标签打开"
+msgstr "A new tab opens"
+
+#: inc/setting/options/OptionCarousel.php:111
+#: inc/setting/options/OptionCarousel.php:145
+msgid "隐藏"
+msgstr "Hide"
+
+#: inc/setting/options/OptionCarousel.php:111
+#: inc/setting/options/OptionCarousel.php:145
+msgid "隐藏后将不会显示"
+msgstr "When hidden, it will not be displayed"
+
+#: inc/setting/options/OptionCarousel.php:119
+msgid "全局公告"
+msgstr "Global Announcement"
+
+#: inc/setting/options/OptionCarousel.php:137
+msgid "公告列表"
+msgstr "List of announcements"
+
+#: inc/setting/options/OptionCarousel.php:142
+msgid "公告标题(支持HTML)"
+msgstr "Announcement title (HTML supported)"
+
+#: inc/setting/options/OptionCarousel.php:143
+msgid "指向链接(可空)"
+msgstr "Point to link (nullable)"
+
+#: inc/setting/options/OptionCarousel.php:144
+msgid "图标class(可空)"
+msgstr ""
+
+#: inc/setting/options/OptionCms.php:11
+msgid "CMS布局"
+msgstr "CMS layout"
+
+#: inc/setting/options/OptionCms.php:16
+msgid "显示最新文章"
+msgstr "Displays the latest articles"
+
+#: inc/setting/options/OptionCms.php:22
+msgid "最新文章数量"
+msgstr "Number of latest articles"
+
+#: inc/setting/options/OptionCms.php:29
+msgid "显示CMS两栏布局"
+msgstr "Displays the CMS two-column layout"
+
+#: inc/setting/options/OptionCms.php:35
+msgid "CMS两栏布局分类ID"
+msgstr "CMS two-column layout category ID"
+
+#: inc/setting/options/OptionCms.php:44
+msgid "CMS两栏布局每栏数量"
+msgstr "CMS two-column layout with the number of each column"
+
+#: inc/setting/options/OptionCompany.php:12
+msgid "企业布局"
+msgstr "Enterprise layout"
+
+#: inc/setting/options/OptionCompany.php:17
+msgid "产品介绍-大标题"
+msgstr "Product Introduction - Big Title"
+
+#: inc/setting/options/OptionCompany.php:18
+msgid "产品介绍"
+msgstr "Product introduction"
+
+#: inc/setting/options/OptionCompany.php:22
+msgid "产品列表"
+msgstr "Product list"
+
+#: inc/setting/options/OptionCompany.php:27
+#: inc/setting/options/OptionCompany.php:45
+#: inc/setting/options/OptionScript.php:76
+#: inc/setting/options/OptionScript.php:102
+msgid "标题"
+msgstr "Title"
+
+#: inc/setting/options/OptionCompany.php:28
+msgid "图片"
+msgstr "Image"
+
+#: inc/setting/options/OptionCompany.php:29
+#: inc/setting/options/OptionCompany.php:47
+msgid "描述"
+msgstr "Description"
+
+#: inc/setting/options/OptionCompany.php:30
+msgid "链接"
+msgstr "link"
+
+#: inc/setting/options/OptionCompany.php:35
+msgid "做什么-大标题"
+msgstr "What to do - big headline"
+
+#: inc/setting/options/OptionCompany.php:36
+msgid "做什么"
+msgstr "Do what"
+
+#: inc/setting/options/OptionCompany.php:40
+msgid "做什么-列表"
+msgstr "What to do - list"
+
+#: inc/setting/options/OptionCompany.php:46
+msgid "图标"
+msgstr "icon"
+
+#: inc/setting/options/OptionCompany.php:52
+msgid "做什么-左侧展示图"
+msgstr "What to do - the left side shows the diagram"
+
+#: inc/setting/options/OptionCompany.php:58
+msgid "显示新闻"
+msgstr "Show news"
+
+#: inc/setting/options/OptionCompany.php:64
+msgid "新闻模块标题"
+msgstr "News module title"
+
+#: inc/setting/options/OptionCompany.php:65
+msgid "新闻动态"
+msgstr "News updates"
+
+#: inc/setting/options/OptionCompany.php:70
+msgid "新闻分类目录"
+msgstr "News categories"
+
+#: inc/setting/options/OptionCompany.php:79
+msgid "新闻显示数量"
+msgstr "Number of news displays"
+
+#: inc/setting/options/OptionCompany.php:86
+msgid "企业两栏CMS分类"
+msgstr "Enterprise two-column CMS classification"
+
+#: inc/setting/options/OptionCompany.php:92
+msgid "企业两栏CMS分类项"
+msgstr "Enterprise two-column CMS classification items"
+
+#: inc/setting/options/OptionCompany.php:101
+msgid "企业两栏CMS分类每栏显示数量"
+msgstr ""
+"The enterprise two-column CMS category displays the quantity in each column"
+
+#: inc/setting/options/OptionDebug.php:11
+msgid "调试与开发"
+msgstr "Debug & Dev"
+
+#: inc/setting/options/OptionDebug.php:16
+msgid "显示SQL查询统计"
+msgstr "Displays SQL query statistics"
+
+#: inc/setting/options/OptionDebug.php:19
+msgid "此数据会显示在<code>console</code>，需<code>F12</code>打开控制台查看"
+msgstr ""
+"This data will be displayed in<code>console</code> and you need to<code>F12</"
+"code> open the console to view it"
+
+#: inc/setting/options/OptionDebug.php:23
+msgid "显示SQL查询详情"
+msgstr "Displays the details of the SQL query"
+
+#: inc/setting/options/OptionDebug.php:26
+msgid ""
+"此数据会显示在<code>console</code>，需<code>F12</code>打开控制台查看，需要在"
+"<code>wp-config.php</code>中加入<code>define('SAVEQUERIES', true);</code>"
+msgstr ""
+"This data will be displayed in<code>console</code>, you need to open the "
+"console to view, you need to<code>F12</code><code>wp-config.php</code> join "
+"it<code>define('SAVEQUERIES', true);</code>"
+
+#: inc/setting/options/OptionEmail.php:11
+msgid "SMTP邮件"
+msgstr "SMTP mail"
+
+#: inc/setting/options/OptionEmail.php:16
+msgid "开启SMTP"
+msgstr "Turn on SMTP"
+
+#: inc/setting/options/OptionEmail.php:19
+msgid "开启会覆盖WordPress默认配置"
+msgstr "Turning on overrides the WordPress default configuration"
+
+#: inc/setting/options/OptionEmail.php:23
+msgid "SMTP加密"
+msgstr "SMTP encryption"
+
+#: inc/setting/options/OptionEmail.php:30
+msgid "发件人邮箱"
+msgstr "Sender mailbox"
+
+#: inc/setting/options/OptionEmail.php:36
+msgid "SMTP服务器"
+msgstr "SMTP server"
+
+#: inc/setting/options/OptionEmail.php:43
+msgid "SMTP端口"
+msgstr "SMTP port"
+
+#: inc/setting/options/OptionEmail.php:49
+msgid "SMTP账户"
+msgstr "SMTP account"
+
+#: inc/setting/options/OptionEmail.php:55
+msgid "SMTP密码"
+msgstr "SMTP password"
+
+#: inc/setting/options/OptionEmail.php:58
+msgid "一般非邮箱账号直接密码，而是对应的平台的POP3/SMTP授权码"
+msgstr ""
+"Generally, it is not the direct password of the email account, but the POP3/"
+"SMTP authorization code of the corresponding platform"
+
+#: inc/setting/options/OptionExtend.php:12
+msgid "扩展及兼容"
+msgstr "Extends & Compatible"
+
+#: inc/setting/options/OptionExtend.php:18
+msgid "Puock官方小程序支持"
+msgstr "Puock official mini program support"
+
+#: inc/setting/options/OptionExtend.php:21
+msgid ""
+"Puock官方小程序支持，此选项安装小程序插件后会自动开启，如需关闭请在小程序插件"
+"中关闭"
+msgstr ""
+"Puock official Mini Program support, this option will be automatically "
+"turned on after installing the Mini Program plug-in, if you need to turn it "
+"off, please turn it off in the Mini Program Plug-in"
+
+#: inc/setting/options/OptionExtend.php:21
+msgid "了解小程序?"
+msgstr "Understanding Mini Programs?"
+
+#: inc/setting/options/OptionExtend.php:23
+msgid "热门 & 推荐"
+msgstr "Popular & recommended"
+
+#: inc/setting/options/OptionExtend.php:27
+msgid "Strawberry图标库"
+msgstr "Strawberry icon library"
+
+#: inc/setting/options/OptionExtend.php:30
+msgid "开启之后会在前台加载Strawberry图标库支持"
+msgstr ""
+"When enabled, Strawberry icon library support will be loaded in the "
+"foreground"
+
+#: inc/setting/options/OptionExtend.php:34
+msgid "支持"
+msgstr "Support"
+
+#: inc/setting/options/OptionExtend.php:37
+msgid "开启之后会在前台加载DPlayer支持"
+msgstr "When enabled, DPlayer support will be loaded in the foreground"
+
+#: inc/setting/options/OptionGlobal.php:12
+msgid "全局设置"
+msgstr "Global settings"
+
+#: inc/setting/options/OptionGlobal.php:18
+msgid "首页布局"
+msgstr "Home layout"
+
+#: inc/setting/options/OptionGlobal.php:25
+msgid "博客风格"
+msgstr "Blog"
+
+#: inc/setting/options/OptionGlobal.php:29
+msgid "CMS风格"
+msgstr "CMS"
+
+#: inc/setting/options/OptionGlobal.php:33
+msgid "企业风格"
+msgstr "Corporate"
+
+#: inc/setting/options/OptionGlobal.php:39
+msgid "文章风格"
+msgstr "Article style"
+
+#: inc/setting/options/OptionGlobal.php:46
+msgid "列表风格"
+msgstr "List"
+
+#: inc/setting/options/OptionGlobal.php:50
+msgid "卡片风格"
+msgstr "Card"
+
+#: inc/setting/options/OptionGlobal.php:56
+msgid "主题模式"
+msgstr "Theme mode"
+
+#: inc/setting/options/OptionGlobal.php:63
+msgid "日光模式"
+msgstr "Light"
+
+#: inc/setting/options/OptionGlobal.php:67
+msgid "暗黑模式"
+msgstr "Dark"
+
+#: inc/setting/options/OptionGlobal.php:73
+msgid "允许切换主题模式"
+msgstr "Allows switching of theme mode"
+
+#: inc/setting/options/OptionGlobal.php:79
+msgid "导航栏毛玻璃效果"
+msgstr "Frosted glass effect for navigation bar"
+
+#: inc/setting/options/OptionGlobal.php:85
+msgid "页面使用.html后缀"
+msgstr "The page uses .html suffix"
+
+#: inc/setting/options/OptionGlobal.php:88
+msgid "更改后需要重新保存<strong>固定链接</strong>"
+msgstr ""
+"You'll need to resave <strong>the permalink</strong> after you make the "
+"change"
+
+#: inc/setting/options/OptionGlobal.php:92
+msgid "开启中文格式化（文案排版）"
+msgstr "Turn on Chinese formatting (copywriting)"
+
+#: inc/setting/options/OptionGlobal.php:95
+msgid "参考"
+msgstr "reference"
+
+#: inc/setting/options/OptionGlobal.php:99
+msgid "使用文字LOGO"
+msgstr "Use text LOGO"
+
+#: inc/setting/options/OptionGlobal.php:105
+msgid "日光模式LOGO"
+msgstr "Light mode LOGO"
+
+#: inc/setting/options/OptionGlobal.php:108
+#: inc/setting/options/OptionGlobal.php:115
+msgid "若不上传则显示文字LOGO，比例：500*125，请尽量选择png无底色图片"
+msgstr ""
+"If you do not upload, the text LOGO will be displayed, the ratio: 500*125, "
+"please try to choose a png colorless picture"
+
+#: inc/setting/options/OptionGlobal.php:112
+msgid "暗黑模式LOGO"
+msgstr "Dark Mode LOGO"
+
+#: inc/setting/options/OptionGlobal.php:119
+msgid "LOGO扫光动画"
+msgstr "LOGO sweeping animation"
+
+#: inc/setting/options/OptionGlobal.php:126
+msgid "网站图标"
+msgstr "Favicon"
+
+#: inc/setting/options/OptionGlobal.php:129
+msgid "比例：32*32，请尽量选择png无底色图片"
+msgstr "Ratio: 32*32, please try to choose PNG no background color picture"
+
+#: inc/setting/options/OptionGlobal.php:133
+msgid "禁用Gutenberg编辑器"
+msgstr "Disable the Gutenberg editor"
+
+#: inc/setting/options/OptionGlobal.php:139
+msgid "使用区块小工具"
+msgstr "Use the block widget"
+
+#: inc/setting/options/OptionGlobal.php:145
+msgid "允许上传webp"
+msgstr "WebP uploads are allowed"
+
+#: inc/setting/options/OptionGlobal.php:151
+msgid "隐藏文章浏览量"
+msgstr "Hide article views"
+
+#: inc/setting/options/OptionGlobal.php:157
+msgid "关闭全站评论功能"
+msgstr "Turn off site-wide commenting"
+
+#: inc/setting/options/OptionGlobal.php:163
+msgid "隐藏底部<code>感谢使用WordPress进行创作</code>和左上角标识"
+msgstr ""
+"Hide the bottom<code>Thanks for using WordPress for creation</code> and "
+"upper-left logos"
+
+#: inc/setting/options/OptionGlobal.php:169
+msgid "全站变灰"
+msgstr "The whole station turns gray"
+
+#: inc/setting/options/OptionGlobal.php:175
+msgid "禁止非管理员访问用户资料页"
+msgstr "Disable non-administrator access to the user profile page"
+
+#: inc/setting/options/OptionGlobal.php:182
+msgid "将HTML压缩成一行"
+msgstr "Compress HTML into one line"
+
+#: inc/setting/options/OptionGlobal.php:188
+msgid "关闭全局侧边栏显示"
+msgstr "Turn off the global sidebar display"
+
+#: inc/setting/options/OptionGlobal.php:194
+msgid "禁止使用"
+msgstr "Prohibited Use"
+
+#: inc/setting/options/OptionGlobal.php:195
+msgid ""
+"开启后将不能使用相关功能，如果使用了<b>小程序</b>等功能此选项应不要开启，\n"
+"                                另外开启后可能导致古腾堡编辑器出现通信异常问"
+"题，建议非必要不开启此选项"
+msgstr ""
+"After opening, you will not be able to use the relevant functions, if you "
+"use functions such as <b>mini programs</b>, this option should not be turned "
+"on.\n"
+"                                In addition, it may cause communication "
+"exceptions in the Gutenberg editor after it is enabled, it is recommended "
+"not to enable this option unless necessary"
+
+#: inc/setting/options/OptionGlobal.php:202
+msgid "缩略图伪静态"
+msgstr "Thumbnails are pseudo-static"
+
+#: inc/setting/options/OptionGlobal.php:206
+msgid "若开启此选项，请自行手动在Nginx配置中添加伪静态规则"
+msgstr ""
+"If this option is enabled, manually add pseudo-static rules to the Nginx "
+"configuration"
+
+#: inc/setting/options/OptionGlobal.php:210
+msgid "缩略图白名单"
+msgstr "Thumbnail whitelist"
+
+#: inc/setting/options/OptionGlobal.php:213
+msgid ""
+"<strong>若使用了其他外链图片须在此处添加外链域名以允许</strong>：一行一个，不"
+"要带 <code>http://</code> 或 <code>https://</code> 协议头，例如：<code>blog."
+"example.com</code>"
+msgstr ""
+"<strong>If you use other backlink images, add the backlink domain here to "
+"allow</strong>: one line at a time, without <code>http://</code> the or "
+"<code>https://</code> protocol header, for example:<code>blog.example.com</"
+"code>"
+
+#: inc/setting/options/OptionResource.php:11
+msgid "资源与更新"
+msgstr "Resources & Updates"
+
+#: inc/setting/options/OptionResource.php:16
+msgid "主题静态资源加载源"
+msgstr "Theme static resource load source"
+
+#: inc/setting/options/OptionResource.php:22
+msgid "本地"
+msgstr "Local"
+
+#: inc/setting/options/OptionResource.php:42
+msgid "自定义（在下方一栏中填入）"
+msgstr "Custom (fill in the field below)"
+
+#: inc/setting/options/OptionResource.php:48
+msgid "自定义静态资源加载URI"
+msgstr "Custom static resource load URI"
+
+#: inc/setting/options/OptionResource.php:50
+msgid ""
+"需填写完整地址，如<code>https://example.com/puock</code>，路径需要指向到可以"
+"访问主题根目录为准"
+msgstr ""
+"You need to fill in the complete address, for example<code>https://example."
+"com/puock</code>, the path needs to point to the root directory of the "
+"accessible topic"
+
+#: inc/setting/options/OptionResource.php:54
+msgid "主题在线更新源"
+msgstr "Theme online update feed"
+
+#: inc/setting/options/OptionResource.php:60
+msgid "官方代理"
+msgstr "Official Agent"
+
+#: inc/setting/options/OptionResource.php:74
+msgid "主题更新检测频率"
+msgstr "Topic update detection frequency"
+
+#: inc/setting/options/OptionResource.php:77
+msgid "单位为小时"
+msgstr "The unit is hours"
+
+#: inc/setting/options/OptionScript.php:12
+msgid "脚本及样式"
+msgstr "Scripts & styles"
+
+#: inc/setting/options/OptionScript.php:17
+msgid "站点主色调"
+msgstr "Site primary color"
+
+#: inc/setting/options/OptionScript.php:23
+msgid "全站区块不透明度"
+msgstr "Site-wide block opacity"
+
+#: inc/setting/options/OptionScript.php:30
+msgid "小于100则会进行透明显示，部分浏览器可能不兼容"
+msgstr ""
+"Less than 100 will be transparent, and some browsers may not be compatible"
+
+#: inc/setting/options/OptionScript.php:31
+msgid "当前不透明度"
+msgstr "Current opacity"
+
+#: inc/setting/options/OptionScript.php:37
+msgid "头部流量统计代码"
+msgstr "Header traffic statistics code"
+
+#: inc/setting/options/OptionScript.php:40
+msgid ""
+"用于在页头添加统计代码（PS：若开启无刷新加载，请在标签上加上<code>data-"
+"instant</code>属性）"
+msgstr ""
+"Used to add statistical code in the header (PS: if no refresh loading is "
+"enabled, please add<code>data-instant</code> attributes to the label)"
+
+#: inc/setting/options/OptionScript.php:44
+msgid "头部自定义全局CSS样式"
+msgstr "Header custom global CSS styles"
+
+#: inc/setting/options/OptionScript.php:46
+msgid "例如"
+msgstr "For example"
+
+#: inc/setting/options/OptionScript.php:48
+msgid "用于在页头添加统自定义CSS样式"
+msgstr "Used to add custom CSS styles to the page header"
+
+#: inc/setting/options/OptionScript.php:52
+msgid "底部流量统计代码"
+msgstr "Bottom traffic statistics code"
+
+#: inc/setting/options/OptionScript.php:58
+msgid "底部页脚信息"
+msgstr "Bottom footer information"
+
+#: inc/setting/options/OptionScript.php:65
+msgid "底部关于我们"
+msgstr "About us"
+
+#: inc/setting/options/OptionScript.php:77
+msgid "关于我们"
+msgstr "About us"
+
+#: inc/setting/options/OptionScript.php:81
+#: inc/setting/options/OptionScript.php:108
+msgid "内容"
+msgstr "Content"
+
+#: inc/setting/options/OptionScript.php:82
+#: inc/setting/options/OptionScript.php:109
+msgid "支持HTML代码"
+msgstr "Support for HTML code"
+
+#: inc/setting/options/OptionScript.php:84
+msgid "<strong>底部关于我们</strong>"
+msgstr "<strong>Bottom about us</strong>"
+
+#: inc/setting/options/OptionScript.php:91
+msgid "底部版权说明"
+msgstr "Bottom copyright notice"
+
+#: inc/setting/options/OptionScript.php:103
+msgid "版权说明"
+msgstr "Copyright Notice"
+
+#: inc/setting/options/OptionScript.php:104
+msgid "若为空则不显示此栏目"
+msgstr "If blank, this field is not displayed"
+
+#: inc/setting/options/OptionScript.php:111
+msgid "<strong>底部版权说明</strong>"
+msgstr "<strong>Bottom copyright notice</strong>"
+
+#: inc/setting/options/OptionScript.php:117
+msgid "下载说明"
+msgstr "Download instructions"
+
+#: inc/setting/options/OptionScript.php:119
+msgid ""
+"本站部分资源来自于网络收集，若侵犯了你的隐私或版权，请及时联系我们删除有关信"
+"息。"
+msgstr ""
+"Some of the resources on this site are collected from the Internet, if it "
+"violates your privacy or copyright, please contact us in time to delete the "
+"relevant information."
+
+#: inc/setting/options/OptionSeo.php:11
+msgid "SEO搜索优化"
+msgstr "SEO"
+
+#: inc/setting/options/OptionSeo.php:16
+msgid "开启SEO"
+msgstr "Turn on SEO"
+
+#: inc/setting/options/OptionSeo.php:19
+msgid "若您正在使用其它的SEO插件，请取消勾选"
+msgstr "If you are using another SEO plugin, please uncheck it"
+
+#: inc/setting/options/OptionSeo.php:23
+msgid "网站标题"
+msgstr "Site title"
+
+#: inc/setting/options/OptionSeo.php:29
+msgid "网站副标题"
+msgstr "Favicon"
+
+#: inc/setting/options/OptionSeo.php:35
+msgid "标题连接符"
+msgstr "Title connector"
+
+#: inc/setting/options/OptionSeo.php:38
+msgid "Title连接符号，例如 \"-\"、\"|\""
+msgstr "Title concatenated symbols, such as \"-\", \"|\""
+
+#: inc/setting/options/OptionSeo.php:42
+msgid "网站描述"
+msgstr "Website Description"
+
+#: inc/setting/options/OptionSeo.php:49
+msgid "网站关键词"
+msgstr "Website keywords"
+
+#: inc/setting/options/OptionSeo.php:56
+msgid "不显示分类链接中的<code>category</code>"
+msgstr "Do not display in the categorization link<code>category</code>"
+
+#: inc/setting/options/OptionSeo.php:62
+msgid "发布文章主动推送至百度"
+msgstr "Publish articles and actively push them to Baidu"
+
+#: inc/setting/options/OptionSeo.php:68
+msgid "百度推送接口地址"
+msgstr "Baidu push interface address"
+
+#: inc/setting/options/OptionSeo.php:71
+msgid "百度推送接口地址，如："
+msgstr "Baidu push interface addresses, such as:"
+
+#: inc/setting/options/OptionValidate.php:12
+msgid "验证及防刷"
+msgstr "Verification"
+
+#: inc/setting/options/OptionValidate.php:17
+msgid "验证码类型"
+msgstr "Captcha type"
+
+#: inc/setting/options/OptionValidate.php:24
+msgid "图形验证码"
+msgstr "Graphic captcha"
+
+#: inc/setting/options/OptionValidate.php:28
+#: inc/setting/options/OptionValidate.php:41
+msgid "极验验证码"
+msgstr "Geetest code"
+
+#: inc/setting/options/OptionValidate.php:34
+msgid "启用评论验证"
+msgstr "Enable comment verification"
+
+#: inc/setting/options/OptionValidate.php:46
+msgid "极验验证ID"
+msgstr "Geetest ID"
+
+#: inc/setting/options/OptionValidate.php:51
+msgid "极验验证Key"
+msgstr "Geetest key"
+
+#: inc/setting/template.php:34
+msgid "简单/方便/高颜值"
+msgstr "Simple / Convenient / Good-looking"
+
+#: inc/setting/template.php:35
+msgid "主题"
+msgstr "Theme"
+
+#: page.php:14 single.php:18
+msgid "次阅读"
+msgstr "Views"
+
+#: page.php:20 single.php:39
+msgid "编辑"
+msgstr ""
+
+#: single.php:30 single.php:114
+msgid "共计"
+msgstr "total "
+
+#: single.php:30
+msgid "字  "
+msgstr ""
+
+#: single.php:33
+msgid "预计"
+msgstr ""
+
+#: single.php:33
+msgid "分钟读完"
+msgstr ""
+
+#: single.php:84
+msgid "发表至："
+msgstr ""
+
+#: single.php:107 single.php:122
+msgid "版权声明："
+msgstr "Copyright notice: "
+
+#: single.php:107
+msgid "本站原创文章，由"
+msgstr "Our original article, by "
+
+#: single.php:114
+msgid "发表，"
+msgstr " publish, "
+
+#: single.php:114 single.php:126
+msgid "字。"
+msgstr " words."
+
+#: single.php:117
+msgid "转载说明："
+msgstr ""
+
+#: single.php:122
+msgid "本文于"
+msgstr "This paper is published in "
+
+#: single.php:123
+msgid "转载自"
+msgstr " Reprinted from "
+
+#: single.php:126
+msgid "，共计"
+msgstr " , total "
+
+#: single.php:129
+msgid "转载提示："
+msgstr "Reprint tips: "
+
+#: single.php:130
+msgid "此文章非本站原创文章，若需转载请联系原作者获得转载授权。"
+msgstr ""
+"This article is not our original article, if you need to reprint, please "
+"contact the original author to obtain the reprint authorization."
+
+#: templates/module-links.php:34
+msgid "更多链接"
+msgstr "More links"
+
+#: update-checker/Puc/v4p11/Plugin/Ui.php:54
+msgid "View details"
+msgstr ""
+
+#: update-checker/Puc/v4p11/Plugin/Ui.php:77
+#, php-format
+msgid "More information about %s"
+msgstr ""
+
+#: update-checker/Puc/v4p11/Plugin/Ui.php:128
+msgid "Check for updates"
+msgstr ""
+
+#: update-checker/Puc/v4p11/Plugin/Ui.php:214
+#, php-format
+msgctxt "the plugin title"
+msgid "The %s plugin is up to date."
+msgstr ""
+
+#: update-checker/Puc/v4p11/Plugin/Ui.php:216
+#, php-format
+msgctxt "the plugin title"
+msgid "A new version of the %s plugin is available."
+msgstr ""
+
+#: update-checker/Puc/v4p11/Plugin/Ui.php:218
+#, php-format
+msgctxt "the plugin title"
+msgid "Could not determine if updates are available for %s."
+msgstr ""
+
+#: update-checker/Puc/v4p11/Plugin/Ui.php:224
+#, php-format
+msgid "Unknown update checker status \"%s\""
+msgstr ""
+
+#: update-checker/Puc/v4p11/Vcs/PluginUpdateChecker.php:98
+msgid "There is no changelog available."
+msgstr ""
+
+#. Theme Name of the plugin/theme
+msgid "Puock"
+msgstr ""
+
+#. Theme URI of the plugin/theme
+#. Author URI of the plugin/theme
+msgid "https://github.com/Licoy/wordpress-theme-puock"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid "支持暗黑与白天模式的自适应多风格主题！"
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Licoy"
+msgstr ""
+
+#~ msgid "载入中..."
+#~ msgstr "Loading..."
+
+#~ msgid "的文章列表"
+#~ msgstr "List of articles"
+
+#~ msgid "开始搜索"
+#~ msgstr "Search"
+
+#~ msgid "发表于："
+#~ msgstr "Published on : "
+
+#~ msgid "复制链接"
+#~ msgstr "Copy link"
+
+#~ msgid "分享至"
+#~ msgstr "Share to"
