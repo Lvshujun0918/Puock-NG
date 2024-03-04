@@ -156,6 +156,13 @@ class OptionBasic extends BaseOptionItem
                             'sdt' => true,
                         ],
                         [
+                            'id' => 'comment_ip_fix',
+                            'label' => __('评论IP修复', PUOCK),
+                            'tip' => __('若评论IP错误显示为服务器IP或127.0.0.1，请选择此项', PUOCK),
+                            'type' => 'switch',
+                            'sdt' => false,
+                        ],
+                        [
                             'id' => 'comment_dont_show_owner_ip',
                             'label' => __('不显示站长IP归属地及运营商', PUOCK),
                             'type' => 'switch',

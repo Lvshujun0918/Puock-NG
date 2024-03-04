@@ -21,11 +21,17 @@ do_action( 'qm/stop', 'Reg_PHPFile' );
 include(PUOCK_ABS_DIR.'/gutenberg/index.php');
 
 
-//从XFF头中获取评论IP 作者:吕舒君
-function pre_comment_ip_XFF() {    
-	return $_SERVER['HTTP_X_FORWARDED_FOR'];
+if (pk_is_checked('comment_ip_fix')) {    
+    /**
+     * pre_comment_ip_XFF
+     * 从X-Forwarded-For获取客户端IP
+     * @return 真实IP
+     */
+    function pre_comment_ip_XFF() {    
+        return $_SERVER['HTTP_X_FORWARDED_FOR'];
+    }
+    add_filter('pre_comment_user_ip', 'pre_comment_ip_XFF');
 }
-add_filter('pre_comment_user_ip', 'pre_comment_ip_XFF');
 
 //去除感谢使用wordpress创作
 if (pk_is_checked('hide_footer_wp_t')) {
