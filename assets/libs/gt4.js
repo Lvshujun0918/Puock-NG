@@ -1,4 +1,4 @@
-"v4.1.5 Geetest Inc.";
+"v4.1.8 Geetest Inc.";
 
 (function (window) {
     "use strict";
@@ -50,12 +50,12 @@ function Config(config) {
 
 Config.prototype = {
     apiServers: ['gcaptcha4.geetest.com','gcaptcha4.geevisit.com','gcaptcha4.gsensebot.com'],
-    staticServers: ["static.geetest.com",'static.geevisit.com', "dn-staticdown.qbox.me"],
+    staticServers: ["static.geetest.com",'static.geevisit.com'],
     protocol: 'http://',
     typePath: '/load',
     fallback_config: {
         bypass: {
-            staticServers: ["static.geetest.com",'static.geevisit.com',"dn-staticdown.qbox.me"],
+            staticServers: ["static.geetest.com",'static.geevisit.com'],
             type: 'bypass',
             bypass: '/v4/bypass.js'
         }
@@ -215,7 +215,8 @@ var normalizeDomain = function (domain) {
     return domain.replace(/^https?:\/\/|\/$/g, ''); // uems.sysu.edu.cn/jwxt/geetest
 };
 var normalizePath = function (path) {
-    path = path.replace(/\/+/g, '/');
+
+    path = path && path.replace(/\/+/g, '/');
     if (path.indexOf('/') !== 0) {
         path = '/' + path;
     }
@@ -249,7 +250,6 @@ var makeURL = function (protocol, domain, path, query) {
 
 var load = function (config, protocol, domains, path, query, cb, handleCb) {
     var tryRequest = function (at) {
-
         // 处理jsonp回调，这里为了保证每个不同jsonp都有唯一的回调函数
         if(handleCb){
             var cbName = "geetest_" + random();
@@ -305,6 +305,7 @@ var jsonp = function (domains, path, config, callback) {
         }
     };
     load(config, config.protocol, domains, path, {
+        callback: '',
         captcha_id: config.captchaId,
         challenge: config.challenge || uuid(),
         client_type: MOBILE? 'h5':'web',
@@ -320,7 +321,6 @@ var jsonp = function (domains, path, config, callback) {
                 config.offlineCb();
                 return;
             }
-
            if(err){
             callback(config._get_fallback_config());
            }
@@ -363,7 +363,7 @@ if (detect()) {
 var GeetestIsLoad = function (fname) {
   var GeetestIsLoad = false;
   var tags = { js: 'script', css: 'link' };
-  var tagname = tags[fname.split('.').pop()];
+  var tagname = fname && tags[fname.split('.').pop()];
   if (tagname !== undefined) {
     var elts = document.getElementsByTagName(tagname);
     for (var i in elts) {
@@ -390,7 +390,6 @@ window.initGeetest4 = function (userConfig,callback) {
     }
 
     jsonp(config.apiServers , config.typePath, config, function (newConfig) {
-            
             //错误捕获，第一个load请求可能直接报错
             var newConfig = camelizeKeys(newConfig);
 
@@ -399,7 +398,6 @@ window.initGeetest4 = function (userConfig,callback) {
             }
 
             var type = newConfig.type;
-            
             if(config.debug){
                 new _Object(newConfig)._extend(config.debug)
             }
@@ -412,11 +410,10 @@ window.initGeetest4 = function (userConfig,callback) {
 
             var s = status[type] || 'init';
             if (s === 'init') {
-
                 status[type] = 'loading';
 
                 callbacks[type].push(init);
-
+                
                 if(newConfig.gctPath){
                     load(config, config.protocol, Object.hasOwnProperty.call(config, 'staticServers') ? config.staticServers  : newConfig.staticServers || config.staticServers , newConfig.gctPath, null, function (err){
                         if(err){
@@ -442,6 +439,7 @@ window.initGeetest4 = function (userConfig,callback) {
                             }
                         });
                     } else {
+
                         status[type] = 'loaded';
                         var cbs = callbacks[type];
                         for (var i = 0, len = cbs.length; i < len; i = i + 1) {
@@ -451,11 +449,12 @@ window.initGeetest4 = function (userConfig,callback) {
                             }
                         }
                         callbacks[type] = [];
+                        status[type] = 'init';
                     }
                 });
             } else if (s === "loaded") {
                 // 判断gct是否需要重新加载
-                if(!GeetestIsLoad(newConfig.gctPath)){
+                if(newConfig.gctPath && !GeetestIsLoad(newConfig.gctPath)){
                   load(config, config.protocol, Object.hasOwnProperty.call(config, 'staticServers') ? config.staticServers  : newConfig.staticServers || config.staticServers , newConfig.gctPath, null, function (err){
                       if(err){
                           throwError('networkError', config, {
