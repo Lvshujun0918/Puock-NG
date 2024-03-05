@@ -85,7 +85,7 @@ class Puock {
         this.swiperOnceEvent()
         this.initModalToggle()
         layer.config({shade: 0.5})
-        console.log("\n %c Puock Theme %c https://github.com/Licoy/wordpress-theme-puock \n\n",
+        console.log("\n %c Puock Theme 增强版 %c https://github.com/Lvshujun0918/Puock-NG/ \n\n",
             "color:#f1ab0e;background:#030307;padding:5px 0;border-top-left-radius:8px;border-bottom-left-radius:8px",
             "background:#aa80ff;padding:5px 0;border-top-right-radius:8px;border-bottom-right-radius:8px");
     }
