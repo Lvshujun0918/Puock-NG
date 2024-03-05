@@ -871,7 +871,7 @@ function pk_get_req_data(array $model)
 function pk_get_ip_region_str($ip)
 {
     if(isset($GLOBALS['ip2_region'])){
-        $ip2_instance = @$GLOBALS['ip2_region'];
+        $ip2_instance = $GLOBALS['ip2_region'];
     } else {
         $ip2_instance = new \Ip2Region();
         $GLOBALS['ip2_region'] = $ip2_instance;
