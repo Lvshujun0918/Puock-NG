@@ -361,7 +361,7 @@ if (!function_exists('pk_paging')) {
         previous_posts_link('&laquo;');
         echo '</li>';
         if ($paged > $pnum + 1) page_link(1);
-        if ($paged > $pnum + 2) echo "<li><a href='javascript:void(0)'>...</a></li>";
+        if ($paged > $pnum + 2) echo "<li class='omit'>...</li>";
         for ($i = $paged - $pnum; $i <= $paged + $pnum; $i++) {
             if ($i > 0 && $i <= $max_page) {
                 if ($i == $paged) {
@@ -372,7 +372,7 @@ if (!function_exists('pk_paging')) {
             }
         }
         if ($paged < $max_page - $pnum - 1) {
-            echo "<li><a href='javascript:void(0)'>...</a></li>";
+            echo "<li class='omit'>...</li>";
             page_link($max_page);
         }
         echo '<li class="next-page">';
