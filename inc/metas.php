@@ -21,9 +21,14 @@ $headMetas = [
     'link_blank_open' => pk_is_checked('link_blank_content'),
     'async_view_id' => pk_metas_get_async_view_id(),
     'mode_switch' => pk_is_checked('theme_mode_s'),
-    'off_img_viewer'=>pk_is_checked('off_img_viewer'),
-    'off_code_highlighting'=>pk_is_checked('off_code_highlighting'),
+    'off_img_viewer' => pk_is_checked('off_img_viewer'),
+    'off_code_highlighting' => pk_is_checked('off_code_highlighting'),
 ];
+if(is_single() || is_page())
+{
+    //生成nounce
+    $headMetas['post_like'] = wp_create_nonce('like_nounce_'.get_the_ID());
+}
 if($headMetas['async_view_id']){
     $headMetas['async_view_generate_time'] = time();
 }

@@ -1,9 +1,19 @@
 <?php
-// 点赞
+/**
+ * puock_post_like
+ * 处理文章点赞
+ * @return void
+ */
 function puock_post_like()
 {
     $id = $_POST["um_id"];
     $action = $_POST["um_action"];
+    $nounce = $_POST["action_nounce"];
+    if(wp_verify_nonce($nounce, 'like_nounce_'.$id)!=1)
+    {
+        echo json_encode(array('e' => 1, 't' => '参数错误'));
+        die;
+    }
     if ($action == 'like') {
         $cookie_key = 'puock_like_' . $id;
         if (!empty($_COOKIE[$cookie_key])) {
@@ -20,6 +30,10 @@ function puock_post_like()
             update_post_meta($id, 'puock_like', ($like_num + 1));
         }
         echo json_encode(array('e' => 0, 't' => '点赞成功', 'd' => get_post_meta($id, 'puock_like', true)));
+    }
+    else{
+        echo json_encode(array('e' => 1, 't' => '参数错误'));
+        die;
     }
     die;
 }

@@ -27,7 +27,8 @@ class Puock {
             mode_switch: false,
             async_view_generate_time: null,
             off_img_viewer:false,
-            off_code_highlighting:false
+            off_code_highlighting:false,
+            post_like:null
         },
         comment: {
             loading: false,
@@ -916,12 +917,17 @@ class Puock {
         $(document).on("click", "#post-like", (e) => {
             const vm = $(this.ct(e))
             let id = vm.attr("data-id");
-            $.post("/wp-admin/admin-ajax.php", {action: 'puock_like', um_id: id, um_action: 'like'}, (res) => {
+            //先判断nounce
+            if(this.data.params.post_like === null){
+                this.toast('点赞异常', TYPE_DANGER);
+                return;
+            }
+            $.post("/wp-admin/admin-ajax.php", {action: 'puock_like', um_id: id, um_action: 'like', action_nounce: this.data.params.post_like}, (res) => {
                 if (res.e === 0) {
                     vm.find("span").html(res.d);
                     vm.addClass("bg-primary text-light");
                 } else {
-                    this.toast(res.t);
+                    this.toast(res.t, TYPE_DANGER);
                 }
             }, 'json').fail(() => {
                 this.toast('点赞异常', TYPE_DANGER);
