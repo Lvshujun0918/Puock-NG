@@ -1,5 +1,5 @@
 <?php
-do_action( 'qm/start', 'Front_Core' );
+do_action('qm/start', 'Front_Core');
 
 use Puock\Theme\classes\PuockClassLoad;
 
@@ -26,10 +26,10 @@ function pk_ajax_resp_error($msg = 'fail', $data = null)
 {
     return pk_ajax_resp($data, $msg, -1);
 }
-do_action( 'qm/stop', 'Front_Core' );
+do_action('qm/stop', 'Front_Core');
 
 
-do_action( 'qm/start', 'require' );
+do_action('qm/start', 'require');
 
 require PUOCK_ABS_DIR . '/inc/fun/cache.php';
 require PUOCK_ABS_DIR . '/inc/setting/index.php';
@@ -59,24 +59,24 @@ if (pk_is_checked('no_category')) {
     require PUOCK_ABS_DIR . '/inc/no-category.php';
 }
 
-do_action( 'qm/stop', 'require' );
+do_action('qm/stop', 'require');
 
 
-do_action( 'qm/start', 'Load_Class' );
+do_action('qm/start', 'Load_Class');
 $puock_class_load = new PuockClassLoad();
-do_action( 'qm/stop', 'Load_Class' );
+do_action('qm/stop', 'Load_Class');
 
 /*Auth-Domains*/
 
 //钩子添加集合
-do_action( 'qm/start', 'Hook_HTML' );
+do_action('qm/start', 'Hook_HTML');
 if (pk_is_checked('html_page_permalink')) {
     add_action('init', 'html_page_permalink', -1);
 }
 add_filter('user_trailingslashit', 'add_init_trailingslashit', 10, 2);
-do_action( 'qm/stop', 'Hook_HTML' );
+do_action('qm/stop', 'Hook_HTML');
 
-do_action( 'qm/start', 'Back_Core' );
+do_action('qm/start', 'Back_Core');
 function pk_open_session()
 {
     session_start();
@@ -89,14 +89,14 @@ function pk_wclose_session()
 
 function pk_session_call($function)
 {
-    do_action( 'qm/start', 'Session_Start' );
+    do_action('qm/start', 'Session_Start');
     pk_open_session();
     try {
         $function();
     } finally {
         session_write_close();
     }
-    do_action( 'qm/stop', 'Session_Start' );
+    do_action('qm/stop', 'Session_Start');
 }
 
 function pk_get_theme_option_url($to = '')
@@ -306,9 +306,9 @@ function pk_get_lazy_img_info($origin, $class = '', $width = null, $height = nul
 
 function pk_content_img_lazy($content)
 {
-    do_action( 'qm/start', 'LazyIMG' );
-    $content=preg_replace('/<img(.+)src=[\'"]([^\'"]+)[\'"](.*)>/i', "<img\$1data-src=\"\$2\" data-lazy=\"true\" src=\"" . pk_get_lazy_pl_img() . "\"\$3/>", $content);
-    do_action( 'qm/stop', 'LazyIMG' );
+    do_action('qm/start', 'LazyIMG');
+    $content = preg_replace('/<img(.+)src=[\'"]([^\'"]+)[\'"](.*)>/i', "<img\$1data-src=\"\$2\" data-lazy=\"true\" src=\"" . pk_get_lazy_pl_img() . "\"\$3/>", $content);
+    do_action('qm/stop', 'LazyIMG');
     return $content;
 }
 
@@ -318,26 +318,37 @@ if (pk_is_checked('basic_img_lazy_z')) {
 //获取图片缩略图链接
 function pk_get_img_thumbnail_src($src, $width, $height, $args = array())
 {
-    // if ($width == null || $height == null) {
-    //     return $src;
-    // }
-    // if (pk_is_checked('thumbnail_rewrite_open')) {
-    //     return home_url() . "/timthumb/w_{$width}/h_{$height}/q_90/zc_1/a_c/" . pk_safe_base64_encode($src) . ".png";
-    // }
-    // if(preg_match('/w:\w*/',$src)){
-    //     $src=preg_replace('/w:\w*/', 'w:'.$width, $src);
-    // }
-    // else{
-    //     $src=preg_replace('/.com/', '.com/w:'.$width, $src);
-    // }
-    // if(preg_match('/h:\w*/',$src)){
-    //     $src=preg_replace('/h:\w*/', 'h:'.$height, $src);
-    // }
-    // else{
-    //     $src=preg_replace('/.com/', '.com/h:'.$height, $src);
-    // }
-    //return PUOCK_ABS_URI . "/timthumb.php?w={$width}&h={$height}&a=c&zc=1&q=90&src=" . $src;
-    return $src;
+    if ($width == null || $height == null) {
+        return $src;
+    }
+    if (pk_is_checked('thumbnail_rewrite_open')) {
+        return home_url() . "/timthumb/w_{$width}/h_{$height}/q_90/zc_1/a_c/" . pk_safe_base64_encode($src) . ".png";
+    } else {
+        $rule = pk_get_option('thumbnail_rule', '');
+        if ($rule != '') {
+            //根据条件替换缩略图
+            return str_replace(
+                '<w>',
+                $width,
+                str_replace(
+                    '<h>',
+                    $height,
+                    str_replace(
+                        '<src>',
+                        urldecode($src),
+                        str_replace(
+                            '<urlsrc>',
+                            $src,
+                            str_replace('<thumb>', PUOCK_ABS_URI . "/timthumb.php", $rule)
+                        )
+                    )
+                )
+            );
+        } else {
+            //返回默认
+            return PUOCK_ABS_URI . "/timthumb.php?w={$width}&h={$height}&a=c&zc=1&q=90&src=" . $src;
+        }
+    }
 }
 
 //获取文章样式是否是卡片式
@@ -371,7 +382,7 @@ if (pk_get_option('gravatar_url', 'wp') != 'wp') {
     } else if ($type == 'v2ex') {
         add_filter('get_avatar', 'v2ex_ssl_avatar');
         add_filter('get_avatar_url', 'v2ex_ssl_avatar');
-    } else if($type=='custom'){
+    } else if ($type == 'custom') {
         add_filter('get_avatar', 'pk_custom_avatar');
         add_filter('get_avatar_url', 'pk_custom_avatar');
     }
@@ -448,7 +459,8 @@ if (pk_is_checked('compress_html')) {
 //百度主动推送
 function pk_baidu_submit($post_ID)
 {
-    if (get_post_meta($post_ID, 'baidu_submit_url_status', true) == 1) return;
+    if (get_post_meta($post_ID, 'baidu_submit_url_status', true) == 1)
+        return;
     $post_url = get_permalink($post_ID);
     $api_url = pk_get_option('baidu_submit_url');
     $resp = wp_remote_post($api_url, array('body' => $post_url, 'headers' => 'Content-Type: text/plain'));
@@ -522,11 +534,13 @@ function create_taxs($tax_slug, $hook_type, $tax_name)
 
 
 //注册菜单
-do_action( 'qm/start', 'register_nav_menus' );
-register_nav_menus(array(
-    'primary' => '主要菜单',
-));
-do_action( 'qm/stop', 'register_nav_menus' );
+do_action('qm/start', 'register_nav_menus');
+register_nav_menus(
+    array(
+        'primary' => '主要菜单',
+    )
+);
+do_action('qm/stop', 'register_nav_menus');
 
 //获取主题配置
 function pk_get_option($name, $default = null)
@@ -713,7 +727,7 @@ function pk_get_menu_obj_to_html($menus, &$out, $mobile = false, $dpath_cur = 1,
         }
         if (count($menu->children) > 0 && $dpath_cur < $max_dpath) {
             $out .= '<ul ' . ($mobile ? 'id="menu-sub-' . $menu->ID . '"' : '') . ' class="sub-menu ' . ($mobile
-                    ? 'collapse' : '') . '">';
+                ? 'collapse' : '') . '">';
             pk_get_menu_obj_to_html($menu->children, $out, $mobile, $dpath_cur + 1, $max_dpath);
             $out .= '</ul>';
         }
@@ -850,7 +864,7 @@ function pk_get_req_data(array $model)
         $val = trim($_REQUEST[$key] ?? '');
         if (empty($val)) {
             if ($item['required']) {
-                return ($item['name'] ?? $key) . '不能为空';
+                return($item['name'] ?? $key) . '不能为空';
             }
             if (isset($item['default'])) {
                 $data[$key] = $item['default'];
@@ -966,15 +980,16 @@ function pk_template_redirect()
 
 add_action('template_redirect', 'pk_template_redirect');
 
-function pk_query_vars($vars){
+function pk_query_vars($vars)
+{
     $vars[] = 'id';
     return $vars;
 }
-add_filter( 'query_vars', 'pk_query_vars' );
+add_filter('query_vars', 'pk_query_vars');
 
 function pk_load_template($_template_file, $require = true, $args = array())
 {
     status_header(200);
     load_template($_template_file, $require, $args);
 }
-do_action( 'qm/stop', 'Back_Core' );
+do_action('qm/stop', 'Back_Core');
