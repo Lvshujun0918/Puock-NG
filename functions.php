@@ -11,23 +11,24 @@ const PUOCK_OPT = 'puock_options';
 
 $puock_colors_name = ['primary', 'danger', 'info', 'success', 'warning', 'dark', 'secondary'];
 
-include(PUOCK_ABS_DIR.'/vendor/autoload.php');
+include(PUOCK_ABS_DIR . '/vendor/autoload.php');
 
-do_action( 'qm/start', 'Reg_PHPFile' );
+do_action('qm/start', 'Reg_PHPFile');
 //这个include格外慢
-include(PUOCK_ABS_DIR.'/inc/fun/core.php');
-do_action( 'qm/stop', 'Reg_PHPFile' );
+include(PUOCK_ABS_DIR . '/inc/fun/core.php');
+do_action('qm/stop', 'Reg_PHPFile');
 
-include(PUOCK_ABS_DIR.'/gutenberg/index.php');
+include(PUOCK_ABS_DIR . '/gutenberg/index.php');
 
 
-if (pk_is_checked('comment_ip_fix')) {    
+if (pk_is_checked('comment_ip_fix')) {
     /**
      * pre_comment_ip_XFF
      * 从X-Forwarded-For获取客户端IP
      * @return 真实IP
      */
-    function pre_comment_ip_XFF() {    
+    function pre_comment_ip_XFF()
+    {
         return $_SERVER['HTTP_X_FORWARDED_FOR'];
     }
     add_filter('pre_comment_user_ip', 'pre_comment_ip_XFF');
@@ -250,12 +251,37 @@ function get_smiley_codes()
 {
     //todo 本地化翻译
     return array(
-        ":?:" => "疑问", ":razz:" => "调皮", ":sad:" => "难过", ":evil:" => "抠鼻", ":naughty:" => "顽皮",
-        ":!:" => "吓", ":smile:" => "微笑", ":oops:" => "憨笑", ":neutral:" => "亲亲", ":cry:" => "大哭", ":mrgreen:" => "呲牙",
-        ":grin:" => "坏笑", ":eek:" => "惊讶", ":shock:" => "发呆", ":???:" => "撇嘴", ":cool:" => "酷", ":lol:" => "偷笑",
-        ":mad:" => "咒骂", ":twisted:" => "发怒", ":roll:" => "白眼", ":wink:" => "鼓掌", ":idea:" => "想法", ":despise:" => "蔑视",
-        ":celebrate:" => "庆祝", ":watermelon:" => "西瓜", ":xmas:" => "圣诞", ":warn:" => "警告", ":rainbow:" => "彩虹",
-        ":loveyou:" => "爱你", ":love:" => "爱", ":beer:" => "啤酒",
+        ":?:" => "疑问",
+        ":razz:" => "调皮",
+        ":sad:" => "难过",
+        ":evil:" => "抠鼻",
+        ":naughty:" => "顽皮",
+        ":!:" => "吓",
+        ":smile:" => "微笑",
+        ":oops:" => "憨笑",
+        ":neutral:" => "亲亲",
+        ":cry:" => "大哭",
+        ":mrgreen:" => "呲牙",
+        ":grin:" => "坏笑",
+        ":eek:" => "惊讶",
+        ":shock:" => "发呆",
+        ":???:" => "撇嘴",
+        ":cool:" => "酷",
+        ":lol:" => "偷笑",
+        ":mad:" => "咒骂",
+        ":twisted:" => "发怒",
+        ":roll:" => "白眼",
+        ":wink:" => "鼓掌",
+        ":idea:" => "想法",
+        ":despise:" => "蔑视",
+        ":celebrate:" => "庆祝",
+        ":watermelon:" => "西瓜",
+        ":xmas:" => "圣诞",
+        ":warn:" => "警告",
+        ":rainbow:" => "彩虹",
+        ":loveyou:" => "爱你",
+        ":love:" => "爱",
+        ":beer:" => "啤酒",
     );
 }
 
@@ -351,17 +377,22 @@ if (!function_exists('pk_paging')) {
     {
         if (is_singular()) {
             return;
-        };
+        }
+        ;
         global $wp_query, $paged;
         $max_page = $wp_query->max_num_pages;
-        if ($max_page == 1) return;
+        if ($max_page == 1)
+            return;
         echo '<div class="mt20 p-flex-s-right"><ul class="pagination">';
-        if (empty($paged)) $paged = 1;
+        if (empty($paged))
+            $paged = 1;
         echo '<li class="prev-page puock-bg">';
         previous_posts_link('&laquo;');
         echo '</li>';
-        if ($paged > $pnum + 1) page_link(1);
-        if ($paged > $pnum + 2) echo "<li class='omit'>...</li>";
+        if ($paged > $pnum + 1)
+            page_link(1);
+        if ($paged > $pnum + 2)
+            echo "<li class='omit'>...</li>";
         for ($i = $paged - $pnum; $i <= $paged + $pnum; $i++) {
             if ($i > 0 && $i <= $max_page) {
                 if ($i == $paged) {
@@ -520,7 +551,7 @@ require dirname(__FILE__) . '/fun-custom.php';
 //更新支持
 function pk_update()
 {
-    do_action( 'qm/start', 'Update' );
+    do_action('qm/start', 'Update');
     $update_server = pk_get_option('update_server');
     $check_period = pk_get_option('update_server_check_period');
     if (empty($check_period) || !is_numeric($check_period)) {
@@ -529,28 +560,25 @@ function pk_update()
     $current_theme_dir_name = basename(dirname(__FILE__));
     include('update-checker/plugin-update-checker.php');
     switch ($update_server) {
-        case 'github':
-            {
-                $pkUpdateChecker = YahnisElsts\PluginUpdateChecker\v5\PucFactory::buildUpdateChecker(
-                    'https://github.com/Licoy/wordpress-theme-puock',
-                    __FILE__,
-                    PUOCK,
-                    $check_period
-                );
-            }
+        case 'github': {
+            $pkUpdateChecker = YahnisElsts\PluginUpdateChecker\v5\PucFactory::buildUpdateChecker(
+                'https://github.com/Licoy/wordpress-theme-puock',
+                __FILE__,
+                PUOCK,
+                $check_period
+            );
+        }
             break;
-        case 'fastgit':
-            {
-                $pkUpdateChecker = YahnisElsts\PluginUpdateChecker\v5\PucFactory::buildUpdateChecker(
-                    'https://licoy.cn/go/puock-update.php?r=fastgit',
-                    __FILE__,
-                    PUOCK,
-                    $check_period
-                );
-            }
+        case 'fastgit': {
+            $pkUpdateChecker = YahnisElsts\PluginUpdateChecker\v5\PucFactory::buildUpdateChecker(
+                'https://licoy.cn/go/puock-update.php?r=fastgit',
+                __FILE__,
+                PUOCK,
+                $check_period
+            );
+        }
             break;
-        default:
-        {
+        default: {
             $pkUpdateChecker = YahnisElsts\PluginUpdateChecker\v5\PucFactory::buildUpdateChecker(
                 'https://licoy.cn/go/puock-update.php?r=worker',
                 __FILE__,
@@ -559,7 +587,7 @@ function pk_update()
             );
         }
     }
-    do_action( 'qm/stop', 'Update' );
+    do_action('qm/stop', 'Update');
 }
 
 
