@@ -211,6 +211,14 @@ class OptionGlobal extends BaseOptionItem
                     'tips' => "⚠️".__('若开启此选项，请自行手动在Nginx配置中添加伪静态规则', PUOCK)."：<code>rewrite ^/timthumb/w_([0-9]+)/h_([0-9]+)/q_([0-9]+)/zc_([0-9])/a_([a-z]+)/([0-9A-Za-z_\-]+)\.([0-9a-z]+)$ /wp-content/themes/" . get_template() . "/timthumb.php?w=$1&h=$2&q=$3&zc=$4&a=$5&src=$6;</code>"
                 ],
                 [
+                    'id' => 'thumbnail_rule',
+                    'label' => __('缩略图规则', PUOCK),
+                    'type' => 'textarea',
+                    'sdt' => '<thumb>?w=<w>&h=<h>&a=c&zc=1&q=90&src=<src>',
+                    'tips' => __("默认使用本站的thumb.php进行缩略，若使用了COS或OOS可以在这里自定义规则，用<w>表示，用<h>表示高，用<src>表示原地址(经过url编码)，用<urlsrc>表示原地址，用<thumb>表示到thumb.php的路径", PUOCK),
+                    'showRefId'=>'func:(function(args){return args.data.thumbnail_rewrite_open===false})(args)'
+                ],
+                [
                     'id' => 'thumbnail_allows',
                     'label' => __('缩略图白名单', PUOCK),
                     'type' => 'textarea',

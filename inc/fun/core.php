@@ -315,7 +315,17 @@ function pk_content_img_lazy($content)
 if (pk_is_checked('basic_img_lazy_z')) {
     add_filter('the_content', 'pk_content_img_lazy');
 }
-//获取图片缩略图链接
+
+
+/**
+ * pk_get_img_thumbnail_src
+ * 缩略图地址函数
+ * @param  mixed $src 原图地址
+ * @param  mixed $width 裁剪宽度
+ * @param  mixed $height 裁剪高度高度
+ * @param  mixed $args 其它参数
+ * @return string
+ */
 function pk_get_img_thumbnail_src($src, $width, $height, $args = array())
 {
     if ($width == null || $height == null) {
