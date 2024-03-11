@@ -9,23 +9,8 @@
     <link rel="apple-touch-icon" href="<?php echo pk_get_option('favicon') ?>"/>
     <?php if(pk_is_checked('seo_open',true)) get_template_part('inc/seo') ?>
     <?php wp_head(); ?>
-    <?php get_template_part('templates/css', 'grey') ?>
-    <?php if(pk_is_checked('grey')): ?>
-    <style>
-        html {
-            filter: grayscale(100%);
-            -webkit-filter: grayscale(100%);
-            -moz-filter: grayscale(100%);
-            -o-filter: grayscale(100%);
-        }
-    </style>
-    <?php endif; ?>
-    <?php echo pk_head_style_var() ?>
     <?php if (!empty(pk_get_option('tj_code_header', ''))): ?>
         <?php echo pk_get_option('tj_code_header', ''); ?>
-    <?php endif; ?>
-    <?php if (!empty(pk_get_option('css_code_header', ''))): ?>
-        <?php echo "<style>" . pk_get_option('css_code_header', '') . "</style>"; ?>
     <?php endif; ?>
 </head>
 <body class="puock-<?php echo pk_theme_light() ? 'light' : 'dark';

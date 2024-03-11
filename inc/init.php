@@ -3,7 +3,7 @@
 add_action('after_setup_theme', 'deel_setup');
 function deel_setup()
 {
-    do_action( 'qm/start', 'Optimaze' );
+    do_action('qm/start', 'Optimaze');
     //去除头部冗余代码
     remove_action('wp_head', 'feed_links_extra', 3);
     remove_action('wp_head', 'feed_links', 2, 1);
@@ -27,11 +27,11 @@ function deel_setup()
         add_filter('rest_enabled', '__return_false');
         add_filter('rest_jsonp_enabled', '__return_false');
         add_filter('rest_authentication_errors', function ($access) {
-            return new WP_Error('rest_cannot_access', 'REST API已经被关闭，请打开后再进行尝试', array('status' => 403));
+            return new WP_Error('rest_cannot_access', 'REST API已经被关闭，请打开后再进行尝试', array ('status' => 403));
         });
     }
 
-    if(pk_is_checked('close_xmlrpc')){
+    if (pk_is_checked('close_xmlrpc')) {
         add_filter('xmlrpc_enabled', '__return_false');
     }
 
@@ -76,7 +76,9 @@ function deel_setup()
     //添加主题特性
     add_theme_support('post-thumbnails');//缩略图设置
     add_theme_support('post-formats', array('aside'));//增加文章形式
-    add_theme_support('custom-background', array(
+    add_theme_support(
+        'custom-background',
+        array(
             'default-repeat' => 'repeat',
             'default-position-x' => 'left',
             'default-position-y' => 'top',
@@ -94,7 +96,7 @@ function deel_setup()
 //    add_action('comment_form', 'deel_add_checkbox');
     //移除自动保存和修订版本
     add_action('wp_print_scripts', 'disable_autosave');
-    do_action( 'qm/stop', 'Optimaze' );
+    do_action('qm/stop', 'Optimaze');
     function disable_autosave()
     {
         wp_deregister_script('autosave');
@@ -172,12 +174,11 @@ $pk_right_slug = 'PGRpdiBjbGFzcz0iZnMxMiBtdDEwIGMtc3ViIj4NCiAgICAgICAgICAgICAgIC
 
 function pk_init_register_assets()
 {
-    do_action( 'qm/start', 'Reg_Assets' );
+    do_action('qm/start', 'Reg_Assets');
     if (is_admin()) {
         wp_enqueue_style('puock-strawberry-icon-admin', pk_get_static_url() . '/assets/libs/strawberry-icon.css', [], PUOCK_CUR_VER_STR);
         wp_enqueue_script('puock-admin', pk_get_static_url() . '/assets/dist/js/admin.min.js', [], PUOCK_CUR_VER_STR, true);
     } else {
-//        wp_deregister_script('jquery');
         wp_register_script('jquery', pk_get_static_url() . '/assets/libs/jquery.min.js', [], PUOCK_CUR_VER_STR);
         wp_enqueue_script('jquery');
         wp_enqueue_style('puock-libs', pk_get_static_url() . '/assets/dist/style/libs.min.css', [], PUOCK_CUR_VER_STR);
@@ -199,8 +200,31 @@ function pk_init_register_assets()
             wp_enqueue_script('puock-gt4', pk_get_static_url() . '/assets/libs/gt4.js', [], PUOCK_CUR_VER_STR, true);
         }
         wp_enqueue_script('puock', pk_get_static_url() . '/assets/dist/js/puock.min.js', array('puock-libs'), PUOCK_CUR_VER_STR, true);
+
+        //加载全站黑白样式
+        if (pk_is_checked('grey')) {
+            wp_add_inline_style('puock', 'html {
+                filter: grayscale(100%);
+                -webkit-filter: grayscale(100%);
+                -moz-filter: grayscale(100%);
+                -o-filter: grayscale(100%);
+            }');
+        }
+
+        //加载自定义主题色
+        if (!empty(pk_get_option('style_color_primary'))) {
+            wp_add_inline_style('puock', 'body{--pk-c-primary:' . pk_get_option('style_color_primary') . '}');
+        }
+
+        //加载头部样式
+        wp_add_inline_style('puock', pk_head_style_var());
+
+        //加载自定义样式
+        if (!empty(pk_get_option('css_code_header', ''))) {
+            wp_add_inline_style('puock', pk_get_option('css_code_header', ''));
+        }
     }
-    do_action( 'qm/stop', 'Reg_Assets' );
+    do_action('qm/stop', 'Reg_Assets');
 }
 
 add_action('wp_enqueue_scripts', 'pk_init_register_assets');
@@ -229,12 +253,13 @@ add_action('wp_enqueue_scripts', 'pk_init_register_assets');
 //     return $tag;
 // }
 
-function pk_dequeue_jquery_migrate( $scripts ) {
-    if ( ! is_admin() && ! empty( $scripts->registered['jquery'] ) ) {
+function pk_dequeue_jquery_migrate($scripts)
+{
+    if (!is_admin() && !empty($scripts->registered['jquery'])) {
         $scripts->registered['jquery']->deps = array_diff(
             $scripts->registered['jquery']->deps,
-            [ 'jquery-migrate' ]
+            ['jquery-migrate']
         );
     }
 }
-add_action( 'wp_default_scripts', 'pk_dequeue_jquery_migrate' );
+add_action('wp_default_scripts', 'pk_dequeue_jquery_migrate');
