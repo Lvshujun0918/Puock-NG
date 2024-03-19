@@ -2,8 +2,10 @@
 
 include '../../../../wp-blog-header.php';
 pk_set_custom_seo("链接跳转");
-$url = @$_GET['to'];
-$name = @$_GET['name'];
+//获取网址
+$url = $_GET['to'] ?? '';
+//获取名称
+$name = $_GET['name'] ?? '';
 if (!empty($name)) {
     $name = base64_decode(str_replace(' ','+',$name));
 }
@@ -11,7 +13,8 @@ $error = null;
 if (empty($url)) {
     $error = "目标网址为空，无法进行跳转";
 } else {
-    $url = htmlentities(base64_decode($url));
+    //解密url
+    $url = htmlentities(pk_authcode(urldecode($url), 'DECODE', 'puock', 120));
     if (strpos($url, "https://") !== 0 && strpos($url, "http://") !== 0) {
         $error = "跳转链接协议有误";
     } else {
