@@ -475,7 +475,7 @@ function pk_get_seo_title() {
     } else if (is_404()) {
         $pk_title .= '你访问的资源不存在' . $pk_common_end;
     } else {
-        $pk_title .= $blog_name . $pk_paged_title;
+        $pk_title .= $pk_blog_name . $pk_paged_title;
     }
     return $pk_title;
 }
