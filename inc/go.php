@@ -1,6 +1,7 @@
 <?php
 
 include '../../../../wp-blog-header.php';
+//设置标题
 pk_set_custom_seo("链接跳转");
 //获取网址
 $url = $_GET['to'] ?? '';
@@ -11,13 +12,16 @@ if (!empty($name)) {
 }
 $error = null;
 if (empty($url)) {
-    $error = "目标网址为空，无法进行跳转";
+    $error = '网址参数有误';
 } else {
     //解密url
-    $url = htmlentities(pk_authcode(urldecode($url), 'DECODE', 'puock', 120));
-    if (strpos($url, "https://") !== 0 && strpos($url, "http://") !== 0) {
-        $error = "跳转链接协议有误";
+    $url = htmlentities(pk_authcode($url, 'DECODE', 'puock', 120));
+    if ($url === '') {
+        $error = '网址参数有误';
+    } elseif (strpos($url, "https://") !== 0 && strpos($url, "http://") !== 0) {
+        $error = "网址参数有误";
     } else {
+        //是本站地址
         if (strpos($url, home_url()) === 0) {
             header("Location:" . $url);
             exit();
