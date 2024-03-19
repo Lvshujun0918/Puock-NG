@@ -448,7 +448,7 @@ function pk_get_seo_title() {
     $pk_common_end = $pk_paged_title . $pk_title_conn . $pk_blog_name;
     // 已经自定义标题
     if (!empty($pk_custom_seo_title)) {
-        $pk_title .= $custom_seo['title'] . $pk_common_end;
+        $pk_title .= $pk_custom_seo_title . $pk_common_end;
     } else if (is_home()) {
         $pk_description = pk_get_option('web_title_2');
         if (!empty($pk_description)) {
