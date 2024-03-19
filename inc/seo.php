@@ -1,7 +1,3 @@
-<?php if (is_home()) : ?>
-    <meta name="keywords" content="<?php echo pk_get_option('keyword') ?>"/>
-    <meta name="description" content="<?php echo pk_get_option('description') ?>"/>
-<?php endif; ?>
 <?php if (is_single()) : while (have_posts()) : the_post(); ?>
     <meta name="keywords" content="<?php
     $single_seo_keywords = get_post_meta($post->ID, "seo_keywords", true);

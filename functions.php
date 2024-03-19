@@ -468,6 +468,48 @@ function pk_get_seo_title() {
     return $pk_title;
 }
 
+/**
+ * 返回主页的SEO信息
+ *
+ * @return string
+ * @author lvshujun
+ * @date 2024-03-19
+ */
+function pk_seo_home() {
+    //非首页返回空
+    if (!is_home() && !is_front_page()) return '';
+    //未启用返回空
+    if (!pk_is_checked('seo_open',true)) return '';
+
+    //站点标题
+    $pk_site_title = get_bloginfo('name');
+    //站点简介
+    $pk_site_desc = pk_get_option('description');
+    //站点链接
+    $pk_site_url = get_bloginfo('url'); 
+    //站点关键词
+    $pk_site_keyword = pk_get_option('keyword');
+
+    //连接字符串
+    $pk_seo_output = '
+
+    <meta name="keywords" content="' . $pk_site_keyword . '"/>
+    <meta name="description" content="' . $pk_site_desc . '"/>
+
+    <!-- og meta -->
+    <meta property="og:type" value="website" />
+    <meta property="og:title" value="' . $pk_site_title . '" />
+    <meta property="og:description" value="' . $pk_site_desc . '" />
+    <meta property="og:url" value="' . $pk_site_url . '" />
+    
+    <!-- twitter meta -->
+    <meta name="twitter:card" value="summary_large_image" />
+    <meta name="twitter:title" value="' . $pk_site_title . '" />
+    <meta name="twitter:description" value="' . $pk_site_desc . '" />';
+
+    return $pk_seo_output;
+}
+
 //获取面包屑导航
 function pk_breadcrumbs()
 {
