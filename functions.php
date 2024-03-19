@@ -371,51 +371,63 @@ function get_post_images($_post = null)
     return $res;
 }
 
-//分页功能
-if (!function_exists('pk_paging')) {
-    function pk_paging($pnum = 2)
-    {
-        if (is_singular()) {
-            return;
-        }
-        ;
-        global $wp_query, $paged;
-        $max_page = $wp_query->max_num_pages;
-        if ($max_page == 1)
-            return;
-        echo '<div class="mt20 p-flex-s-right"><ul class="pagination">';
-        if (empty($paged))
-            $paged = 1;
-        echo '<li class="prev-page puock-bg">';
-        previous_posts_link('&laquo;');
-        echo '</li>';
-        if ($paged > $pnum + 1)
-            page_link(1);
-        if ($paged > $pnum + 2)
-            echo "<li class='omit'>...</li>";
-        for ($i = $paged - $pnum; $i <= $paged + $pnum; $i++) {
-            if ($i > 0 && $i <= $max_page) {
-                if ($i == $paged) {
-                    echo "<li ><a class='cur'>{$i}</a></li>";
-                } else {
-                    page_link($i);
-                }
+/**
+ * 输出分页
+ *
+ * @param integer $pnum 显示页数
+ * @return void
+ * @author lvshujun
+ * @date 2024-03-19
+ */
+function pk_paging($pnum = 2)
+{
+    if (is_singular()) {
+        return;
+    }
+    global $wp_query, $paged;
+    $max_page = $wp_query->max_num_pages;
+    if ($max_page == 1)
+        return;
+    echo '<div class="mt20 p-flex-s-right"><ul class="pagination">';
+    if (empty($paged))
+        $paged = 1;
+    echo '<li class="prev-page puock-bg">';
+    previous_posts_link('&laquo;');
+    echo '</li>';
+    if ($paged > $pnum + 1)
+        pk_echo_page_link(1);
+    if ($paged > $pnum + 2)
+        echo '<li class="omit">...</li>';
+    for ($i = $paged - $pnum; $i <= $paged + $pnum; $i++) {
+        if ($i > 0 && $i <= $max_page) {
+            if ($i == $paged) {
+                echo '<li><a class="cur">' . $i . '</a></li>';
+            } else {
+                pk_echo_page_link($i);
             }
         }
-        if ($paged < $max_page - $pnum - 1) {
-            echo "<li class='omit'>...</li>";
-            page_link($max_page);
-        }
-        echo '<li class="next-page">';
-        next_posts_link('&raquo;');
-        echo '</li>';
-        echo '</ul></div>';
     }
+    if ($paged < $max_page - $pnum - 1) {
+        echo "<li class='omit'>...</li>";
+        pk_echo_page_link($max_page);
+    }
+    echo '<li class="next-page">';
+    next_posts_link('&raquo;');
+    echo '</li>';
+    echo '</ul></div>';
+}
 
-    function page_link($i, $title = '')
-    {
-        echo "<li><a href='", esc_html(get_pagenum_link($i)), "'>{$i}</a></li>";
-    }
+/**
+ * 生成页面链接，并输出
+ *
+ * @param int $i 页码
+ * @return void
+ * @author lvshujun
+ * @date 2024-03-19
+ */
+function pk_echo_page_link($i)
+{
+    echo '<li><a href="' . esc_html(get_pagenum_link($i)) . '">' . $i . '</a></li>';
 }
 
 function pk_get_seo_title() {
