@@ -408,7 +408,7 @@ function pk_paging($pnum = 2)
         }
     }
     if ($paged < $max_page - $pnum - 1) {
-        echo "<li class='omit'>...</li>";
+        echo '<li class="omit">...</li>';
         pk_echo_page_link($max_page);
     }
     echo '<li class="next-page">';
