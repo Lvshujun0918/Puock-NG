@@ -430,6 +430,13 @@ function pk_echo_page_link($i)
     echo '<li><a href="' . esc_html(get_pagenum_link($i)) . '">' . $i . '</a></li>';
 }
 
+/**
+ * 输出SEO标题
+ *
+ * @return string SEO标题
+ * @author lvshujun
+ * @date 2024-03-19
+ */
 function pk_get_seo_title() {
     // 用户定义的连接符
     $pk_title_conn = ' ' . pk_get_option("title_conn") . ' ';
