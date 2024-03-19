@@ -300,7 +300,7 @@ function pk_go_link($url, $name = '')
     //创建密码
     $url = pk_authcode($url, 'ENCODE', 'puock', 120);
     //拼合url
-    $url = PUOCK_ABS_URI . '/inc/go.php?to=' . urlencode($url);
+    $url = PUOCK_ABS_URI . '/inc/go.php?to=' . $url;
     if (!empty($name)) {
         $url .= '&name=' . base64_encode($name);
     }
@@ -331,7 +331,7 @@ function pk_authcode($string, $operation = 'DECODE', $key = 'puock', $expiry = 0
     $key_length = strlen($cryptkey);
     // 明文，前10位用来保存时间戳，解密时验证数据有效性，10到26位用来保存$keyb(密匙b)，解密时会通过这个密匙验证数据完整性
     // 如果是解码的话，会从第$ckey_length位开始，因为密文前$ckey_length位保存 动态密匙，以保证解密正确
-    $string = $operation == 'DECODE' ? base64_decode(substr($string, $ckey_length)) : sprintf('%010d', $expiry ? $expiry + time() : 0) . substr(md5($string . $keyb), 0, 16) . $string;
+    $string = $operation == 'DECODE' ? pk_safe_base64_decode(substr($string, $ckey_length)) : sprintf('%010d', $expiry ? $expiry + time() : 0) . substr(md5($string . $keyb), 0, 16) . $string;
     $string_length = strlen($string);
     $result = '';
     $box = range(0, 255);
@@ -369,7 +369,7 @@ function pk_authcode($string, $operation = 'DECODE', $key = 'puock', $expiry = 0
     } else {
         // 把动态密匙保存在密文里，这也是为什么同样的明文，生产不同密文后能解密的原因
         // 因为加密后的密文可能是一些特殊字符，复制过程可能会丢失，所以用base64编码
-        return $keyc . str_replace('=', '', base64_encode($result));
+        return $keyc . str_replace('=', '', pk_safe_base64_encode($result));
     }
 }
 
