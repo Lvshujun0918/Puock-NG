@@ -23,15 +23,17 @@ include(PUOCK_ABS_DIR . '/gutenberg/index.php');
 
 if (pk_is_checked('comment_ip_fix')) {
     /**
-     * pre_comment_ip_XFF
-     * 从X-Forwarded-For获取客户端IP
-     * @return 真实IP
+     * 评论IP重写（前端有代理）
+     *
+     * @return string 从XFF中获取到的IP
+     * @author lvshujun
+     * @date 2024-03-20
      */
-    function pre_comment_ip_XFF()
+    function pk_pre_comment_ip_XFF()
     {
         return $_SERVER['HTTP_X_FORWARDED_FOR'];
     }
-    add_filter('pre_comment_user_ip', 'pre_comment_ip_XFF');
+    add_filter('pre_comment_user_ip', 'pk_pre_comment_ip_XFF');
 }
 
 //去除感谢使用wordpress创作
@@ -369,6 +371,26 @@ function get_post_images($_post = null)
         $res = get_stylesheet_directory_uri() . '/assets/img/random/' . mt_rand(1, 8) . '.jpg';
     }
     return $res;
+}
+
+/**
+ * 拼合类名
+ *
+ * @param string ...$class_names 原类名
+ * @return string 拼合后的字符串
+ * @author lvshujun
+ * @date 2024-03-20
+ */
+function pk_get_class_name(...$class_names) {
+    $output = '';
+    //遍历一下
+    foreach ($class_names as $name) {
+        if ($class_names !== '') {
+            $output .= $name . ' ';
+        }
+    }
+    //去除首尾多余空格
+    return trim($output);
 }
 
 /**

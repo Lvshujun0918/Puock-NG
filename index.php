@@ -5,13 +5,13 @@
     <div id="content" class="mt15 container">
         <?php get_template_part('templates/box', 'global-top') ?>
         <div class="pk-index-wrap row row-cols-1">
-            <div class="pk-index-posts-wrap col-lg-<?php pk_hide_sidebar_out('12', '8') ?> col-md-12 <?php pk_open_box_animated('animated fadeInLeft') ?> ">
+            <div class="<?php echo pk_get_class_name('pk-index-posts-wrap', 'col-lg-'. pk_hide_sidebar_out('12', '8', null, false), 'col-md-12', pk_open_box_animated('animated fadeInLeft', false)) ?> ">
                 <?php if (isset($paged) && $paged <= 1): ?>
                     <div class="pk-index-posts-banner <?php pk_open_box_animated('animated fadeInLeft') ?>">
                         <?php get_template_part('templates/module', 'banners') ?>
                     </div>
                 <?php endif; ?>
-                <div class="pk-index-posts-list <?php pk_open_box_animated('animated fadeInLeft') ?> <?php echo pk_post_style_list() ? '' : 'pr-0 pl-0' ?>">
+                <div class="<?php echo pk_get_class_name('pk-index-posts-list', pk_open_box_animated('animated fadeInLeft', false), pk_post_style_list() ? '' : 'pr-0 pl-0') ?>">
                     <div>
                         <?php get_template_part('templates/module', 'posts') ?>
                     </div>
