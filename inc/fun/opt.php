@@ -272,7 +272,7 @@ function pk_content_addlink($content) {
 	if ($matches) {
 		foreach ($matches[2] as $val) {
 			if (strpos($val,'://') !== false 
-                && strpos($val,home_url()) === false 
+                && pk_is_cur_site($val) === false 
                 && !preg_match('/\.(jpg|jepg|png|ico|bmp|gif|tiff)/i',$val)) {
 				$content = str_replace('href="'.$val.'"', 'href="'.pk_go_link($val).'"', $content);
 			}
