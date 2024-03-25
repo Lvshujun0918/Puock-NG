@@ -22,7 +22,7 @@ if (empty($url)) {
         $error = "网址参数有误";
     } else {
         //是本站地址
-        if (str_starts_with($url, home_url()) === 0) {
+        if (pk_is_cur_site($url)) {
             header("Location:" . $url);
             exit();
         }
