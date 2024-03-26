@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta http-equiv='content-language' content='<?php echo get_locale() ?>'>
-    <?php echo pk_seo_home(); ?>
+    <?php pk_seo(); ?>
     <?php echo pk_icon_mate(); ?>
     <title><?php echo pk_get_seo_title();?></title>
     <?php if(pk_is_checked('seo_open',true)) get_template_part('inc/seo') ?>

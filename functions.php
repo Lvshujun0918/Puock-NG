@@ -510,9 +510,24 @@ function pk_get_seo_title() {
 }
 
 /**
+ * SEO输出方法
+ *
+ * @return void
+ * @author lvshujun
+ * @date 2024-03-26
+ */
+function pk_seo() {
+    if (is_home() || is_front_page()) {
+        echo pk_seo_home();
+    } elseif (is_single() || is_page()) {
+        echo pk_seo_post();
+    }
+}
+
+/**
  * 返回主页的SEO信息
  *
- * @return string
+ * @return string SEO
  * @author lvshujun
  * @date 2024-03-19
  */
@@ -536,6 +551,7 @@ function pk_seo_home() {
 
     <meta name="keywords" content="' . $pk_site_keyword . '"/>
     <meta name="description" content="' . $pk_site_desc . '"/>
+    <link rel="canonical" href="' . home_url() . '">
 
     <!-- og meta -->
     <meta property="og:type" value="website" />
@@ -548,6 +564,71 @@ function pk_seo_home() {
     <meta name="twitter:title" value="' . $pk_site_title . '" />
     <meta name="twitter:description" value="' . $pk_site_desc . '" />';
 
+    return $pk_seo_output;
+}
+
+/**
+ * 返回文章页的SEO信息
+ *
+ * @return string SEO
+ * @author lvshujun
+ * @date 2024-03-26
+ */
+function pk_seo_post() {
+    //是首页不调用
+    if (is_home() || is_front_page()) return '';
+    //未启用返回空
+    if (!pk_is_checked('seo_open',true)) return '';
+
+    //取关键词段
+    $pk_seo_keywords = '';
+    $pk_custom_seo_keywords = get_post_meta($post->ID, "seo_keywords", true);
+    //获取自定义关键词
+    if ($pk_custom_seo_keywords != null && !empty(trim($pk_custom_seo_keywords))) {
+        //直接使用已定义的关键词
+        echo trim($pk_custom_seo_keywords);
+    } else {
+        //获取tag作为关键词
+        $pk_tag_lists = get_the_tags();
+        if ($pk_tag_lists != null && count($pk_tag_lists) > 0) {
+            foreach (get_the_tags() as $pk_tag_item) {
+                $pk_seo_keywords .= $pk_tag_item->name . ',';
+            };
+            //去除最后的逗号
+            $pk_seo_keywords = substr($pk_seo_keywords, 0, strlen($pk_seo_keywords) - 1);
+        }
+    }
+
+    //取简介
+    $pk_seo_desc = get_post_meta($post->ID, "seo_desc", true);
+    if ($pk_seo_desc != null && !empty(trim($pk_seo_desc))) {
+        //选取自定义SEO
+        $pk_seo_desc = trim($pk_seo_desc);
+    } else {
+        //裁剪获得简介
+        $pk_seo_desc = wp_trim_words(do_shortcode(get_the_content($post->ID)), 147, '...');
+    }
+    
+    $pk_seo_output = '
+    <meta name="keywords" content="' . $pk_seo_keywords . '" />
+    <meta name="description" content="' . $pk_seo_desc . '"/>
+    <link rel="canonical" href="' . get_permalink() . '">
+
+    <!-- og meta -->
+    <meta property="og:type" value="article" />
+    <meta property="og:title" value="'. get_the_title() . '" />
+    <meta property="og:description" value="' . $pk_seo_desc . '" />
+    <meta property="og:article:author" value="' . get_the_author() . '" />
+    <meta property="og:article:published_time" value="发布时间" />
+    <meta property="og:image" value="图片" />
+    <meta property="og:url" value="' . get_permalink() . '" />
+    
+    <!-- twitter meta -->
+    <meta name="twitter:card" value="summary_large_image" />
+    <meta name="twitter:title" value="'. get_the_title() . '" />
+    <meta name="twitter:description" value="' . $pk_seo_desc . '" />
+    <meta name="twitter:image" value="图片" />';
+    
     return $pk_seo_output;
 }
 
