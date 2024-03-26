@@ -4,7 +4,7 @@
 define('PUOCK_ABS_DIR', get_template_directory());
 define('PUOCK_ABS_URI', get_template_directory_uri());
 //不使用wp_get_theme()->get('Version')，节省时间
-define('PUOCK_CUR_VER_STR', '2.8.1');
+define('PUOCK_CUR_VER_STR', '2.8.2');
 
 const PUOCK = 'puock';
 const PUOCK_OPT = 'puock_options';
@@ -579,10 +579,7 @@ function pk_seo_post() {
     if (is_home() || is_front_page()) return '';
     //未启用返回空
     if (!pk_is_checked('seo_open',true)) return '';
-
     global $post;
-
-    do_action( 'qm/debug', 'This happened!' );
     //取关键词段
     $pk_seo_keywords = '';
     $pk_custom_seo_keywords = get_post_meta($post->ID, "seo_keywords", true);
