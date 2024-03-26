@@ -609,6 +609,8 @@ function pk_seo_post() {
         $pk_seo_desc = wp_trim_words(do_shortcode(get_the_content($post->ID)), 147, '...');
     }
     
+    do_action( 'qm/debug', get_the_author_meta('ID')  );
+
     $pk_seo_output = '
     <meta name="keywords" content="' . $pk_seo_keywords . '" />
     <meta name="description" content="' . $pk_seo_desc . '"/>
@@ -618,16 +620,16 @@ function pk_seo_post() {
     <meta property="og:type" value="article" />
     <meta property="og:title" value="'. get_the_title() . '" />
     <meta property="og:description" value="' . $pk_seo_desc . '" />
-    <meta property="og:article:author" value="' . get_the_author() . '" />
-    <meta property="og:article:published_time" value="发布时间" />
-    <meta property="og:image" value="图片" />
+    <meta property="og:article:author" value="' . get_the_author_meta('display_name',  $post->post_author) . '" />
+    <meta property="og:article:published_time" value="' . get_the_time() . '" />
+    <meta property="og:image" value="' . get_post_images() . '" />
     <meta property="og:url" value="' . get_permalink() . '" />
     
     <!-- twitter meta -->
     <meta name="twitter:card" value="summary_large_image" />
     <meta name="twitter:title" value="'. get_the_title() . '" />
     <meta name="twitter:description" value="' . $pk_seo_desc . '" />
-    <meta name="twitter:image" value="图片" />';
+    <meta name="twitter:image" value="' . get_post_images() . '" />';
     
     return $pk_seo_output;
 }
