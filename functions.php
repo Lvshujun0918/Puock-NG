@@ -580,6 +580,8 @@ function pk_seo_post() {
     //未启用返回空
     if (!pk_is_checked('seo_open',true)) return '';
 
+    global $post;
+
     do_action( 'qm/debug', 'This happened!' );
     //取关键词段
     $pk_seo_keywords = '';
