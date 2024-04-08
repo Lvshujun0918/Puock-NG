@@ -298,7 +298,7 @@ function pk_go_link($url, $name = '')
         return $url;
     }
     //创建密码
-    $url = pk_authcode($url, 'ENCODE', 'puock', 120);
+    $url = pk_authcode($url, 'ENCODE', 'puock', 0);
     //拼合url
     $url = PUOCK_ABS_URI . '/inc/go.php?to=' . $url;
     if (!empty($name)) {
