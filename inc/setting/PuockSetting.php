@@ -19,6 +19,7 @@ use Puock\Theme\setting\options\OptionResource;
 use Puock\Theme\setting\options\OptionScript;
 use Puock\Theme\setting\options\OptionSeo;
 use Puock\Theme\setting\options\OptionValidate;
+use Puock\Theme\setting\options\OptionFooter;
 
 class PuockSetting
 {
@@ -34,6 +35,7 @@ class PuockSetting
         $classes[] = ['class' => OptionGlobal::class, 'sort' => 1];
         $classes[] = ['class' => OptionBasic::class, 'sort' => 2];
         $classes[] = ['class' => OptionCarousel::class, 'sort' => 3];
+        $classes[] = ['class' => OptionFooter::class, 'sort' => 4];
         $classes[] = ['class' => OptionCms::class, 'sort' => 4];
         $classes[] = ['class' => OptionCompany::class, 'sort' => 5];
         $classes[] = ['class' => OptionAuth::class, 'sort' => 6];

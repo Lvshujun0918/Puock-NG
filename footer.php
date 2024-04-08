@@ -26,11 +26,54 @@
             <?php endif; ?>
         </div>
     </div>
-    <div class="mt20 text-center t-md">
-        <div class="info">
-            <?php echo apply_filters('pk_footer_info','') ?>
+    <div class="text-center t-md">
+        <div class="container">
+            <div class="footer-bar">
+                <div class="footer-title"><?php bloginfo('name'); ?></div>
+                <div class="footer-social-button">
+                    <div class="btn btn-secondary"><i class="fa-brands fa-github"></i></div>
+                </div>
+            </div>
+            <hr>
+            <div class="footer-bar c-sub">
+                <div class="footer-bar-left">
+                    <div id="footer-bar-tips">
+                        <div class="copyright"><?php echo pk_get_option('footer_copyright');?></div>
+                    </div>
+                </div>
+                <div class="footer-bar-right">
+                    <i class="fa-brands fa-wordpress"></i>&nbsp;Theme by <a target="_blank" class="c-sub" href="https://github.com/Lvshujun0918/Puock-NG">Puock-NG</a>
+                    <i class="fa-solid fa-shield-halved"></i>&nbsp;<a class="footer-bar-link c-sub" target="_blank" rel="noopener" href="https://icp.gov.moe/?keyword=20249688" title="萌ICP备20249688号" draggable="false">萌ICP备20249688号</a>
+                </div>
+            </div>
         </div>
     </div>
+    <style>
+        .footer-social-button>.btn{
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+        }
+        .footer-social-button>.i{
+            line-height:26px;
+        }
+        .footer-title{
+            color: #787878;
+            font-size: 35px;
+            font-weight: 700;
+        }
+        .footer-bar{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .footer-bar-left{
+            display: flex;
+            flex-direction: row;
+        }
+        
+    </style>
     </div>
 </footer>
 </div>
