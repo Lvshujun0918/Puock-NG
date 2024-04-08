@@ -38,12 +38,12 @@
             <div class="footer-bar c-sub">
                 <div class="footer-bar-left">
                     <div id="footer-bar-tips">
-                        <div class="copyright"><?php echo pk_get_option('footer_copyright');?></div>
+                        <div class="copyright"><?php echo pk_get_option('footer_copyright_left');?></div>
                     </div>
                 </div>
                 <div class="footer-bar-right">
                     <i class="fa-brands fa-wordpress"></i>&nbsp;Theme by <a target="_blank" class="c-sub" href="https://github.com/Lvshujun0918/Puock-NG">Puock-NG</a>
-                    <i class="fa-solid fa-shield-halved"></i>&nbsp;<a class="footer-bar-link c-sub" target="_blank" rel="noopener" href="https://icp.gov.moe/?keyword=20249688" title="萌ICP备20249688号" draggable="false">萌ICP备20249688号</a>
+                    <?php echo pk_get_option('footer_copyright_right');?>
                 </div>
             </div>
         </div>
@@ -68,11 +68,11 @@
             justify-content: space-between;
             align-items: center;
         }
-        .footer-bar-left{
+        .footer-bar-left, .footer-bar-right{
             display: flex;
             flex-direction: row;
+            align-items: center;
         }
-        
     </style>
     </div>
 </footer>
