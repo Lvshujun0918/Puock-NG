@@ -608,8 +608,6 @@ function pk_seo_post() {
         //裁剪获得简介
         $pk_seo_desc = wp_trim_words(do_shortcode(get_the_content($post->ID)), 147, '...');
     }
-    
-    do_action( 'qm/debug', get_the_author_meta('ID')  );
 
     $pk_seo_output = '
     <meta name="keywords" content="' . $pk_seo_keywords . '" />
