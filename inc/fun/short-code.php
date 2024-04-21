@@ -275,12 +275,32 @@ function pk_sc_github($attr, $content = null)
 
 add_shortcode('github', 'pk_sc_github');
 
-
-function p_wpautop($content)
+/**
+ * 文章内链卡片
+ *
+ * @param string $attr 短代码参数
+ * @param string $content 短代码内容
+ * @return string 短代码解析后内容
+ */
+function pk_post_card($attr, $content = null)
 {
-    return wpautop($content, true);
+    extract(shortcode_atts(array(
+        'id' => null,
+    ), $attr));
+    if ($id === null) {
+        //未传入文章id
+        return sc_tips(array('outline' => true), '<span class="c-sub fs14">未配置正确的文章地址</span>', 't-warning');;
+    }
+    $pk_post_title = get_post($id) -> post_title;
+    $pk_post_summary = get_the_excerpt($id);
+    do_action( 'qm/debug', $pk_post_summary);
+    $pk_post_link = get_permalink($id);
+    return '<div class="card"><div class="card-body">
+      <h5 class="card-title mb-0"><i class="fa-solid fa-newspaper"></i> '.$pk_post_title.'</h5>
+      <p class="card-text">'.$pk_post_summary.'</p>
+      <a href="'.$pk_post_link.'" class="btn btn-primary text-end"><i class="fa-solid fa-eye"></i> 跳转</a></div></div>';
 }
+add_shortcode('neilian', 'pk_post_card');
 
-//TODO 添加到后台配置
+//去除自动添加<p>
 remove_filter('the_content', 'wpautop');
-add_filter('the_content', 'p_wpautop', 11);
