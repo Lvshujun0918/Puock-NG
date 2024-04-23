@@ -376,7 +376,7 @@ function pk_authcode($string, $operation = 'DECODE', $key = 'puock', $expiry = 0
 //检测链接是否属于本站
 function pk_is_cur_site($url)
 {
-    if (str_starts_with($url, home_url()) === 0) {
+    if (str_starts_with($url, home_url())) {
         return true;
     }
     return false;
