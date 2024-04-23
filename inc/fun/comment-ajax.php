@@ -167,24 +167,48 @@ function pk_comment_ajax()
 
     wp_set_comment_cookies($comment, $user);
 
+    //评论等级
+    $comment_level = '';
+    if(pk_is_checked('comment_level')) {
+        $comment_level = pk_the_author_class(false, $comment);
+    }
+
+    //评论来源
+    $comment_flag = '<div class="comment-os c-sub">';
+    //显示UA
+    if(pk_is_checked('comment_show_ua', true)) {
+        $commentUserAgent = parse_user_agent($comment->comment_agent);
+        $commentOsIcon = pk_get_comment_ua_os_icon($commentUserAgent['platform']);
+        $commentBrowserIcon = pk_get_comment_ua_os_icon($commentUserAgent['browser']);
+        $comment_flag .= '<span class="mt10" title="'.$commentUserAgent['platform'].'"><i class="'.$commentOsIcon.'"></i>&nbsp;<span>'.$commentUserAgent['platform'].'&nbsp;</span></span>';
+    }
+    //显示IP
+    if (pk_is_checked('comment_show_ip', true)) {
+        if (!pk_is_checked('comment_dont_show_owner_ip') || (pk_is_checked('comment_dont_show_owner_ip') && $comment->user_id != 1)) {
+            $ip = pk_get_ip_region_str($comment->comment_author_IP);
+            $comment_flag .= '<span class="mt10" title="由IP推算得出的地理位置"><i class="fa-solid fa-location-dot"></i>&nbsp;'.$ip.'</span>';
+        }
+    }
+    $comment_flag .= '</div>';
+
     echo '<div id="comment-' . get_comment_ID() . '" class="post-comment">
-            <div class="info">
-                <div>' . get_avatar($comment, 64, '', '', array('class' => 'md-avatar')) . '</div>
-                <div class="ml-3 two-info">
-                    <div class="puock-text ta3b">
-                        <span class="t-md puock-links">' . get_comment_author_link($comment_id) . '</span>
-                        ' . pk_the_author_class(false, $comment) . '
-                    </div>
-                    <div class="t-sm c-sub">' . get_comment_date('Y-m-d H:i:s', $comment_id) . '</div>
+        <div class="info">
+            <div>' . get_avatar($comment, 64, '', '', array('class' => 'md-avatar')) . '</div>
+            <div class="ml-3 two-info">
+                <div class="puock-text ta3b">
+                    <span class="t-md puock-links">' . get_comment_author_link($comment_id) . '</span>
+                    ' . $comment_level  . '
                 </div>
+                <div class="t-sm c-sub">' . get_comment_date('Y-m-d H:i:s', $comment_id) . '</div>
             </div>
-            <div class="content t-sm mt10 puock-text">
-                <div class="content-text">
-                    ' . get_comment_text($comment_id) . '
-                    ' . $comment_approved_str . '
-                </div>
+        </div>
+        <div class="content">
+            <div class="content-text t-md mt10 puock-text">
+                <p>' . get_comment_text($comment_id) . '</p>
+                ' . $comment_approved_str .  $comment_flag . '
             </div>
-        </div>';
+        </div>
+    </div>';
 
     wp_die();
 }
