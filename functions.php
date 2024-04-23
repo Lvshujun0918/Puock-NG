@@ -36,6 +36,22 @@ if (pk_is_checked('comment_ip_fix')) {
     add_filter('pre_comment_user_ip', 'pk_pre_comment_ip_XFF');
 }
 
+if(!function_exists('str_starts_with')){
+    /**
+     * str_starts_with兼容适配
+     *
+     * @param string $haystack 要比较的字符串
+     * @param string $needle 开头的字符串
+     * @return bool 是否以它开头
+     * @author lvshujun
+     * @date 2024-04-23
+     */
+    function str_starts_with($haystack, $needle)
+    {
+        return substr_compare($haystack, $needle, 0, strlen($needle)) === 0;
+    }
+}
+
 //去除感谢使用wordpress创作
 if (pk_is_checked('hide_footer_wp_t')) {
     function my_admin_footer_text()
