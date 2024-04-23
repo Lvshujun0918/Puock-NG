@@ -32,6 +32,23 @@ function pk_comment_callback($comment, $args, $depth)
         }
         $GLOBALS[$pccci_key] = $comment->comment_ID;
     }
+    //评论来源
+    $comment_flag = '<div class="comment-os c-sub">';
+    //显示UA
+    if(pk_is_checked('comment_show_ua', true)) {
+        $commentUserAgent = parse_user_agent($comment->comment_agent);
+        $commentOsIcon = pk_get_comment_ua_os_icon($commentUserAgent['platform']);
+        $commentBrowserIcon = pk_get_comment_ua_os_icon($commentUserAgent['browser']);
+        $comment_flag .= '<span class="mt10" title="'.$commentUserAgent['platform'].'"><i class="'.$commentOsIcon.'"></i>&nbsp;<span>'.$commentUserAgent['platform'].'&nbsp;</span></span>';
+    }
+    //显示IP
+    if (pk_is_checked('comment_show_ip', true)) {
+        if (!pk_is_checked('comment_dont_show_owner_ip') || (pk_is_checked('comment_dont_show_owner_ip') && $comment->user_id != 1)) {
+            $ip = pk_get_ip_region_str($comment->comment_author_IP);
+            $comment_flag .= '<span class="mt10" title="由IP推算得出的地理位置"><i class="fa-solid fa-location-dot"></i>&nbsp;'.$ip.'</span>';
+        }
+    }
+    $comment_flag .= '</div>';
     ?>
 <div id="comment-<?php comment_ID() ?>" class="post-comment">
     <div class="info">
@@ -74,26 +91,7 @@ function pk_comment_callback($comment, $args, $depth)
             <?php if ($comment->comment_approved == '0') : ?>
                 <p class="c-sub mt-1"><i class="fa fa-warning mr-1"></i>您的评论正在等待审核！</p>
             <?php endif; ?>
-
-            <div class="comment-os c-sub">
-                <?php
-                if (pk_is_checked('comment_show_ua', true)):
-                    $commentUserAgent = \donatj\UserAgent\parse_user_agent($comment->comment_agent);
-                    $commentOsIcon = pk_get_comment_ua_os_icon($commentUserAgent['platform']);
-                    $commentBrowserIcon = pk_get_comment_ua_os_icon($commentUserAgent['browser']);
-                    echo "<span class='mt10' title='{$commentUserAgent['platform']}'><i class='$commentOsIcon'></i>&nbsp;<span>{$commentUserAgent['platform']}&nbsp;</span></span>";
-                    echo "<span class='mt10' title='{$commentUserAgent['browser']} {$commentUserAgent['version']}'><i class='$commentBrowserIcon'></i>&nbsp;<span>{$commentUserAgent['browser']}</span></span>";
-                endif;
-                ?>
-                <?php
-                if (pk_is_checked('comment_show_ip', true)) {
-                    if (!pk_is_checked('comment_dont_show_owner_ip') || (pk_is_checked('comment_dont_show_owner_ip') && $comment->user_id != 1)) {
-                        $ip = pk_get_ip_region_str($comment->comment_author_IP);
-                        echo "<span class='mt10' title='IP'><i class='fa-solid fa-location-dot'></i>&nbsp;$ip</span>";
-                    }
-                }
-                ?>
-            </div>
+            <?php echo $comment_flag; ?>
         </div>
         <div class="comment-box-reply d-none" id="comment-box-<?php comment_ID() ?>"></div>
     </div>
