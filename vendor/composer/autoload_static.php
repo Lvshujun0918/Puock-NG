@@ -12,6 +12,10 @@ class ComposerStaticInitf74d6302ff22d6ca9f1ebbf1a19d8e44
             'Yurun\\Util\\' => 11,
             'Yurun\\OAuthLogin\\' => 17,
         ),
+        'W' => 
+        array (
+            'WhichBrowser\\' => 13,
+        ),
         'R' => 
         array (
             'Rahul900day\\Gpt3Encoder\\' => 24,
@@ -21,6 +25,7 @@ class ComposerStaticInitf74d6302ff22d6ca9f1ebbf1a19d8e44
             'Puock\\Theme\\' => 12,
             'Psr\\Log\\' => 8,
             'Psr\\Http\\Message\\' => 17,
+            'Psr\\Cache\\' => 10,
         ),
         'O' => 
         array (
@@ -37,6 +42,10 @@ class ComposerStaticInitf74d6302ff22d6ca9f1ebbf1a19d8e44
         array (
             0 => __DIR__ . '/..' . '/yurunsoft/yurun-oauth-login/src',
         ),
+        'WhichBrowser\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/whichbrowser/parser/src',
+        ),
         'Rahul900day\\Gpt3Encoder\\' => 
         array (
             0 => __DIR__ . '/..' . '/rahul900day/gpt-3-encoder/src',
@@ -52,6 +61,10 @@ class ComposerStaticInitf74d6302ff22d6ca9f1ebbf1a19d8e44
         'Psr\\Http\\Message\\' => 
         array (
             0 => __DIR__ . '/..' . '/psr/http-message/src',
+        ),
+        'Psr\\Cache\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/psr/cache/src',
         ),
         'Orhanerday\\OpenAi\\' => 
         array (

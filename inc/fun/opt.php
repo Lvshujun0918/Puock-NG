@@ -419,47 +419,48 @@ if (pk_is_checked("upload_webp")) {
     }, 10, 1);
 }
 
-function pk_get_comment_ua_os_icon($name)
+/**
+ * 解析评论UA函数
+ *
+ * @param string $ua 评论UA
+ * @return string 返回的网页字符串
+ * @author lvshujun
+ * @date 2024-04-24
+ */
+function pk_ua_parser($ua) {
+    if($ua == null) {
+        //没有UA
+        return '';
+    }
+    //解析ua
+    $result = new WhichBrowser\Parser($ua);
+    //浏览器和版本号
+    $pk_ua_browser = $result->browser->name . ' ' . $result->browser->version->toString();
+    //操作系统
+    $pk_ua_system = $result->os->toString();
+    //操作系统图标
+    $pk_ua_system_icon = pk_get_comment_ua_os_icon($result);
+    //拼合字符串
+    $output = '<span class="mt10" title="根据评论UA解析得出"><i class="'.$pk_ua_system_icon.'"></i>'.$pk_ua_system.'&nbsp;<span>'.$pk_ua_browser.'&nbsp;</span></span>';
+    return $output;
+}
+
+function pk_get_comment_ua_os_icon($result)
 {
-    $prefix = "fa-brands ";
-    switch ($name) {
-        case "Android":
-            $res_class = "fa-android";
-            break;
-        case "Chrome":
-            $res_class = "fa-chrome";
-            break;
-        case "Edge":
-            $res_class = "fa-edge";
-            break;
-        case "Firefox":
-            $res_class = "fa-firefox";
-            break;
-        case "Linux":
-            $res_class = "fa-linux";
-            break;
-        case "iPad":
-        case "iPhone":
-        case "Macintosh":
-            $res_class = "fa-apple";
-            break;
-        case "Safari":
-            $res_class = "fa-safari";
-            break;
-        case "Windows":
-            $res_class = "fa-windows";
-            break;
-        case "Weixin":
-            $res_class = "fa-weixin";
-            break;
-        case "Puock MiniProgram":
-            $prefix = "fa-regular ";
-            $res_class = "fa-circle-dot pk-breathe";
-            break;
-        default:
-            $prefix = "fa ";
-            $res_class = "fa-tablet";
-            break;
+    $prefix = 'fa-brands ';
+    $res_class = 'fa-tablet';
+    if ($result -> isOs('OS X') || $result -> isOs('iOS')) {
+        $res_class = 'fa-apple';
+    } elseif ($result -> isOs('Android')) {
+        $res_class = 'fa-android';
+    } elseif ($result -> isOs('Linux')) {
+        $res_class = 'fa-linux';
+    } elseif ($result -> isOs('Windows')) {
+        $res_class = 'fa-windows';
+    }
+    if($res_class == 'fa-tablet') {
+        //未匹配到
+        $prefix = 'fa';
     }
     return $prefix . $res_class;
 }

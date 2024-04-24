@@ -177,10 +177,7 @@ function pk_comment_ajax()
     $comment_flag = '<div class="comment-os c-sub">';
     //显示UA
     if(pk_is_checked('comment_show_ua', true)) {
-        $commentUserAgent = parse_user_agent($comment->comment_agent);
-        $commentOsIcon = pk_get_comment_ua_os_icon($commentUserAgent['platform']);
-        $commentBrowserIcon = pk_get_comment_ua_os_icon($commentUserAgent['browser']);
-        $comment_flag .= '<span class="mt10" title="'.$commentUserAgent['platform'].'"><i class="'.$commentOsIcon.'"></i>&nbsp;<span>'.$commentUserAgent['platform'].'&nbsp;</span></span>';
+        $comment_flag .= pk_ua_parser($comment->comment_agent);
     }
     //显示IP
     if (pk_is_checked('comment_show_ip', true)) {

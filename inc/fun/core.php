@@ -52,7 +52,6 @@ if (is_admin()) {
 require PUOCK_ABS_DIR . '/inc/fun/sidebar.php';
 require PUOCK_ABS_DIR . '/inc/fun/post-tags.php';
 require PUOCK_ABS_DIR . '/inc/fun/comment-notify.php';
-require PUOCK_ABS_DIR . '/inc/user-agent-parse.php';
 require PUOCK_ABS_DIR . '/inc/phpqrcode.php';
 require PUOCK_ABS_DIR . '/inc/ajax/index.php';
 if (pk_is_checked('no_category')) {
