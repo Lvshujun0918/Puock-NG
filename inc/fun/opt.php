@@ -441,7 +441,7 @@ function pk_ua_parser($ua) {
     //操作系统图标
     $pk_ua_system_icon = pk_get_comment_ua_os_icon($result);
     //拼合字符串
-    $output = '<span class="mt10" title="根据评论UA解析得出"><i class="'.$pk_ua_system_icon.'"></i>'.$pk_ua_system.'&nbsp;<span>'.$pk_ua_browser.'&nbsp;</span></span>';
+    $output = '<span class="pk-ua-badget mt10" title="根据评论UA解析得出"><span class="pk-ua-system"><i class="'.$pk_ua_system_icon.'"></i>'.$pk_ua_system.'</span>&nbsp;<span class="pk-ua-browser">'.$pk_ua_browser.'&nbsp;</span></span>';
     return $output;
 }
 
