@@ -1,4 +1,7 @@
 <?php
+//验证码
+use Gregwar\Captcha\CaptchaBuilder;
+use Gregwar\Captcha\PhraseBuilder;
 /**
  * puock_post_like
  * 处理文章点赞
@@ -492,23 +495,32 @@ function pk_captcha()
     if (!in_array($type, ['comment', 'login', 'register', 'forget-password'])) {
         wp_die();
     }
+    //获取宽和高
     $width = $_GET['w'];
     $height = $_GET['h'];
-    include PUOCK_ABS_DIR.'/inc/php-captcha.php';
-    $captcha = new CaptchaBuilder();
-    $captcha->initialize([
-        'width' => intval($width),     // 宽度
-        'height' => intval($height),     // 高度
-        'curve' => true,   // 曲线
-        'noise' => 1,   // 噪点背景
-        'fonts' => [PUOCK_ABS_DIR . '/assets/fonts/G8321-Bold.ttf']       // 字体
-    ]);
-    $result = $captcha->create();
-    $text = $result->getText();
+    //需要四个字符
+    $phraseBuilder = new PhraseBuilder(4);
+    //生成验证码
+    $builder = new CaptchaBuilder(null, $phraseBuilder);
+    $builder->build();
+    //输出验证码
+    header('Content-type: image/jpeg');
+    $builder->output();
+    // include PUOCK_ABS_DIR.'/inc/php-captcha.php';
+    // $captcha = new CaptchaBuilder();
+    // $captcha->initialize([
+    //     'width' => intval($width),     // 宽度
+    //     'height' => intval($height),     // 高度
+    //     'curve' => true,   // 曲线
+    //     'noise' => 1,   // 噪点背景
+    //     'fonts' => [PUOCK_ABS_DIR . '/assets/fonts/G8321-Bold.ttf']       // 字体
+    // ]);
+    // $result = $captcha->create();
+     $text = $builder->getPhrase();
     pk_session_call(function () use ($text, $type) {
         $_SESSION[$type . '_vd'] = $text;
     });
-    $result->output();
+    // $result->output();
     wp_die();
 }
 
