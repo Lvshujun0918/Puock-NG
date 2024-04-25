@@ -9,10 +9,12 @@ return array(
     'Yurun\\Util\\' => array($vendorDir . '/yurunsoft/yurun-http/src'),
     'Yurun\\OAuthLogin\\' => array($vendorDir . '/yurunsoft/yurun-oauth-login/src'),
     'WhichBrowser\\' => array($vendorDir . '/whichbrowser/parser/src'),
+    'Symfony\\Component\\Finder\\' => array($vendorDir . '/symfony/finder'),
     'Rahul900day\\Gpt3Encoder\\' => array($vendorDir . '/rahul900day/gpt-3-encoder/src'),
     'Puock\\Theme\\' => array($baseDir . '/inc'),
     'Psr\\Log\\' => array($vendorDir . '/psr/log/Psr/Log'),
     'Psr\\Http\\Message\\' => array($vendorDir . '/psr/http-message/src'),
     'Psr\\Cache\\' => array($vendorDir . '/psr/cache/src'),
     'Orhanerday\\OpenAi\\' => array($vendorDir . '/orhanerday/open-ai/src'),
+    'Gregwar\\' => array($vendorDir . '/gregwar/captcha/src/Gregwar'),
 );

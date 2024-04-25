@@ -16,6 +16,10 @@ class ComposerStaticInitf74d6302ff22d6ca9f1ebbf1a19d8e44
         array (
             'WhichBrowser\\' => 13,
         ),
+        'S' => 
+        array (
+            'Symfony\\Component\\Finder\\' => 25,
+        ),
         'R' => 
         array (
             'Rahul900day\\Gpt3Encoder\\' => 24,
@@ -31,6 +35,10 @@ class ComposerStaticInitf74d6302ff22d6ca9f1ebbf1a19d8e44
         array (
             'Orhanerday\\OpenAi\\' => 18,
         ),
+        'G' => 
+        array (
+            'Gregwar\\' => 8,
+        ),
     );
 
     public static $prefixDirsPsr4 = array (
@@ -45,6 +53,10 @@ class ComposerStaticInitf74d6302ff22d6ca9f1ebbf1a19d8e44
         'WhichBrowser\\' => 
         array (
             0 => __DIR__ . '/..' . '/whichbrowser/parser/src',
+        ),
+        'Symfony\\Component\\Finder\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/finder',
         ),
         'Rahul900day\\Gpt3Encoder\\' => 
         array (
@@ -69,6 +81,10 @@ class ComposerStaticInitf74d6302ff22d6ca9f1ebbf1a19d8e44
         'Orhanerday\\OpenAi\\' => 
         array (
             0 => __DIR__ . '/..' . '/orhanerday/open-ai/src',
+        ),
+        'Gregwar\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/gregwar/captcha/src/Gregwar',
         ),
     );
 
