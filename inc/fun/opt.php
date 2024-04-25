@@ -502,21 +502,11 @@ function pk_captcha()
     $phraseBuilder = new PhraseBuilder(4);
     //生成验证码
     $builder = new CaptchaBuilder(null, $phraseBuilder);
-    $builder->build();
+    $builder->build($width, $height);
     //输出验证码
     header('Content-type: image/jpeg');
     $builder->output();
-    // include PUOCK_ABS_DIR.'/inc/php-captcha.php';
-    // $captcha = new CaptchaBuilder();
-    // $captcha->initialize([
-    //     'width' => intval($width),     // 宽度
-    //     'height' => intval($height),     // 高度
-    //     'curve' => true,   // 曲线
-    //     'noise' => 1,   // 噪点背景
-    //     'fonts' => [PUOCK_ABS_DIR . '/assets/fonts/G8321-Bold.ttf']       // 字体
-    // ]);
-    // $result = $captcha->create();
-     $text = $builder->getPhrase();
+    $text = $builder->getPhrase();
     pk_session_call(function () use ($text, $type) {
         $_SESSION[$type . '_vd'] = $text;
     });
