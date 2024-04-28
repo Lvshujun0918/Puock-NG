@@ -914,12 +914,22 @@ function pk_get_ip_region_str($ip)
         //存下来
         $GLOBALS['pk_ip_db'] = $cityDbReader;
     }
-    //查找IP
-    $record = $cityDbReader->city($ip);
-    //取国家
-    $res .= $record->country->names['zh-CN'];
-    //取城市
-    $res .= $record->city->names['zh-CN'];
+    
+    try {
+        //查找IP
+        $record = $cityDbReader->city($ip);
+        //取国家
+        $res .= $record->country->names['zh-CN'];
+        //取城市
+        $res .= $record->city->names['zh-CN'];
+    } catch (\Throwable $th) {
+        return '未知IP';
+    }
+    
+    //合规化处理
+    if ($res === '香港') {
+        $res = '中国香港';
+    }
     return $res;
 }
 
