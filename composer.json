@@ -19,7 +19,9 @@
     "orhanerday/open-ai": "^4.7",
     "rahul900day/gpt-3-encoder": "^1.1",
     "whichbrowser/parser": "^2.1",
-    "gregwar/captcha": "^1.2"
+    "gregwar/captcha": "^1.2.0",
+    "geoip2/geoip2": "~2.0",
+    "symfony/polyfill-php80": "^1.29"
   },
   "config": {
     "platform-check": false,
