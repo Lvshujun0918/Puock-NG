@@ -891,6 +891,14 @@ function pk_get_req_data(array $model)
     return $data;
 }
 
+/**
+ * 通过IP获取地理位置
+ *
+ * @param string $ip IP
+ * @return string 对应的地理位置
+ * @author lvshujun
+ * @date 2024-04-28
+ */
 function pk_get_ip_region_str($ip)
 {
     $ip2_instance = $GLOBALS['ip2_region'] ?? false;
