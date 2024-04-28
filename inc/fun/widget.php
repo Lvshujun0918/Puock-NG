@@ -585,7 +585,7 @@ class puockNewComment extends puockWidgetBase
                             <img <?php echo pk_get_lazy_img_info(get_avatar_url($comment->comment_author_email), 'min-avatar') ?>
                                 alt="<?php echo $comment->comment_author ?>">
                             <a class="puock-link" <?php pk_link_target() ?>
-                                href="<?php echo get_permalink($comment->comment_ID) . '#comment-' . $comment->comment_ID ?>">
+                                href="<?php echo get_permalink($comment->comment_post_ID) . '#comment-' . $comment->comment_ID ?>">
                                 <span class="ta3 link-hover">
                                     <?php echo $comment->comment_author ?>
                                 </span></a>
