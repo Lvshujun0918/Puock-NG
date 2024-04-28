@@ -448,6 +448,14 @@ function pk_ua_parser($ua) {
     return $output;
 }
 
+/**
+ * 获取操作系统对应图标
+ *
+ * @param string $result 解析用对象
+ * @return string 图标代码
+ * @author lvshujun
+ * @date 2024-04-28
+ */
 function pk_get_comment_ua_os_icon($result)
 {
     $prefix = 'fa-brands ';
@@ -460,8 +468,14 @@ function pk_get_comment_ua_os_icon($result)
         $res_class = 'fa-linux';
     } elseif ($result -> isOs('Windows')) {
         $res_class = 'fa-windows';
+    } elseif ($result -> isOS('Windows Mobile')) {
+        $res_class = 'fa-microsoft';
+    } elseif ($result -> isOS('UIQ')) {
+        //诺基亚
+        $prefix = 'fa-solid ';
+        $res_class = 'fa-mobile';
     }
-    if($res_class == 'fa-tablet') {
+    if ($res_class == 'fa-tablet') {
         //未匹配到
         $prefix = 'fa';
     }
