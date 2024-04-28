@@ -15,7 +15,6 @@
   ],
   "require": {
     "yurunsoft/yurun-oauth-login": "~3.0",
-    "zoujingli/ip2region": "^2.0",
     "orhanerday/open-ai": "^4.7",
     "rahul900day/gpt-3-encoder": "^1.1",
     "whichbrowser/parser": "^2.1",

@@ -924,55 +924,6 @@
                 "source": "https://github.com/Yurunsoft/YurunOAuthLogin/tree/v3.1.0"
             },
             "install-path": "../yurunsoft/yurun-oauth-login"
-        },
-        {
-            "name": "zoujingli/ip2region",
-            "version": "v2.0.5",
-            "version_normalized": "2.0.5.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/zoujingli/ip2region.git",
-                "reference": "95d9064c057b978f8985b67389693ecd31f48c7f"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/zoujingli/ip2region/zipball/95d9064c057b978f8985b67389693ecd31f48c7f",
-                "reference": "95d9064c057b978f8985b67389693ecd31f48c7f",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.4"
-            },
-            "time": "2024-03-21T12:09:30+00:00",
-            "type": "library",
-            "installation-source": "dist",
-            "autoload": {
-                "classmap": [
-                    "Ip2Region.php",
-                    "XdbSearcher.php"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "Apache-2.0"
-            ],
-            "authors": [
-                {
-                    "name": "Anyon",
-                    "email": "zoujingli@qq.com",
-                    "homepage": "https://thinkadmin.top"
-                }
-            ],
-            "description": "Ip2Region for PHP",
-            "homepage": "https://github.com/zoujingli/Ip2Region",
-            "keywords": [
-                "Ip2Region"
-            ],
-            "support": {
-                "issues": "https://github.com/zoujingli/ip2region/issues",
-                "source": "https://github.com/zoujingli/ip2region/tree/v2.0.5"
-            },
-            "install-path": "../zoujingli/ip2region"
         }
     ],
     "dev": true,
