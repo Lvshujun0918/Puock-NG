@@ -1,5 +1,5 @@
 {
-  "name": "licoy/wordpress-theme-puock",
+  "name": "lvshujun/puock-ng",
   "description": "A high-value adaptive theme based on WordPress, supports day and night modes, no refresh loading, etc.",
   "type": "project",
   "license": "GPL V3",
@@ -10,7 +10,7 @@
   },
   "authors": [
     {
-      "name": "Licoy"
+      "name": "lvshujun"
     }
   ],
   "require": {
