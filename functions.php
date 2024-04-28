@@ -36,61 +36,6 @@ if (pk_is_checked('comment_ip_fix')) {
     add_filter('pre_comment_user_ip', 'pk_pre_comment_ip_XFF');
 }
 
-if(!function_exists('str_starts_with')){
-    /**
-     * str_starts_with兼容适配
-     *
-     * @param string $haystack 要比较的字符串
-     * @param string $needle 开头的字符串
-     * @return bool 是否以它开头
-     * @author lvshujun
-     * @date 2024-04-23
-     */
-    function str_starts_with(string $haystack, string $needle): bool
-    {
-        return 0 === strncmp($haystack, $needle, \strlen($needle));
-    }
-}
-
-if(!function_exists('str_ends_with')){
-    /**
-     * str_ends_with
-     *
-     * @param string $haystack 要比较的字符串
-     * @param string $needle 结尾的字符串
-     * @return bool 是否以它结尾
-     * @author lvshujun
-     * @date 2024-04-23
-     */
-    function str_ends_with(string $haystack, string $needle): bool
-    {
-        if ('' === $needle || $needle === $haystack) {
-            return true;
-        }
-        if ('' === $haystack) {
-            return false;
-        }
-        $needleLength = \strlen($needle);
-        return $needleLength <= \strlen($haystack) && 0 === substr_compare($haystack, $needle, -$needleLength);
-    }
-}
-
-if(!function_exists('str_contains')){
-    /**
-     * str_starts_with兼容适配
-     *
-     * @param string $haystack 父字符串
-     * @param string $needle 子字符串
-     * @return boolean 判断是否包含
-     * @author lvshujun
-     * @date 2024-04-23
-     */
-    function str_contains(string $haystack, string $needle): bool
-    {
-        return '' === $needle || false !== strpos($haystack, $needle);
-    }
-}
-
 //去除感谢使用wordpress创作
 if (pk_is_checked('hide_footer_wp_t')) {
     function my_admin_footer_text()

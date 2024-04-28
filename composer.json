@@ -20,7 +20,10 @@
     "whichbrowser/parser": "^2.1",
     "gregwar/captcha": "^1.2.0",
     "geoip2/geoip2": "~2.0",
-    "symfony/polyfill-php80": "^1.29"
+    "symfony/polyfill-php80": "^1.29",
+    "symfony/polyfill-php81": "^1.29",
+    "symfony/polyfill-php82": "^1.29",
+    "symfony/polyfill-mbstring": "^1.29"
   },
   "config": {
     "platform-check": false,
