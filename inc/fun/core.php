@@ -3,6 +3,9 @@ do_action('qm/start', 'Front_Core');
 
 use Puock\Theme\classes\PuockClassLoad;
 
+//GEOIP库
+use GeoIp2\Database\Reader;
+
 add_action('after_setup_theme', 'puock_theme_setup');
 function puock_theme_setup()
 {
@@ -901,27 +904,22 @@ function pk_get_req_data(array $model)
  */
 function pk_get_ip_region_str($ip)
 {
-    $ip2_instance = $GLOBALS['ip2_region'] ?? false;
-    if (!$ip2_instance) {
-        $ip2_instance = new \Ip2Region();
-        $GLOBALS['ip2_region'] = $ip2_instance;
-    }
-    try {
-        $s = $ip2_instance->memorySearch($ip);
-    } catch (Exception $e) {
-        return '未知';
-    }
-    if (str_contains($s['region'], '内网IP')) {
-        return '内网IP';
-    }
-    $region = explode('|', $s['region']);
+    //首先尝试读取已经存在的对象
+    $cityDbReader = $GLOBALS['pk_ip_db'] ?? false;
+    //返回字符串
     $res = '';
-    foreach ($region as $item) {
-        if (str_starts_with($item, '0')) {
-            continue;
-        }
-        $res .= $item;
+    if (!$ip2_instance) {
+        //没有就实例化一个新的
+        $cityDbReader = new Reader(PUOCK_ABS_DIR . '/inc/db/GeoLite2-City_20240423.mmdb');
+        //存下来
+        $GLOBALS['pk_ip_db'] = $cityDbReader;
     }
+    //查找IP
+    $record = $cityDbReader->city($ip);
+    //取国家
+    $res .= $record->country->names['zh-CN'];
+    //取城市
+    $res .= $record->city->names['zh-CN'];
     return $res;
 }
 
