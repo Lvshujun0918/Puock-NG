@@ -6,6 +6,15 @@
 
 Puock主题增强版，由吕舒君修改增强，感谢原作者licoy！
 
+## 系统环境
+
+需要正确设置WordPress伪静态
+
+需要PHP7.4及以上
+
+需要GD扩展/curl扩展/mbstring扩展
+
+
 ## 演示地址
 
 可以前往[我的博客](https://cszj.wang)查看，与本项目储存库保持同步。
