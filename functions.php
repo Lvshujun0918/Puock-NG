@@ -3,8 +3,7 @@
 //以下三个Define已优化到最佳
 define('PUOCK_ABS_DIR', get_template_directory());
 define('PUOCK_ABS_URI', get_template_directory_uri());
-//不使用wp_get_theme()->get('Version')，节省时间
-define('PUOCK_CUR_VER_STR', '2.8.2');
+define('PUOCK_CUR_VER_STR', '3.0.0');
 
 const PUOCK = 'puock';
 const PUOCK_OPT = 'puock_options';
