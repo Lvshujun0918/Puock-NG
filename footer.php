@@ -42,7 +42,7 @@
                     </div>
                 </div>
                 <div class="footer-bar-right">
-                    <i class="fa-brands fa-wordpress"></i>&nbsp;Theme by <a target="_blank" class="c-sub" href="https://github.com/Lvshujun0918/Puock-NG">Puock-NG</a>
+                    <i class="fa-brands fa-wordpress"></i>&nbsp;Theme by&nbsp;<a target="_blank" class="c-sub" href="https://github.com/Lvshujun0918/Puock-NG">Puock-NG</a>
                     <?php echo pk_get_option('footer_copyright_right');?>
                 </div>
             </div>
