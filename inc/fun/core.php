@@ -153,13 +153,20 @@ if (!function_exists('the_views')) {
         echo $count_view;
     }
 }
-//异步请求浏览量
+
+/**
+ * 异步请求浏览量
+ *
+ * @return void
+ * @author lvshujun
+ * @date 2024-05-10
+ */
 function async_pk_views()
 {
-    $postId = $_POST['id'];
+    $postId = $_POST['id'] ?? '';
     if (empty($postId)) {
-        echo pk_ajax_resp(0);
-        return;
+        echo pk_ajax_resp_error('ID is NULL');
+        wp_die();
     }
     echo pk_ajax_resp(the_views($postId, false, true));
     wp_die();
