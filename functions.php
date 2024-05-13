@@ -215,6 +215,7 @@ function get_post_tags($class = '', $item_class = '')
 function pk_get_post_date()
 {
     $ptime = get_post_time();
+    //注意时间的时区问题
     $etime = current_time('timestamp') - $ptime;
     if ($etime < 1) {
         return '刚刚';
