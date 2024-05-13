@@ -204,37 +204,40 @@ function get_post_tags($class = '', $item_class = '')
     return $out;
 }
 
+/**
+ * XX天以前
+ * @author 吕舒君
+ * @date  2020-04-15T09:38:39+0800
+ * @copyright 吕舒君                      2020
+ * @param     integer                   $ptime 绝对时间
+ * @return    string                          输出相对时间
+ */
 function pk_get_post_date()
 {
-    $time = get_post_time();
-    $c_time = time() - $time;
-    $day = 86400;
-    switch ($c_time) {
-        //todo 本地化翻译
-        case $c_time < $day:
-            $res = __('近一天内',PUOCK);
-            break;
-        case $c_time < ($day * 2):
-            $res = __('近两天内',PUOCK);
-            break;
-        case $c_time < ($day * 3):
-            $res = __('近三天内',PUOCK);
-            break;
-        case $c_time < ($day * 4):
-            $res = __('四天前',PUOCK);
-            break;
-        case $c_time < ($day * 5):
-            $res = __('五天前',PUOCK);
-            break;
-        case $c_time < ($day * 6):
-            $res = __('六天前',PUOCK);
-            break;
-        default:
-            $res = date('Y-m-d', $time);
+    $ptime = get_post_time();
+    $etime = current_time('timestamp') - $ptime;
+    if ($etime < 1) {
+        return '刚刚';
     }
-    echo $res;
-}
 
+    $interval = array(
+        12 * 30 * 24 * 60 * 60 => '年前'.' (' . date('Y年m月d日', $ptime) . ')',
+        30 * 24 * 60 * 60 => '个月前'.'  (' . date('m月d日', $ptime) . ')',
+        7 * 24 * 60 * 60 => '周前'.'  (' . date('m月d日', $ptime) . ')',
+        24 * 60 * 60 => '天前',
+        60 * 60 => '小时前',
+        60 => '分钟前',
+        1 => '秒前',
+    );
+    foreach ($interval as $secs => $str) {
+        $d = $etime / $secs;
+        if ($d >= 1) {
+            $r = round($d);
+            echo $r . $str;
+            return;
+        }
+    }
+}
 //获取随机的bootstrap的颜色表示
 function pk_get_color_tag($ex = array())
 {
