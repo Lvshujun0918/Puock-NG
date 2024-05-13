@@ -23,8 +23,7 @@
     "symfony/polyfill-php80": "^1.29",
     "symfony/polyfill-php81": "^1.29",
     "symfony/polyfill-php82": "^1.29",
-    "symfony/polyfill-mbstring": "^1.29",
-    "nesbot/carbon": "^3.3"
+    "symfony/polyfill-mbstring": "^1.29"
   },
   "config": {
     "platform-check": false,
