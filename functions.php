@@ -782,7 +782,8 @@ function pk_init_wp_empty_style()
 
 add_action('wp_enqueue_scripts', 'pk_init_wp_empty_style');
 
-require dirname(__FILE__) . '/fun-custom.php';
+//引入自定义方法文件
+require PUOCK_ABS_DIR . '/fun-custom.php';
 
 //更新支持
 function pk_update()
