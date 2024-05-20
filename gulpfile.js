@@ -6,7 +6,9 @@ const uglify = require('gulp-uglify');
 const plumber = require('gulp-plumber');
 const concat = require('gulp-concat');
 const concatCss = require('gulp-concat-css');
-const minifyCSS = require('gulp-minify-css')
+const minifyCSS = require('gulp-minify-css');
+const autoprefixer = require('autoprefixer')
+const postcss = require('gulp-postcss');
 
 const _core_script = "assets/js/*.js"
 const _libs_script = "assets/libs/basic/**/*.js"
@@ -20,6 +22,7 @@ gulp.task('style', function () {
         .pipe(less({
             compress: true
         }))
+        .pipe(postcss([ autoprefixer() ]))
         .pipe(rename({suffix: '.min'}))
         .pipe(gulp.dest(_dist + '/style'))
 })
