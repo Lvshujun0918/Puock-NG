@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html lang="zh">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -69,8 +69,7 @@ echo current_theme_supports('custom-background') ? ' custom-background' : ''; ?>
                                         class="fa fa-search mr-1"></i><?php _e('搜索', PUOCK) ?></button>
                         </div>
                         <div class="search-close-btn">
-                            <button type="button" class="btn-danger btn ml-1 search-modal-btn"><i
-                                        class="fa fa-close"></i></button>
+                            <button type="button" aria-label="Redirect Search" class="btn-danger btn ml-1 search-modal-btn"><i class="fa fa-close"></i></button>
                         </div>
                     </div>
                 </form>
