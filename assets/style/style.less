@@ -25,10 +25,6 @@ blockquote {
 
 //覆盖样式
 .hljs-ln-numbers {
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
   user-select: none;
   text-align: center;
   color: #8e8d8d;
@@ -281,7 +277,6 @@ body.pre-mac pre {
     content: " ";
     z-index: 10;
     position: absolute;
-    -webkit-border-radius: 50%;
     border-radius: 50%;
     background: #fc625d;
     @wh: 10px;
@@ -289,7 +284,6 @@ body.pre-mac pre {
     height: @wh;
     left: @wh;
     top: @wh;
-    -webkit-box-shadow: 20px 0 #fdbc40, 40px 0 #35cd4b;
     box-shadow: 20px 0 #fdbc40, 40px 0 #35cd4b;
   }
 }
@@ -536,8 +530,6 @@ body.pre-mac pre {
     width: 180px;
     height: 8px;
     background-color: rgba(255, 255, 255, .4);
-    -webkit-transform: rotate(-45deg);
-    -webkit-animation: logo-loop-light 4s ease-in 0s infinite;
     transform: rotate(-45deg);
     animation: logo-loop-light 4s ease-in 0s infinite;
   }
@@ -653,7 +645,6 @@ body.pre-mac pre {
 
 .modal-backdrop, .mobile-menu-backdrop, .layui-layer-shade {
   backdrop-filter: blur(2px);
-  -webkit-backdrop-filter: blur(2px);
   opacity: 1 !important;
   background-color: rgba(0, 0, 0, 0.53) !important;
 }
@@ -697,7 +688,6 @@ a:hover {
   &#header.blur {
     background-color: var(--pk-bg-header);
     backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
   }
 
   &#header {
@@ -1557,7 +1547,7 @@ a:hover {
       .link-item {
         &:hover > div {
           color: var(--pk-c-font);
-          -webkit-transform: translateY(-5px);
+          transform: translateY(-5px);
         }
 
         img {
@@ -1569,7 +1559,7 @@ a:hover {
 
         & > div {
           transition: all .2s;
-          -webkit-transform: translateY(0px);
+          transform: translateY(0px);
           padding: 8px 10px;
           border-radius: 3px;
         }

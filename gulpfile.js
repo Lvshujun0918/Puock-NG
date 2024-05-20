@@ -22,7 +22,7 @@ gulp.task('style', function () {
         .pipe(less({
             compress: true
         }))
-        .pipe(postcss([ autoprefixer() ]))
+        .pipe(postcss([ autoprefixer({overrideBrowserslist: ['> 1%'], cascade: false}) ]))
         .pipe(rename({suffix: '.min'}))
         .pipe(gulp.dest(_dist + '/style'))
 })
