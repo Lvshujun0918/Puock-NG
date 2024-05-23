@@ -10,6 +10,9 @@ import ripplet from 'ripplet.js';
 //侧边栏粘贴
 import stickySidebar from 'sticky-sidebar';
 
+//引入bootstrap
+import { Tooltip } from 'bootstrap';
+
 //导入智能对象
 window.i = intelligent_obj;
 
@@ -48,11 +51,21 @@ $(function () {
         ripplet(arguments[0], args);
     });
 
+    //侧边栏粘滞
     new stickySidebar('#sidebar', {
         topSpacing: 20,
         bottomSpacing: 20,
         containerSelector: '.pk-scroll-wrap',
         innerWrapperSelector: '.sidebar-main'
-    })
+    });
+
+    //提示初始化
+    let el = $("[data-bs-toggle=\"tooltip\"]");
+    [...el].map(tooltipTriggerEl => {
+        common.web_log_push('Tooltip Start');
+        new Tooltip(tooltipTriggerEl, {
+            placement: 'bottom', trigger: 'hover'
+        })
+    });
 });
 

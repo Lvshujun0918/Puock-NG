@@ -429,7 +429,7 @@ class Puock {
         if (this.data.params.use_post_menu) {
             this.generatePostMenuHTML()
         }
-        this.tooltipInit()
+        //this.tooltipInit()
         if(!this.data.params.off_img_viewer){
             jQuery(".entry-content").viewer({
                 navbar: false,
