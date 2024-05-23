@@ -181,6 +181,23 @@ function pk_init_register_assets()
     } else {
         wp_register_script('jquery', pk_get_static_url() . '/assets/libs/jquery.min.js', [], PUOCK_CUR_VER_STR);
         wp_enqueue_script('jquery');
+
+        //webpack打包(实验功能)
+        wp_enqueue_script('puock-exp', pk_get_static_url() . '/dist/main.js', [], PUOCK_CUR_VER_STR,false);
+        wp_enqueue_script('puock-expv', pk_get_static_url() . '/dist/runtime.js', [], PUOCK_CUR_VER_STR,false);
+        wp_localize_script('puock-exp', 'intelligent_obj', array(
+            'ajaxurl'     => admin_url('admin-ajax.php'),
+            'rooturl'     => PUOCK_ABS_URI,
+            'isindex'     => is_front_page() || is_home(),
+            'ispost'      => is_singular(array('post', 'page')),
+            'commenturl'  => home_url('wp-comments-post.php'),
+            'ver'         => PUOCK_CUR_VER_STR,
+            'isie'        => $is_IE,
+            'name'        => 'puock',
+            'ismobile'    => wp_is_mobile(),
+            'debug'       => true
+        ));
+
         wp_enqueue_style('puock-libs', pk_get_static_url() . '/assets/dist/style/libs.min.css', [], PUOCK_CUR_VER_STR);
         wp_enqueue_style('puock', pk_get_static_url() . '/assets/dist/style/style.min.css', ['puock-libs'], PUOCK_CUR_VER_STR);
         wp_enqueue_script('puock-libs', pk_get_static_url() . '/assets/dist/js/libs.min.js', [], PUOCK_CUR_VER_STR, true);

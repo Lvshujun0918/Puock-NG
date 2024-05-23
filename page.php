@@ -4,8 +4,8 @@
     <?php get_template_part('templates/box', 'global-top') ?>
     <?php echo pk_breadcrumbs(); while (have_posts()):the_post();?>
         <div id="page-empty">
-            <div id="page-<?php the_ID() ?>" class="row row-cols-1">
-                <div id="post-main" class="col-lg-<?php pk_hide_sidebar_out('12','8') ?> col-md-12 <?php pk_open_box_animated('animated fadeInLeft') ?> ">
+            <div id="page-<?php the_ID() ?>" class="pk-scroll-wrap row row-cols-1">
+                <div id="post-main" class="left-content col-lg-<?php pk_hide_sidebar_out('12','8') ?> col-md-12 <?php pk_open_box_animated('animated fadeInLeft') ?> ">
                     <div class="p-block">
                         <div><h1 id="post-title" class="mb-0 puock-text t-xxl"><?php the_title() ?></h1></div>
                         <div class="options p-flex-sbc mt20">

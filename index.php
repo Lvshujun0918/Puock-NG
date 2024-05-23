@@ -4,8 +4,8 @@
 
     <div id="content" class="mt15 container">
         <?php get_template_part('templates/box', 'global-top') ?>
-        <div class="pk-index-wrap row row-cols-1">
-            <div class="<?php echo pk_get_class_name('pk-index-posts-wrap', 'col-lg-'. pk_hide_sidebar_out('12', '8', null, false), 'col-md-12', pk_open_box_animated('animated fadeInLeft', false)) ?> ">
+        <div class="pk-scroll-wrap pk-index-wrap row row-cols-1">
+            <div class="<?php echo pk_get_class_name('left-content','pk-index-posts-wrap', 'col-lg-'. pk_hide_sidebar_out('12', '8', null, false), 'col-md-12', pk_open_box_animated('animated fadeInLeft', false)) ?> ">
                 <?php if (isset($paged) && $paged <= 1): ?>
                     <div class="pk-index-posts-banner <?php pk_open_box_animated('animated fadeInLeft') ?>">
                         <?php get_template_part('templates/module', 'banners') ?>

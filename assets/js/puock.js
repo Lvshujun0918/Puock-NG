@@ -59,9 +59,9 @@ class Puock {
                 this.gotoArea(toArea)
             }
         });
-        $(document).on("click", ".colorMode", () => {
-            this.modeChange(null, true);
-        });
+        // $(document).on("click", ".colorMode", () => {
+        //     this.modeChange(null, true);
+        // });
         $(document).on("click", ".captcha", (e) => {
             this.loadCommentCaptchaImage($(this.ct(e)))
         });
@@ -285,20 +285,6 @@ class Puock {
     }
 
     rippleInit() {
-        const args = {
-            debug: false,
-            on: 'mousedown',
-            opacity: 0.4,
-            color: "var(--pk-c-light)",
-            multi: false,
-            duration: 0.6,
-            rate: function (pxPerSecond) {
-                return pxPerSecond;
-            },
-            easing: 'linear'
-        }
-        jQuery.ripple(".btn", args);
-        jQuery.ripple(".ww", args);
     }
 
     eventShareStart() {
@@ -481,9 +467,6 @@ class Puock {
             this.toast(`复制${name}失败`, TYPE_DANGER)
         })
         this.lazyLoadInit()
-        $('#post-main, #sidebar').theiaStickySidebar({
-            additionalMarginTop: 20
-        });
     }
 
 
