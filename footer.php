@@ -5,6 +5,19 @@
     <div data-to="top" class="p-block"><i class="fa fa-arrow-up puock-text"></i></div>
     <div data-to="bottom" class="p-block"><i class="fa fa-arrow-down puock-text"></i></div>
 </div>
+<!--Toast-->
+<div class="toast-container position-fixed bottom-0 start-0 p-3 pb-5">
+    <div id="pk-ng-toast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="toast-header">
+            <strong class="me-auto"><?php bloginfo('name') ?></strong>
+            <small>现在</small>
+            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+        <div class="toast-body">
+            欢迎访问
+        </div>
+    </div>
+</div>
 <footer id="footer">
     <div class="container">
         <div class="row row-cols-md-1">

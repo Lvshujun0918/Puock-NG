@@ -11,7 +11,7 @@ import ripplet from 'ripplet.js';
 import stickySidebar from 'sticky-sidebar';
 
 //引入bootstrap
-import { Tooltip } from 'bootstrap';
+import { Tooltip, Toast } from 'bootstrap';
 
 //导入智能对象
 window.i = intelligent_obj;
@@ -67,5 +67,9 @@ $(function () {
             placement: 'bottom', trigger: 'hover'
         })
     });
+    
+    //展示Toast
+    var modal = new Toast('#pk-ng-toast');
+    modal.show();
 });
 
