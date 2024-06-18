@@ -16,7 +16,6 @@ module.exports = {
         chunkFilename: 'chunk.[fullhash].js',
         clean: true,
     },
-    devtool: 'inline-source-map',
     module: {
         rules: [
             {

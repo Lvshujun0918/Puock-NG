@@ -4,6 +4,11 @@ __webpack_public_path__ = intelligent_obj.rooturl + '/dist/';
 import * as common from './common';
 import $ from 'jquery';
 
+//引入样式
+import './style/footer.less';
+//老样式
+import './style/style.less';
+
 //涟漪效果
 import ripplet from 'ripplet.js';
 
@@ -11,7 +16,7 @@ import ripplet from 'ripplet.js';
 import stickySidebar from 'sticky-sidebar';
 
 //引入bootstrap
-import { Tooltip, Toast } from 'bootstrap';
+import { Tooltip } from 'bootstrap';
 
 //导入智能对象
 window.i = intelligent_obj;
@@ -67,9 +72,5 @@ $(function () {
             placement: 'bottom', trigger: 'hover'
         })
     });
-    
-    //展示Toast
-    var modal = new Toast('#pk-ng-toast');
-    modal.show();
 });
 
