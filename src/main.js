@@ -48,8 +48,14 @@ $(function () {
     });
 
     //搜索按钮
-    $(document).on("click", ".search-modal-btn,#search-backdrop", function () {
-        import('./chunk/search').then((search) => function () {
+    $(document).on("click", ".search-modal-btn", function () {
+        common.web_log_push("Click Search Btn");
+        import('./chunk/search').then((search) => {
+            search.searchToggle();
+        });
+    });
+    $(document).on("click", "#search-backdrop", function () {
+        import('./chunk/search').then((search) => {
             search.searchToggle();
         });
     });

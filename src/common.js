@@ -19,11 +19,11 @@ export function getClassName(str = "") {
  * 重定向页面
  * @param {string} adr 地址
  */
-export function goUrl(adr=""){
+export function goUrl(adr = "") {
     web_log_push("Redirect!");
     if (intelligent_obj.is_pjax) {
         //InstantClick.go(url)
     } else {
-        window.location.href = url;
+        window.location.href = adr;
     }
 }
