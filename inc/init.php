@@ -195,7 +195,8 @@ function pk_init_register_assets()
             'isie'        => $is_IE,
             'name'        => 'puock',
             'ismobile'    => wp_is_mobile(),
-            'debug'       => true
+            'debug'       => true,
+            'ispjax'      => pk_is_checked('page_ajax_load')
         ));
         wp_enqueue_style('puock', pk_get_static_url() . '/dist/main.css', ['puock-libs'], PUOCK_CUR_VER_STR);
 
