@@ -42,11 +42,25 @@ $(function () {
 
     //检测并且自动切换黑暗模式
     nightmode.autoToggleMode();
-
     //黑暗模式切换按钮
     $(document).on("click", ".colorMode", function () {
         nightmode.saveAndToggleMode();
     });
+
+    //搜索按钮
+    $(document).on("click", ".search-modal-btn,#search-backdrop", function () {
+        import('./chunk/search').then((search) => function () {
+            search.searchToggle();
+        });
+    });
+    //搜索表单提交
+    $(document).on("submit", ".global-search-form", (e) => {
+        //阻断默认提交事件
+        e.preventDefault();
+        const el = $(e.currentTarget);
+        //跳转地址
+        common.goUrl(intelligent_obj.homeurl + "/?" + el.serialize())
+    })
 
     //初始化涟漪效果
     const args = {
