@@ -14,7 +14,7 @@
         <?php echo pk_get_option('tj_code_header', ''); ?>
     <?php endif; ?>
 </head>
-<body class="puock-<?php echo pk_theme_light() ? 'light' : 'dark';
+<body class="puock-body puock-<?php echo pk_theme_light() ? 'light' : 'dark';
 echo current_theme_supports('custom-background') ? ' custom-background' : ''; ?>">
 <div>
     <?php if (is_single()): ?>

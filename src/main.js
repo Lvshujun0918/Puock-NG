@@ -12,6 +12,9 @@ import './style/style.less';
 //涟漪效果
 import ripplet from 'ripplet.js';
 
+//黑暗模式
+import * as nightmode from './chunk/nightmode';
+
 //侧边栏粘贴
 import stickySidebar from 'sticky-sidebar';
 
@@ -35,14 +38,14 @@ if (intelligent_obj.isindex === "1") {
 }
 
 $(function () {
+    //检测并且自动切换黑暗模式
+    nightmode.autoToggleMode();
+
     common.web_log_push('Load Func Start');
 
     //黑暗模式切换按钮
     $(document).on("click", ".colorMode", function () {
-        import("./chunk/nightmode").then((nightmode) => {
-            common.web_log_push('Chunk Loaded!');
-            nightmode.toggleDayAndNight();
-        });
+        nightmode.saveAndToggleMode();
     });
 
     //初始化涟漪效果

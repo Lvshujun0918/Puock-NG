@@ -2,7 +2,10 @@ import * as common from '../common';
 import $ from 'jquery';
 import storage from 'simplestorage.js';
 
-export function toggleDayAndNight() {
+function toggleMode() {
+
+    common.web_log_push('Toggle Mode!');
+    
     //处理白天黑夜模式的图标问题
     let dn = 'd-none';
     $('#logo-light').toggleClass(dn);
@@ -27,7 +30,28 @@ export function toggleDayAndNight() {
     //切换body上的样式
     $('body').toggleClass(common.getClassName('light'));
     $('body').toggleClass(common.getClassName('dark'));
+}
 
+export function autoToggleMode() {
+    //储存下来
+    if (storage.hasKey('puock-ng-mode')) {
+        //获取当前的状态
+        let mode = storage.get('puock-ng-mode');
+        if (mode === 'night') {
+            common.web_log_push('Auto Toggle Mode!');
+            toggleMode();
+        }
+    }
+}
+
+export function saveAndToggleMode() {
+    //手动切换
+    common.web_log_push('Manual Mode Toggle');
+
+    //切换
+    toggleMode();
+
+    common.web_log_push('Chunk Loaded!');
     //储存下来
     if (storage.hasKey('puock-ng-mode')) {
         //获取当前的状态
