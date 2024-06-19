@@ -58,7 +58,7 @@ echo current_theme_supports('custom-background') ? ' custom-background' : ''; ?>
     <div id="search" class="d-none">
         <div class="w-100 d-flex justify-content-center">
             <div id="search-main" class="container p-block">
-                <form class="global-search-form" action="<?php echo home_url() ?>">
+                <form class="global-search-form">
                     <div class="search-layout">
                         <div class="search-input">
                             <input required type="text" name="s" class="form-control"
