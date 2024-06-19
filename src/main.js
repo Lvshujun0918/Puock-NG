@@ -38,10 +38,10 @@ if (intelligent_obj.isindex === "1") {
 }
 
 $(function () {
+    common.web_log_push('Load Func Start');
+
     //检测并且自动切换黑暗模式
     nightmode.autoToggleMode();
-
-    common.web_log_push('Load Func Start');
 
     //黑暗模式切换按钮
     $(document).on("click", ".colorMode", function () {
