@@ -16,6 +16,6 @@ export function searchToggle() {
     search.attr("data-open", !open);
     if (!open) {
         //聚焦一下搜索框
-        search.find("input").trigger( "focus" );
+        search.find("input").trigger("focus");
     }
 }
