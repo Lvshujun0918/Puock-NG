@@ -188,6 +188,7 @@ function pk_init_register_assets()
         wp_localize_script('puock-exp', 'intelligent_obj', array(
             'ajaxurl'     => admin_url('admin-ajax.php'),
             'rooturl'     => PUOCK_ABS_URI,
+            'homeurl'     => home_url(),
             'isindex'     => is_front_page() || is_home(),
             'ispost'      => is_singular(array('post', 'page')),
             'commenturl'  => home_url('wp-comments-post.php'),
