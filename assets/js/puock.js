@@ -230,28 +230,28 @@ class Puock {
     }
 
     searchInit() {
-        const toggle = () => {
-            const search = $("#search");
-            const open = search.attr("data-open") === "true";
-            let tag = open ? 'Out' : 'In';
-            search.attr("class", "animated fade" + tag + "Left");
-            $("#search-backdrop").attr("class", "modal-backdrop animated fade" + tag + "Right");
-            search.attr("data-open", !open);
-            if (!open) {
-                search.find("input").focus();
-            }
-        }
-        $(document).on("click", ".search-modal-btn", () => {
-            toggle();
-        });
-        $(document).on("click", "#search-backdrop", () => {
-            toggle();
-        })
-        $(document).on("submit", ".global-search-form", (e) => {
-            e.preventDefault();
-            const el = $(this.ct(e));
-            this.goUrl(el.attr("action") + "/?" + el.serialize())
-        })
+        // const toggle = () => {
+        //     const search = $("#search");
+        //     const open = search.attr("data-open") === "true";
+        //     let tag = open ? 'Out' : 'In';
+        //     search.attr("class", "animated fade" + tag + "Left");
+        //     $("#search-backdrop").attr("class", "modal-backdrop animated fade" + tag + "Right");
+        //     search.attr("data-open", !open);
+        //     if (!open) {
+        //         search.find("input").focus();
+        //     }
+        // }
+        // $(document).on("click", ".search-modal-btn", () => {
+        //     toggle();
+        // });
+        // $(document).on("click", "#search-backdrop", () => {
+        //     toggle();
+        // })
+        // $(document).on("submit", ".global-search-form", (e) => {
+        //     e.preventDefault();
+        //     const el = $(this.ct(e));
+        //     this.goUrl(el.attr("action") + "/?" + el.serialize())
+        // })
     }
 
     goUrl(url) {
