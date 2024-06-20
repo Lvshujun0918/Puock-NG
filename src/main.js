@@ -89,11 +89,11 @@ $(function () {
 
     //提示初始化
     let el = $("[data-bs-toggle=\"tooltip\"]");
-    [...el].map(tooltipTriggerEl => {
+    el.each(function(e){
         common.web_log_push('Tooltip Start');
-        new Tooltip(tooltipTriggerEl, {
+        new Tooltip($(this), {
             placement: 'bottom', trigger: 'hover'
-        })
+        });
     });
 });
 
