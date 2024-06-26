@@ -41,6 +41,7 @@
     "dev": "gulp watch"
   },
   "dependencies": {
+    "@yaohaixiao/message.js": "^0.3.0",
     "bootstrap": "^5.3.3",
     "jquery": "^3.7.1",
     "ripplet.js": "^1.1.0",
