@@ -183,8 +183,8 @@ function pk_init_register_assets()
         wp_enqueue_script('jquery');
 
         //webpack打包(实验功能)
-        wp_enqueue_script('puock-exp', pk_get_static_url() . '/dist/main.js', [], PUOCK_CUR_VER_STR,false);
         wp_enqueue_script('puock-expv', pk_get_static_url() . '/dist/runtime.js', [], PUOCK_CUR_VER_STR,false);
+        wp_enqueue_script('puock-exp', pk_get_static_url() . '/dist/main.js', ['puock-expv'], PUOCK_CUR_VER_STR,false);
         wp_localize_script('puock-exp', 'intelligent_obj', array(
             'ajaxurl'     => admin_url('admin-ajax.php'),
             'rooturl'     => PUOCK_ABS_URI,
