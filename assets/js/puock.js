@@ -405,11 +405,11 @@ class Puock {
     }
 
     tooltipInit(el = $("[data-bs-toggle=\"tooltip\"]")) {
-        [...el].map(tooltipTriggerEl => {
-            new bootstrap.Tooltip(tooltipTriggerEl, {
-                placement: 'bottom', trigger: 'hover'
-            })
-        })
+        // [...el].map(tooltipTriggerEl => {
+        //     new bootstrap.Tooltip(tooltipTriggerEl, {
+        //         placement: 'bottom', trigger: 'hover'
+        //     })
+        // })
     }
 
     pageChangeInit() {
