@@ -1,11 +1,15 @@
 import * as common from '../common';
 import $ from 'jquery';
 import storage from 'simplestorage.js';
+import toastr from 'toastr';
+import 'toastr/build/toastr.css';
 
 function toggleMode() {
 
+    toastr.success("切换成功！");
+
     common.web_log_push('Toggle Mode!');
-    
+
     //处理白天黑夜模式的图标问题
     let dn = 'd-none';
     $('#logo-light').toggleClass(dn);

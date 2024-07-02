@@ -21,6 +21,9 @@ import stickySidebar from 'sticky-sidebar';
 //引入bootstrap
 import { Tooltip } from 'bootstrap';
 
+//toast
+import toastr from 'toastr';
+
 //导入智能对象
 window.i = intelligent_obj;
 
@@ -37,9 +40,29 @@ if (intelligent_obj.isindex === "1") {
     common.web_log_push('Index Route');
 }
 
-$(function () {
-    common.web_log_push('Load Func Start');
 
+$(function () {
+    //配置toast
+    toastr.options = {
+        "closeButton": false,
+        "debug": false,
+        "newestOnTop": false,
+        "progressBar": false,
+        "positionClass": "toast-bottom-left",
+        "preventDuplicates": false,
+        "onclick": null,
+        "showDuration": "300",
+        "hideDuration": "1000",
+        "timeOut": "5000",
+        "extendedTimeOut": "1000",
+        "showEasing": "swing",
+        "hideEasing": "linear",
+        "showMethod": "fadeIn",
+        "hideMethod": "fadeOut"
+    }
+    common.web_log_push('Toastr Config Done');
+
+    common.web_log_push('Load Func Start');
     //检测并且自动切换黑暗模式
     nightmode.autoToggleMode();
     //黑暗模式切换按钮
@@ -89,7 +112,7 @@ $(function () {
 
     //提示初始化
     let el = $("[data-bs-toggle=\"tooltip\"]");
-    el.each(function(e){
+    el.each(function (e) {
         common.web_log_push('Tooltip Start');
         new Tooltip($(this), {
             placement: 'bottom', trigger: 'hover'
