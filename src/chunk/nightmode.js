@@ -44,16 +44,13 @@ export function autoToggleMode() {
         }
     }
     //用户自己系统是黑暗模式
-    if(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches){
-        common.web_log_push('Dark Media Mode Detect. Exec Manual Mode Toggle');
-        if (storage.hasKey('puock-ng-mode')) {
-            //获取当前的状态
-            let mode = storage.get('puock-ng-mode');
-            if (mode !== 'night') {
-                //不是夜晚模式，不符合系统设置值
-                toggleMode();
-                toastr.success("检测到系统级黑暗设置，已为您自动切换模式！");
-            }
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        common.web_log_push('Dark Media Mode Detect.');
+        if (!storage.hasKey('puock-ng-mode') || (storage.get('puock-ng-mode') != 'night')) {
+            //不是夜晚模式，不符合系统设置值
+            common.web_log_push('Exec Auto Dark Mode');
+            toggleMode();
+            toastr.success("检测到系统级黑暗设置，已为您自动切换模式！");
         }
     }
 }
