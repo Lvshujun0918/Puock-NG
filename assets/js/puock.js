@@ -645,65 +645,65 @@ class Puock {
     }
 
     modeInit() {
-        let light = this.localstorageToggle('light');
-        if (light !== undefined) {
-            this.modeChange(light);
-        }
+        // let light = this.localstorageToggle('light');
+        // if (light !== undefined) {
+        //     this.modeChange(light);
+        // }
     }
 
     modeChange(isLight = null, isSwitch = false) {
-        const body = $("body");
-        if (typeof (isLight) === "string") {
-            isLight = isLight === 'true';
-        }
-        if (isLight === null) {
-            isLight = body.hasClass(this.data.tag + "-light");
-        }
-        if (isSwitch) {
-            isLight = !isLight;
-        }
-        let dn = 'd-none';
-        if (isLight) {
-            $("#logo-light").removeClass(dn);
-            $("#logo-dark").addClass(dn);
-        } else {
-            $("#logo-dark").removeClass(dn);
-            $("#logo-light").addClass(dn);
-        }
-        $(".colorMode").each((_, e) => {
-            const el = $(e);
-            let target;
-            if (el.prop("localName") === 'i') {
-                target = el;
-            } else {
-                target = $(el).find("i");
-            }
-            if (target) {
-                target.removeClass("fa-sun").removeClass("fa-moon").addClass(isLight ? "fa-sun" : "fa-moon");
-            }
-        })
-        body.removeClass(isLight ? this.data.tag + "-dark" : this.data.tag + "-light");
-        body.addClass(isLight ? this.data.tag + "-light" : this.data.tag + "-dark");
-        this.localstorageToggle('light', isLight)
-        Cookies.set('mode', isLight ? 'light' : 'dark')
+        // const body = $("body");
+        // if (typeof (isLight) === "string") {
+        //     isLight = isLight === 'true';
+        // }
+        // if (isLight === null) {
+        //     isLight = body.hasClass(this.data.tag + "-light");
+        // }
+        // if (isSwitch) {
+        //     isLight = !isLight;
+        // }
+        // let dn = 'd-none';
+        // if (isLight) {
+        //     $("#logo-light").removeClass(dn);
+        //     $("#logo-dark").addClass(dn);
+        // } else {
+        //     $("#logo-dark").removeClass(dn);
+        //     $("#logo-light").addClass(dn);
+        // }
+        // $(".colorMode").each((_, e) => {
+        //     const el = $(e);
+        //     let target;
+        //     if (el.prop("localName") === 'i') {
+        //         target = el;
+        //     } else {
+        //         target = $(el).find("i");
+        //     }
+        //     if (target) {
+        //         target.removeClass("fa-sun").removeClass("fa-moon").addClass(isLight ? "fa-sun" : "fa-moon");
+        //     }
+        // })
+        // body.removeClass(isLight ? this.data.tag + "-dark" : this.data.tag + "-light");
+        // body.addClass(isLight ? this.data.tag + "-light" : this.data.tag + "-dark");
+        // this.localstorageToggle('light', isLight)
+        // Cookies.set('mode', isLight ? 'light' : 'dark')
     }
 
     modeChangeListener() {
-        this.modeChange(!window.matchMedia('(prefers-color-scheme:dark)').matches);
+        //this.modeChange(!window.matchMedia('(prefers-color-scheme:dark)').matches);
     }
 
     registerModeChangeEvent() {
-        if (this.data.params.mode_switch) {
-            try {
-                window.matchMedia('(prefers-color-scheme:dark)').addEventListener('change', () => {
-                    this.modeChangeListener()
-                });
-            } catch (ex) {
-                window.matchMedia('(prefers-color-scheme:dark)').addListener(() => {
-                    this.modeChangeListener()
-                });
-            }
-        }
+        // if (this.data.params.mode_switch) {
+        //     try {
+        //         window.matchMedia('(prefers-color-scheme:dark)').addEventListener('change', () => {
+        //             this.modeChangeListener()
+        //         });
+        //     } catch (ex) {
+        //         window.matchMedia('(prefers-color-scheme:dark)').addListener(() => {
+        //             this.modeChangeListener()
+        //         });
+        //     }
+        // }
     }
 
     infoToastShow(text, title = '提示') {
