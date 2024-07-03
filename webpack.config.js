@@ -54,14 +54,15 @@ module.exports = {
             }),
             new CssMinimizerPlugin(),
         ],
-        splitChunks: {
-            name: 'runtime',
-            chunks: 'all',
-        },
+        // splitChunks: {
+        //     name: 'runtime',
+        //     chunks: 'all',
+        // },
     },
     plugins: [
         new MiniCssExtractPlugin({
             filename: "[name].css",
+            chunkFilename: 'chunk.[chunkhash].css'
         }),
         new webpack.BannerPlugin({
             banner: "Lvshujun@PuockNG"
