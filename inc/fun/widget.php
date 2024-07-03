@@ -679,7 +679,7 @@ class puockSearch extends puockWidgetBase
                     <?php if (!$this->is_checked($instance['hide_title'])): ?>
                         <div>
                             <span class="t-lg border-bottom border-primary
-                puock-text pb-2"><i class="fa fa-search mr-1"></i>
+                puock-text pb-2"><i class="ift kbk-search mr-1"></i>
                                 <?php echo $instance['title'] ?>
                             </span>
                         </div>

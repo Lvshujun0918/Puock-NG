@@ -23,8 +23,8 @@ function toggleMode() {
             target = $(el).find('i');
         }
         if (target) {
-            target.toggleClass('fa-sun');
-            target.toggleClass('fa-moon');
+            target.toggleClass('kbk-light');
+            target.toggleClass('kbk-nightmode');
         }
     });
 
@@ -34,15 +34,6 @@ function toggleMode() {
 }
 
 export function autoToggleMode() {
-    //储存下来
-    if (storage.hasKey('puock-ng-mode')) {
-        //获取当前的状态
-        let mode = storage.get('puock-ng-mode');
-        if (mode === 'night') {
-            common.web_log_push('Auto Toggle Mode!');
-            toggleMode();
-        }
-    }
     //用户自己系统是黑暗模式
     if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
         common.web_log_push('Dark Media Mode Detect.');
@@ -70,6 +61,7 @@ export function saveAndToggleMode() {
         let mode = storage.get('puock-ng-mode');
         //反转状态
         mode = (mode === 'light' ? 'night' : 'light');
+        document.cookie = "puock-ng-mode=" + mode;
         //存回去
         if (storage.set('puock-ng-mode', mode) === false) {
             //储存失败
@@ -79,5 +71,6 @@ export function saveAndToggleMode() {
     else {
         //没存过
         storage.set('puock-ng-mode', 'night');
+        document.cookie = "puock-ng-mode=night";
     }
 }

@@ -24,8 +24,7 @@
                                     data-once-load="true"
                                     title="快捷登录"
                                     data-url="<?php echo pk_ajax_url('pk_font_login_page', ['redirect' => get_permalink()]) ?>">
-                                <i
-                                        class="fa fa-right-to-bracket"></i>&nbsp;<?php _e('快捷登录', PUOCK) ?>
+                                <i class="fa fa-right-to-bracket"></i>&nbsp;<?php _e('快捷登录', PUOCK) ?>
                             </button>
                         </div>
                     <?php endif; ?>

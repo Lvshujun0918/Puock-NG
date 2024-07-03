@@ -9,6 +9,9 @@ import './style/footer.less';
 //老样式
 import './style/style.less';
 
+//引入动画
+import 'animate.css/animate.compat.css';
+
 //涟漪效果
 import ripplet from 'ripplet.js';
 

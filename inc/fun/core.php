@@ -595,8 +595,8 @@ function pk_checked_out($name, $out = '', $default = 0)
 //主题模式
 function pk_theme_light()
 {
-    if (isset($_COOKIE['mode'])) {
-        return $_COOKIE['mode'] == 'light';
+    if (isset($_COOKIE['puock-ng-mode'])) {
+        return $_COOKIE['puock-ng-mode'] == 'light';
     }
     return pk_get_option('theme_mode', 'light') == 'light';
 }
@@ -672,9 +672,9 @@ function pk_get_main_menu($mobile = false)
     }
     if (!$mobile) {
         if (pk_is_checked('theme_mode_s')) {
-            $out .= '<li><a class="colorMode" data-bs-toggle="tooltip" title="模式切换" href="javascript:void(0)"><i class="fa-regular fa-' . (pk_theme_light() ? 'sun' : 'moon') . '"></i></a></li>';
+            $out .= '<li><a class="colorMode" data-bs-toggle="tooltip" title="模式切换" href="javascript:void(0)"><i class="ift ' . (pk_theme_light() ? 'kbk-nightmode' : 'kbk-light'). '"></i></a></li>';
         }
-        $out .= '<li><a class="search-modal-btn" data-bs-toggle="tooltip" title="搜索" href="javascript:void(0)"><i class="fa fa-search"></i></a></li>';
+        $out .= '<li><a class="search-modal-btn" data-bs-toggle="tooltip" title="搜索" href="javascript:void(0)"><i class="ift kbk-search"></i></a></li>';
     }
     $out .= '</ul>';
     return $out;

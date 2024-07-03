@@ -48,9 +48,9 @@ echo current_theme_supports('custom-background') ? ' custom-background' : ''; ?>
                 <div class="mobile-menus d-block d-lg-none p-1 puock-text">
                     <i class="fa fa-bars t-xl mr-2 mobile-menu-s"></i>
                     <?php if (pk_is_checked('theme_mode_s')): ?>
-                        <i class="fa-regular fa-<?php echo(pk_theme_light() ? 'sun' : 'moon'); ?> colorMode t-xl mr-2"></i>
+                        <i class="ift <?php echo(pk_theme_light() ? 'kbk-nightmode' : 'kbk-light'); ?> colorMode t-xl mr-2"></i>
                     <?php endif; ?>
-                    <i class="search-modal-btn fa fa-search t-md"></i>
+                    <i class="search-modal-btn ift kbk-search t-md"></i>
                 </div>
             </div>
         </div>
@@ -61,12 +61,10 @@ echo current_theme_supports('custom-background') ? ' custom-background' : ''; ?>
                 <form class="global-search-form">
                     <div class="search-layout">
                         <div class="search-input">
-                            <input required type="text" name="s" class="form-control"
-                                   placeholder="<?php _e('请输入搜索关键字', PUOCK) ?>">
+                            <input required type="text" name="s" class="form-control" placeholder="<?php _e('请输入搜索关键字', PUOCK) ?>">
                         </div>
                         <div class="search-start">
-                            <button type="submit" class="btn-dark btn"><i
-                                        class="fa fa-search mr-1"></i><?php _e('搜索', PUOCK) ?></button>
+                            <button type="submit" class="btn-dark btn"><i class="ift kbk-search mr-1"></i><?php _e('搜索', PUOCK) ?></button>
                         </div>
                         <div class="search-close-btn">
                             <button type="button" aria-label="Redirect Search" class="btn-danger btn ml-1 search-modal-btn"><i class="fa fa-close"></i></button>

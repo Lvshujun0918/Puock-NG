@@ -2,8 +2,8 @@
 <!--返回顶部和底部-->
 <div id="rb-float-actions">
     <?php echo apply_filters('pk_rb_float_actions','') ?>
-    <div data-to="top" class="p-block"><i class="fa fa-arrow-up puock-text"></i></div>
-    <div data-to="bottom" class="p-block"><i class="fa fa-arrow-down puock-text"></i></div>
+    <div data-to="top" class="p-block"><i class="ift kbk-top puock-text"></i></div>
+    <div data-to="bottom" class="p-block"><i class="ift kbk-down-arrow puock-text"></i></div>
 </div>
 <footer id="footer">
     <div class="container">
@@ -31,7 +31,7 @@
             <div class="footer-bar">
                 <div class="footer-title"><?php bloginfo('name'); ?></div>
                 <div class="footer-social-button">
-                    <div class="btn btn-secondary"><i class="fa-brands fa-github"></i></div>
+                    <a class="btn btn-secondary" href="https://github.com/Lvshujun0918/Puock-NG"><i class="ift kbk-github"></i></a>
                 </div>
             </div>
             <hr>
