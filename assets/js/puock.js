@@ -578,24 +578,24 @@ class Puock {
             return
         }
         if (window.hljs !== undefined) {
-            window.hljs.configure({ignoreUnescapedHTML: true})
-            $(bodyEl).find("pre").each((index, block) => {
-                const el = $(block);
-                const codeChildClass = el.children("code") ? el.children("code").attr("class") : undefined;
-                if (codeChildClass) {
-                    if (codeChildClass.indexOf("katex") !== -1 || codeChildClass.indexOf("latex") !== -1 || codeChildClass.indexOf("flowchart") !== -1
-                        || codeChildClass.indexOf("flow") !== -1 || codeChildClass.indexOf("seq") !== -1 || codeChildClass.indexOf("math") !== -1) {
-                        return;
-                    }
-                }
-                if (!el.attr("id")) {
-                    el.attr("id", "hljs-item-" + index)
-                    el.before("<div class='pk-code-tools' data-pre-id='hljs-item-" + index + "'><div class='dot'>" +
-                        "<i></i><i></i><i></i></div><div class='actions'><div><i class='i fa fa-copy cp-code' data-clipboard-target='#hljs-item-" + index + "'></i></div></div></div>")
-                    window.hljs.highlightElement(block);
-                    window.hljs.lineNumbersBlock(block);
-                }
-            });
+            // window.hljs.configure({ignoreUnescapedHTML: true})
+            // $(bodyEl).find("pre").each((index, block) => {
+            //     const el = $(block);
+            //     const codeChildClass = el.children("code") ? el.children("code").attr("class") : undefined;
+            //     if (codeChildClass) {
+            //         if (codeChildClass.indexOf("katex") !== -1 || codeChildClass.indexOf("latex") !== -1 || codeChildClass.indexOf("flowchart") !== -1
+            //             || codeChildClass.indexOf("flow") !== -1 || codeChildClass.indexOf("seq") !== -1 || codeChildClass.indexOf("math") !== -1) {
+            //             return;
+            //         }
+            //     }
+            //     if (!el.attr("id")) {
+            //         el.attr("id", "hljs-item-" + index)
+            //         el.before("<div class='pk-code-tools' data-pre-id='hljs-item-" + index + "'><div class='dot'>" +
+            //             "<i></i><i></i><i></i></div><div class='actions'><div><i class='i fa fa-copy cp-code' data-clipboard-target='#hljs-item-" + index + "'></i></div></div></div>")
+            //         window.hljs.highlightElement(block);
+            //         window.hljs.lineNumbersBlock(block);
+            //     }
+            // });
             if (fullChange) {
                 const cp = new ClipboardJS('.cp-code');
                 cp.on("success", (e) => {
