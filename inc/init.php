@@ -201,8 +201,8 @@ function pk_init_register_assets()
         wp_enqueue_script('jquery');
 
         //webpack打包(实验功能)
-        wp_enqueue_script('puock-expv', pk_get_static_url() . '/dist/runtime.js', [], PUOCK_CUR_VER_STR,false);
-        wp_enqueue_script('puock-exp', pk_get_static_url() . '/dist/main.js', ['puock-expv'], PUOCK_CUR_VER_STR,false);
+        //wp_enqueue_script('puock-expv', pk_get_static_url() . '/dist/runtime.js', [], PUOCK_CUR_VER_STR,false);
+        wp_enqueue_script('puock-exp', pk_get_static_url() . '/dist/main.js', [], PUOCK_CUR_VER_STR,false);
         wp_localize_script('puock-exp', 'intelligent_obj', array(
             'ajaxurl'     => admin_url('admin-ajax.php'),
             'rooturl'     => PUOCK_ABS_URI,
@@ -216,7 +216,8 @@ function pk_init_register_assets()
             'debug'       => true,
             'ispjax'      => pk_is_checked('page_ajax_load')
         ));
-        wp_enqueue_style('puock', pk_get_static_url() . '/dist/main.css', ['puock-libs'], PUOCK_CUR_VER_STR);
+        wp_enqueue_style('puock', pk_get_static_url() . '/dist/main.css', [], PUOCK_CUR_VER_STR);
+        //wp_enqueue_style('puock-rt', pk_get_static_url() . '/dist/runtime.css', [], PUOCK_CUR_VER_STR);
 
         wp_enqueue_style('puock-libs', pk_get_static_url() . '/assets/dist/style/libs.min.css', [], PUOCK_CUR_VER_STR);
         //wp_enqueue_style('puock', pk_get_static_url() . '/assets/dist/style/style.min.css', ['puock-libs'], PUOCK_CUR_VER_STR);
