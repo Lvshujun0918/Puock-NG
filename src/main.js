@@ -20,6 +20,7 @@ import stickySidebar from 'sticky-sidebar';
 
 //引入bootstrap
 import { Tooltip } from 'bootstrap';
+import 'bootstrap/scss/bootstrap.scss';
 
 //toast
 import toastr from 'toastr';
@@ -45,7 +46,7 @@ if (intelligent_obj.route === 'index') {
 if (intelligent_obj.route === 'post' || intelligent_obj.route === 'single') {
     common.web_log_push('Post Route');
     import('./chunk/post').then((search) => {
-        
+
     });
 }
 
