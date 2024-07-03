@@ -6,6 +6,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const ParallelUglifyPlugin = require('webpack-parallel-uglify-plugin');
 const CompressionWebpackPlugin = require('compression-webpack-plugin');
+const { tree } = require('gulp');
 
 module.exports = {
     mode: "production",
@@ -76,8 +77,14 @@ module.exports = {
                 compress: {
                     drop_console: false,
                     collapse_vars: true,
-                    reduce_vars: true
-                }
+                    reduce_vars: true,
+                    comparisons: true,
+                    booleans: true,
+                    unused: true,
+                    dead_code: true,
+                    if_return: true,
+                },
+                mangle: true 
             }
         }),
     ]
