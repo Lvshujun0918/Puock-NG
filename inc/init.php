@@ -172,6 +172,24 @@ $pk_right_slug = 'PGRpdiBjbGFzcz0iZnMxMiBtdDEwIGMtc3ViIj4NCiAgICAgICAgICAgICAgIC
 
 // add_action('admin_notices', 'pk_env_check');
 
+/**
+ * 获取路由地址
+ *
+ * @return string 路由
+ */
+function pk_get_route(){
+    if(is_front_page() || is_home()){
+        return 'index';
+    }
+    else if(is_singular(array('post'))){
+        return 'post';
+    }
+    else if(is_singular(array('page'))){
+        return 'page';
+    }
+    return 'other';
+}
+
 function pk_init_register_assets()
 {
     do_action('qm/start', 'Reg_Assets');
@@ -189,8 +207,7 @@ function pk_init_register_assets()
             'ajaxurl'     => admin_url('admin-ajax.php'),
             'rooturl'     => PUOCK_ABS_URI,
             'homeurl'     => home_url(),
-            'isindex'     => is_front_page() || is_home(),
-            'ispost'      => is_singular(array('post', 'page')),
+            'route'       => pk_get_route(),
             'commenturl'  => home_url('wp-comments-post.php'),
             'ver'         => PUOCK_CUR_VER_STR,
             'isie'        => $is_IE,

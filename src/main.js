@@ -23,6 +23,7 @@ import { Tooltip } from 'bootstrap';
 
 //toast
 import toastr from 'toastr';
+import 'toastr/build/toastr.css';
 
 //导入智能对象
 window.i = intelligent_obj;
@@ -36,8 +37,16 @@ if (intelligent_obj.debug === "1") {
 }
 
 //首页路由
-if (intelligent_obj.isindex === "1") {
+if (intelligent_obj.route === 'index') {
     common.web_log_push('Index Route');
+}
+
+//文章路由
+if (intelligent_obj.route === 'post' || intelligent_obj.route === 'single') {
+    common.web_log_push('Post Route');
+    import('./chunk/post').then((search) => {
+        
+    });
 }
 
 
