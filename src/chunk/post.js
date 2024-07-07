@@ -8,6 +8,9 @@ import * as hljsln from '../inc/hljsline-number';
 //引入主题
 import 'highlight.js/styles/base16/humanoid-dark.css';
 
+//toastr
+import toastr from 'toastr';
+
 $(function () {
     common.web_log_push('Post Chunk Loaded');
 
@@ -30,4 +33,9 @@ $(function () {
         //行号
         hljsln.lineNumbersBlock(block);
     });
+
+    //复制提示
+    document.body.oncopy = function() {
+        toastr.success("复制成功，转载请保留原文链接哦！");
+    };
 });

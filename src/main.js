@@ -48,9 +48,7 @@ if (intelligent_obj.route === 'index') {
 //文章路由
 if (intelligent_obj.route === 'post' || intelligent_obj.route === 'single') {
     common.web_log_push('Post Route');
-    import('./chunk/post').then((search) => {
-
-    });
+    import('./chunk/post');
 }
 
 
