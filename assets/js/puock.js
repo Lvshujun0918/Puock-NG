@@ -1047,7 +1047,7 @@ class Puock {
                     <div class="row">
                     <div class="col-4"><i class="fa-regular fa-star"></i><a ${link_html}>${res.stargazers_count}</a></div>
                     <div class="col-4"><i class="fa-solid fa-code-fork"></i><a ${link_html}>${res.forks}</a></div>
-                    <div class="col-4"><i class="fa-regular fa-eye"></i><a ${link_html}>${res.subscribers_count}</a></div>
+                    <div class="col-4"><i class="ift kbk-postview"></i><a ${link_html}>${res.subscribers_count}</a></div>
                     </div>
                     </div>
                 `);
