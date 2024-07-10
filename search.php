@@ -1,6 +1,6 @@
 <?php get_header() ?>
 
-    <div id="content" class="mt15 container min-height-container">
+    <div id="content" class="mt30 container min-height-container">
         <?php get_template_part('templates/box', 'global-top') ?>
         <?php echo pk_breadcrumbs() ?>
 

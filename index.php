@@ -2,7 +2,7 @@
 
 <?php if (pk_get_option('index_mode') != 'company'): ?>
 
-    <div id="content" class="mt15 container">
+    <div id="content" class="mt30 container">
         <?php get_template_part('templates/box', 'global-top') ?>
         <div class="pk-scroll-wrap pk-index-wrap row row-cols-1">
             <div class="<?php echo pk_get_class_name('left-content','pk-index-posts-wrap', 'col-lg-'. pk_hide_sidebar_out('12', '8', null, false), 'col-md-12', pk_open_box_animated('animated fadeInLeft', false)) ?> ">
