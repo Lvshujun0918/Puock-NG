@@ -19,7 +19,7 @@ function pk_ajax_dialog_reward()
             <?php if (!empty($reward_wx)): ?>
                 <div id="reward-wx">
                     <img src="<?php echo $reward_wx ?>" style="width: 140px" alt="微信赞赏" title="微信赞赏" data-bs-toggle="tooltip"/>
-                    <p class="mt10 text-center fs12"><i class="fa-brands fa-weixin"></i>&nbsp;请使用微信扫一扫</p>
+                    <p class="mt10 text-center fs12"><i class="ift kbk-wechat"></i>&nbsp;请使用微信扫一扫</p>
                 </div>
             <?php endif; ?>
         </div>

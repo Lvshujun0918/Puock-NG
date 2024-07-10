@@ -1,12 +1,12 @@
 <?php if (get_comments_number() == 0 && !comments_open() || pk_post_comment_is_closed()):echo ''; else: ?>
     <?php get_template_part('ad/comment', 'top') ?>
 <?php add_filter('pk_rb_float_actions',function ($content){
-        return $content.'<div data-to-area="#comments" class="p-block"><i class="ift kbk-comments puock-text"></i></div>';
+        return $content.'<div data-to-area="#comments" class="p-block"><i class="ift kbk-comment puock-text"></i></div>';
     }) ?>
     <div class="p-block" id="comments">
         <div>
             <span class="t-lg border-bottom border-primary puock-text pb-2"><i
-                        class="ift kbk-comments mr-1"></i><?php _e('评论', PUOCK) ?>（<?php comments_number() ?>）</span>
+                        class="ift kbk-comment mr-1"></i><?php _e('评论', PUOCK) ?>（<?php comments_number() ?>）</span>
         </div>
         <?php if (comments_open()): ?>
             <?php if (get_option('comment_registration', '0') == '1' && !is_user_logged_in()): //登录后才可以评论 ?>
@@ -24,7 +24,7 @@
                                     data-once-load="true"
                                     title="快捷登录"
                                     data-url="<?php echo pk_ajax_url('pk_font_login_page', ['redirect' => get_permalink()]) ?>">
-                                <i class="fa fa-right-to-bracket"></i>&nbsp;<?php _e('快捷登录', PUOCK) ?>
+                                <i class="ift kbk-login"></i>&nbsp;<?php _e('快捷登录', PUOCK) ?>
                             </button>
                         </div>
                     <?php endif; ?>
@@ -84,9 +84,7 @@
                                 <?php if (is_user_logged_in()): $user = wp_get_current_user(); ?>
                                     <div class="puock-text t-sm">
                                         <input type="text" value="1" hidden name="comment-logged" id="comment-logged">
-                                        <span><strong><?php echo $user->data->display_name ?></strong>，<a
-                                                    data-no-instant class="ta3 a-link"
-                                                    href="<?php echo wp_logout_url(get_the_permalink()) ?>"><?php _e('登出', PUOCK) ?></a></span>
+                                        <span><?php _e('你好，用户', PUOCK) ?><i class="ift kbk-user"></i> <strong><?php echo $user->data->display_name ?></strong>！<adata-no-instant class="ta3 a-link"href="<?php echo wp_logout_url(get_the_permalink()) ?>"><?php _e('登出', PUOCK) ?></a></span>
                                     </div>
                                 <?php endif; ?>
                                 <?php if (!is_user_logged_in() && pk_oauth_platform_count() > 0): ?>
@@ -97,7 +95,7 @@
                                                 title="快捷登录"
                                                 data-url="<?php echo pk_ajax_url('pk_font_login_page', ['redirect' => get_permalink()]) ?>">
                                             <i
-                                                    class="fa fa-right-to-bracket"></i>&nbsp;<?php _e('快捷登录', PUOCK) ?>
+                                                    class="ift kbk-login"></i>&nbsp;<?php _e('快捷登录', PUOCK) ?>
                                         </button>
                                     </div>
                                 <?php endif; ?>
@@ -110,7 +108,7 @@
                                         data-url="<?php echo pk_ajax_url('pk_ajax_dialog_smiley') ?>">
                                     <i class="fa-regular fa-face-smile t-md"></i></button>
                                 <button id="comment-submit" type="submit" class="btn btn-primary btn-ssm"><i
-                                            class="fa-regular fa-paper-plane"></i>&nbsp;<?php _e('发布评论', PUOCK) ?>
+                                            class="ift kbk-go"></i>&nbsp;<?php _e('发布评论', PUOCK) ?>
                                 </button>
                             </div>
                         </div>

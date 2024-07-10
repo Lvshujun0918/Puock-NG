@@ -663,7 +663,7 @@ function pk_breadcrumbs()
     $out = '<div id="breadcrumb" class="' . (pk_open_box_animated('animated fadeInUp', false)) . '">';
     $out .= '<nav aria-label="breadcrumb">';
     $out .= '<ol class="breadcrumb">';
-    $out .= '<li class="breadcrumb-item"><i class="fa-solid fa-house"></i> <a class="a-link" href="' . home_url() . '">' . __('首页', PUOCK) . '</a></li>';
+    $out .= '<li class="breadcrumb-item"><i class="ift kbk-home"></i> <a class="a-link" href="' . home_url() . '">' . __('首页', PUOCK) . '</a></li>';
     if (is_single() || is_category()) {
         $categorys = get_the_category();
         if (count($categorys) <= 0 && is_single()) {
@@ -678,11 +678,11 @@ function pk_breadcrumbs()
         } else {
             $cats = get_category_parents($cat, true, '');
         }
-        $cats = str_replace("<a", '<li class="breadcrumb-item"><a class="a-link"', $cats);
+        $cats = str_replace("<a", '<li class="breadcrumb-item"><i class="ift kbk-category"></i> <a class="a-link"', $cats);
         $cats = str_replace("</a>", '</a></li>', $cats);
         $out .= $cats;
         if (is_single()) {
-            $out .= '<li class="breadcrumb-item active " aria-current="page"><i class="fa-solid fa-newspaper"></i> ' . get_the_title() . '</li>';
+            $out .= '<li class="breadcrumb-item active " aria-current="page"><i class="ift kbk-post"></i> ' . get_the_title() . '</li>';
         } else if (is_category()) {
             $out .= '<li class="breadcrumb-item active " aria-current="page">' . __('文章列表', PUOCK) . '</li>';
         }

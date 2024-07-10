@@ -19,7 +19,7 @@
             <div class="circle-button puock-bg text-center pk-modal-toggle"
                  title="分享" data-once-load="true"
                  data-url="<?php echo pk_ajax_url('pk_ajax_dialog_post_share', ['id' => $post->ID]) ?>">
-                <i class="fa fa-share-from-square t-md"></i></div>
+                <i class="ift kbk-share t-md"></i></div>
             <div class="ls">
                 <div class="circle-button puock-bg text-center post-menu-toggle post-menus-box"><i
                             class="fa fa-bars t-md"></i></div>

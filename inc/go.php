@@ -49,7 +49,7 @@ get_header();
         <?php endif; ?>
         <div class="text-center mt20">
             <a rel="nofollow" href="<?php echo $url; ?>" class="btn btn-ssm btn-primary"><i
-                        class="fa-regular fa-paper-plane"></i>&nbsp;立即进入</a>
+                        class="ift kbk-go"></i>&nbsp;立即进入</a>
             <a href="<?php echo home_url() ?>" class="btn btn-ssm btn-secondary"><i
                         class="ift kbk-home"></i>&nbsp;返回首页</a>
         </div>

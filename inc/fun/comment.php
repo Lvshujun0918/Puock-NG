@@ -74,7 +74,7 @@ function pk_comment_callback($comment, $args, $depth)
                 <?php if ($comment->comment_approved == '1' && (!$author_cat_comment || $is_author)) : ?>
                     <a id="comment-reply-<?php comment_ID() ?>" data-id="<?php comment_ID() ?>"
                        class="hide-info animated bounceIn c-sub-a t-sm ml-1 comment-reply"
-                       href="javascript:void(0)" title="回复此评论"><i class="fa fa-share-from-square"></i>
+                       href="javascript:void(0)" title="回复此评论"><i class="ift kbk-share"></i>
                         <span class="comment-reply-text">回复</span></a>
                 <?php endif; ?>
             </div>

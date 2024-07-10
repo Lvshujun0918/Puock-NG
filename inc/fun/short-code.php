@@ -146,7 +146,7 @@ function pk_download($attr, $content = null)
         <div class='mb15'><i class='fa fa-file-zipper'></i>&nbsp;<span>文件名称：$filename</span></div>
         <div class='mb15'><i class='fa fa-download'></i>&nbsp;<span>文件大小：$size</span></div>
         <div class='mb15'><i class='fa-regular fa-bell'></i>&nbsp;<span>下载声明：$down_tips</span></div>
-        <div><i class='fa fa-link'></i><span>下载地址：$content</span></div>
+        <div><i class='ift kbk-url'></i><span>下载地址：$content</span></div>
     </div>";
 }
 
@@ -296,7 +296,7 @@ function pk_post_card($attr, $content = null)
     do_action( 'qm/debug', $pk_post_summary);
     $pk_post_link = get_permalink($id);
     return '<div class="card"><div class="card-body">
-      <h5 class="card-title mb-0"><i class="fa-solid fa-newspaper"></i> '.$pk_post_title.'</h5>
+      <h5 class="card-title mb-0"><i class="ift kbk-post"></i> '.$pk_post_title.'</h5>
       <p class="card-text">'.$pk_post_summary.'</p>
       <a href="'.$pk_post_link.'" class="btn btn-primary text-end"><i class="fa-solid fa-eye"></i> 跳转</a></div></div>';
 }

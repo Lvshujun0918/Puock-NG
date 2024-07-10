@@ -27,7 +27,7 @@ $(function () {
         }
 
         el.before("<div class='pk-code-tools' data-pre-id='hljs-item-" + index + "'><div class='dot'>" +
-            "<i></i><i></i><i></i></div><div class='actions'><div><i class='i fa fa-copy cp-code' data-clipboard-target='#hljs-item-" + index + "'></i></div></div></div>")
+            "<i></i><i></i><i></i></div><div class='actions'><div><i class='ift kbk-copy cp-code' data-clipboard-target='#hljs-item-" + index + "'></i></div></div></div>")
         //执行高亮
         hljs.highlightElement(block);
         //行号

@@ -243,7 +243,7 @@ function pk_front_login_page_callback()
                     <label class="form-check-label" for="front-login-remember-me"> 记住我</label>
                 </div>
                 <div class="mb15 d-flex justify-content-center wh100">
-                    <button class="btn btn-ssm btn-primary mr5" type="submit"><i class="fa fa-right-to-bracket"></i>
+                    <button class="btn btn-ssm btn-primary mr5" type="submit"><i class="ift kbk-login"></i>
                         立即登录
                     </button>
                 </div>
@@ -298,7 +298,7 @@ function pk_front_login_page_callback()
                     </div>
                 <?php endif; ?>
                 <div class="mb15 d-flex justify-content-center wh100">
-                    <button class="btn btn-ssm btn-primary mr5" type="submit"><i class="fa fa-right-to-bracket"></i>
+                    <button class="btn btn-ssm btn-primary mr5" type="submit"><i class="ift kbk-login"></i>
                         立即注册
                     </button>
                 </div>
