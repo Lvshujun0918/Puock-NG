@@ -218,7 +218,7 @@ function pk_init_register_assets()
         ));
         wp_enqueue_style('puock', pk_get_static_url() . '/dist/main.css', [], PUOCK_CUR_VER_STR);
         //引入图标
-        wp_enqueue_style('iconfont', 'https://at.alicdn.com/t/c/font_2745880_3azbdl2yxb6.css', [], PUOCK_CUR_VER_STR);
+        wp_enqueue_style('iconfont', 'https://at.alicdn.com/t/c/font_2745880_6ir0si6jouq.css', [], PUOCK_CUR_VER_STR);
         //wp_enqueue_style('puock-rt', pk_get_static_url() . '/dist/runtime.css', [], PUOCK_CUR_VER_STR);
 
         wp_enqueue_style('puock-libs', pk_get_static_url() . '/assets/dist/style/libs.min.css', [], PUOCK_CUR_VER_STR);
