@@ -168,7 +168,7 @@ function get_post_category_link_exec($all = true, $class = '', $icon = '', $cid 
             if ($all) {
                 $out = "";
                 foreach ($cats as $cate) {
-                    $out .= '<a ' . pk_link_target(false) . ' class="' . $class . ' mr5" href="' . get_category_link($cate) . '"><i class="fa-regular fa-folder-open"></i> ' . $icon . $cate->name . '</a> ';
+                    $out .= '<a ' . pk_link_target(false) . ' class="' . $class . ' mr5" href="' . get_category_link($cate) . '"><i class="ift kbk-category"></i> ' . $icon . $cate->name . '</a> ';
                 }
                 $out = mb_substr($out, 0, mb_strlen($out) - 1);
                 return $out;
@@ -178,7 +178,7 @@ function get_post_category_link_exec($all = true, $class = '', $icon = '', $cid 
                 } else {
                     $cate = get_category($cat);
                 }
-                return '<a ' . pk_link_target(false) . ' class="' . $class . '" href="' . get_category_link($cate) . '"><i class="fa-regular fa-folder-open"></i> ' . $icon . $cate->name . '</a>';
+                return '<a ' . pk_link_target(false) . ' class="' . $class . '" href="' . get_category_link($cate) . '"><i class="ift kbk-category"></i> ' . $icon . $cate->name . '</a>';
             }
         }
     }

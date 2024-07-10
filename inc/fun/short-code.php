@@ -158,7 +158,7 @@ function pk_reply_read($attr, $content = null)
     global $wpdb;
     $email = null;
     $user_id = (int)wp_get_current_user()->ID;
-    $msg = sc_tips(array('outline' => true), "<span class='c-sub fs14'><i class='fa-regular fa-eye'></i>&nbsp;此处含有隐藏内容，请提交评论并审核通过刷新后即可查看！</span>", 't-primary');
+    $msg = sc_tips(array('outline' => true), "<span class='c-sub fs14'><i class='ift kbk-postview'></i>&nbsp;此处含有隐藏内容，请提交评论并审核通过刷新后即可查看！</span>", 't-primary');
     if ($user_id > 0) {
         $email = get_userdata($user_id)->user_email;
         if ($email == get_bloginfo('admin_email')) {
@@ -185,7 +185,7 @@ add_shortcode('reply', 'pk_reply_read');
 //登录可见
 function pk_login_read($attr, $content = null)
 {
-    $msg = sc_tips(array('outline' => true), "<span class='c-sub fs14'><i class='fa-regular fa-eye'></i>&nbsp;此处含有隐藏内容，登录后即可查看！</span>", 't-primary');
+    $msg = sc_tips(array('outline' => true), "<span class='c-sub fs14'><i class='ift kbk-postview'></i>&nbsp;此处含有隐藏内容，登录后即可查看！</span>", 't-primary');
     return is_user_logged_in() ? do_shortcode($content) : $msg;
 }
 
@@ -202,7 +202,7 @@ function pk_login_email_read($attr, $content = null)
             }
         }
     }
-    return sc_tips(array('outline' => true), "<span class='c-sub fs14'><i class='fa-regular fa-eye'></i>&nbsp;此处含有隐藏内容，需要登录并验证邮箱后即可查看！</span>", 't-primary');
+    return sc_tips(array('outline' => true), "<span class='c-sub fs14'><i class='ift kbk-postview'></i>&nbsp;此处含有隐藏内容，需要登录并验证邮箱后即可查看！</span>", 't-primary');
 }
 
 add_shortcode('login_email', 'pk_login_email_read');
@@ -227,7 +227,7 @@ function pk_password_read($attr, $content = null)
     if (empty(trim($desc ?? ''))) {
         $desc = "此处含有隐藏内容，需要正确输入密码后可见！";
     }
-    $info = "<p class='fs14 c-sub'><i class='fa-regular fa-eye'></i>&nbsp;{$desc}</p>";
+    $info = "<p class='fs14 c-sub'><i class='ift kbk-postview'></i>&nbsp;{$desc}</p>";
     if (isset($_REQUEST['pass'])) {
         if ($_REQUEST['pass'] == $pass) {
             return do_shortcode($content);

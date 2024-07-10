@@ -11,9 +11,9 @@
                         <div class="options p-flex-sbc mt20">
                             <div>
                                 <?php if (!pk_is_checked('hide_post_views')): ?>
-                                <div class="option puock-bg ta3 t-sm mr-1"><i class="fa-regular fa-eye mr-1"></i><span id="post-views"><?php pk_get_post_views();  ?></span><span><?php _e('次阅读', PUOCK) ?></span></div>
+                                <div class="option puock-bg ta3 t-sm mr-1"><i class="ift kbk-postview mr-1"></i><span id="post-views"><?php pk_get_post_views();  ?></span><span><?php _e('次阅读', PUOCK) ?></span></div>
                                 <?php endif; ?>
-                                <a href="#comments"><div class="option puock-bg ta3 t-sm mr-1"><i class="fa-regular fa-comment mr-1"></i><?php comments_number() ?></div></a>
+                                <a href="#comments"><div class="option puock-bg ta3 t-sm mr-1"><i class="ift kbk-comment mr-1"></i><?php comments_number() ?></div></a>
                                 <?php if (is_user_logged_in() && current_user_can('edit_post', $post->ID)): ?>
                                     <a target="_blank" href="<?php echo get_edit_post_link() ?>">
                                         <div class="option puock-bg ta3 t-sm mr-1"><i

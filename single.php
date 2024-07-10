@@ -13,14 +13,14 @@
                         <div>
                             <?php if (!pk_is_checked('hide_post_views')): ?>
                                 <div class="option puock-bg ta3 t-sm mr-1"><i
-                                            class="fa-regular fa-eye mr-1"></i>
+                                            class="ift kbk-postview mr-1"></i>
                                     <span id="post-views"><?php pk_get_post_views(); ?></span><span><?php _e('次阅读', PUOCK) ?></span>
                                 </div>
                             <?php endif; ?>
                             <?php if (!pk_post_comment_is_closed()): ?>
                                 <a href="#comments">
                                     <div class="option puock-bg ta3 t-sm mr-1"><i
-                                                class="fa-regular fa-comment mr-1"></i><?php comments_number() ?></div>
+                                                class="ift kbk-comment mr-1"></i><?php comments_number() ?></div>
                                 </a>
                             <?php endif; ?>
                             <?php if (is_user_logged_in() && current_user_can('edit_post', $post->ID)): ?>
@@ -42,7 +42,7 @@
                         <div class="<?php get_entry_content_class() ?> content-main puock-text <?php pk_checked_out('post_content_indent', 'p-indent') ?>">
                             <?php if (pk_is_checked('post_read_time')): ?>
                                 <p class="fs14 c-sub no-indent">
-                                    <i class="fa-regular fa-clock"></i>
+                                    <i class="ift kbk-calendar"></i>
                                     <?php echo pk_read_time_tip() ?>
                                 </p>
                             <?php endif; ?>
@@ -81,7 +81,7 @@
                                     <span><?php _e('发表至：', PUOCK) ?></span><?php echo get_post_category_link_exec(true) ?>
                                 </div>
                                 <div>
-                                    <span class="c-sub"><i class="fa-regular fa-clock"></i> <?php pk_get_post_date() ?></span>
+                                    <span class="c-sub"><i class="ift kbk-calendar"></i> <?php pk_get_post_date() ?></span>
                                 </div>
                             </div>
                         </div>

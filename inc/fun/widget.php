@@ -81,7 +81,7 @@ abstract class puockWidgetBase extends WP_Widget
     {
         return array_merge($array, array(
             array('id' => 'hide_title', 'val' => 0),
-            array('id' => 'icon', 'val' => 'fa fa-chart-simple'),
+            array('id' => 'icon', 'val' => 'ift kbk-aslide'),
             array('id' => 'classes', 'val' => ''),
         )
         );
@@ -120,7 +120,7 @@ abstract class puockWidgetBase extends WP_Widget
     }
 
     //获取icon
-    public function get_icon($val, $default = 'fa fa-chart-simple')
+    public function get_icon($val, $default = 'ift kbk-aslide')
     {
         if (!empty($val)) {
             return $val;

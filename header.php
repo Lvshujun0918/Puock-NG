@@ -67,7 +67,7 @@ echo current_theme_supports('custom-background') ? ' custom-background' : ''; ?>
                             <button type="submit" class="btn-dark btn"><i class="ift kbk-search mr-1"></i><?php _e('搜索', PUOCK) ?></button>
                         </div>
                         <div class="search-close-btn">
-                            <button type="button" aria-label="Redirect Search" class="btn-danger btn ml-1 search-modal-btn"><i class="fa fa-close"></i></button>
+                            <button type="button" aria-label="Redirect Search" class="btn-danger btn ml-1 search-modal-btn"><i class="ift kbk-close"></i></button>
                         </div>
                     </div>
                 </form>
@@ -77,7 +77,7 @@ echo current_theme_supports('custom-background') ? ' custom-background' : ''; ?>
     <div id="mobile-menu" class="d-none">
         <div class="menus">
             <div class="p-block">
-                <div class="text-end"><i class="fa fa-close t-xl puock-link mobile-menu-close ta3"></i></div>
+                <div class="text-end"><i class="ift kbk-close t-xl puock-link mobile-menu-close ta3"></i></div>
                 <nav>
                     <?php echo pk_get_main_menu(true) ?>
                 </nav>
