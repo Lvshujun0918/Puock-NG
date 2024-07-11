@@ -35,7 +35,32 @@ $(function () {
     });
 
     //复制提示
-    document.body.oncopy = function() {
+    document.body.oncopy = function () {
         toastr.success("复制成功，转载请保留原文链接哦！");
     };
+
+    //github短代码
+    $.each($(".github-card"), (_index, _el) => {
+        const el = $(_el);
+        const repo = el.attr("data-repo");
+        if (repo) {
+            common.web_log_push("Get A Github Card. Start Convert.");
+            $.get(`https://api.github.com/repos/${repo}`, (res) => {
+                const link_html = `class="hide-hover" href="${res.html_url}" target="_blank" rel="noreferrer"`;
+                el.html(`<div class="card-header"><i class="ift kbk-github"></i><a ${link_html}>${res.full_name}</a></div>
+                    <div class="card-body">${res.description}</div>
+                    <div class="card-footer">
+                    <div class="row">
+                    <div class="col-4"><i class="ift kbk-like"></i><a ${link_html}>${res.stargazers_count}</a></div>
+                    <div class="col-4"><i class="fa-solid fa-code-fork"></i><a ${link_html}>${res.forks}</a></div>
+                    <div class="col-4"><i class="ift kbk-postview"></i><a ${link_html}>${res.subscribers_count}</a></div>
+                    </div>
+                    </div>
+                `);
+                el.addClass("loaded");
+            }, 'json').fail((err) => {
+                el.html(`<div class="alert alert-danger"><i class="fa fa-error"></i>&nbsp;请求Github项目详情异常：${repo}</div>`)
+            });
+        }
+    })
 });
