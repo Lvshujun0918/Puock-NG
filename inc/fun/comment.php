@@ -86,7 +86,7 @@ function pk_comment_callback($comment, $args, $depth)
         } ?>>
             <?php comment_text() ?>
             <?php if ($comment->comment_approved == '0') : ?>
-                <p class="c-sub mt-1"><i class="fa fa-warning mr-1"></i>您的评论正在等待审核！</p>
+                <p class="c-sub mt-1"><i class="ift kbk-info mr-1"></i>您的评论正在等待审核！</p>
             <?php endif; ?>
             <?php echo $comment_flag; ?>
         </div>
