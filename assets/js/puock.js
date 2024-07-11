@@ -1035,28 +1035,28 @@ class Puock {
     }
 
     initGithubCard() {
-        $.each($(".github-card"), (index, _el) => {
-            const el = $(_el);
-            const repo = el.attr("data-repo");
-            if (repo) {
-                $.get(`https://api.github.com/repos/${repo}`, (res) => {
-                    const link_html = `class="hide-hover" href="${res.html_url}" target="_blank" rel="noreferrer"`;
-                    el.html(`<div class="card-header"><i class="fa-brands fa-github"></i><a ${link_html}>${res.full_name}</a></div>
-                    <div class="card-body">${res.description}</div>
-                    <div class="card-footer">
-                    <div class="row">
-                    <div class="col-4"><i class="fa-regular fa-star"></i><a ${link_html}>${res.stargazers_count}</a></div>
-                    <div class="col-4"><i class="fa-solid fa-code-fork"></i><a ${link_html}>${res.forks}</a></div>
-                    <div class="col-4"><i class="ift kbk-postview"></i><a ${link_html}>${res.subscribers_count}</a></div>
-                    </div>
-                    </div>
-                `);
-                    el.addClass("loaded");
-                }, 'json').fail((err) => {
-                    el.html(`<div class="alert alert-danger"><i class="fa fa-warning"></i>&nbsp;请求Github项目详情异常：${repo}</div>`)
-                });
-            }
-        })
+        // $.each($(".github-card"), (index, _el) => {
+        //     const el = $(_el);
+        //     const repo = el.attr("data-repo");
+        //     if (repo) {
+        //         $.get(`https://api.github.com/repos/${repo}`, (res) => {
+        //             const link_html = `class="hide-hover" href="${res.html_url}" target="_blank" rel="noreferrer"`;
+        //             el.html(`<div class="card-header"><i class="fa-brands fa-github"></i><a ${link_html}>${res.full_name}</a></div>
+        //             <div class="card-body">${res.description}</div>
+        //             <div class="card-footer">
+        //             <div class="row">
+        //             <div class="col-4"><i class="fa-regular fa-star"></i><a ${link_html}>${res.stargazers_count}</a></div>
+        //             <div class="col-4"><i class="fa-solid fa-code-fork"></i><a ${link_html}>${res.forks}</a></div>
+        //             <div class="col-4"><i class="ift kbk-postview"></i><a ${link_html}>${res.subscribers_count}</a></div>
+        //             </div>
+        //             </div>
+        //         `);
+        //             el.addClass("loaded");
+        //         }, 'json').fail((err) => {
+        //             el.html(`<div class="alert alert-danger"><i class="fa fa-warning"></i>&nbsp;请求Github项目详情异常：${repo}</div>`)
+        //         });
+        //     }
+        // })
     }
 
     keyUpHandle() {
