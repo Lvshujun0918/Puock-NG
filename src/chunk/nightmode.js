@@ -1,11 +1,9 @@
 import * as common from '../common';
 import $ from 'jquery';
 import storage from 'simplestorage.js';
-import toastr from 'toastr';
-import 'toastr/build/toastr.css';
 
 function toggleMode() {
-    common.web_log_push('Toggle Mode!');
+    common.pkng_web_log('Toggle Mode!');
 
     //处理白天黑夜模式的图标问题
     let dn = 'd-none';
@@ -29,32 +27,32 @@ function toggleMode() {
     });
 
     //切换body上的样式
-    $('body').toggleClass(common.getClassName('light'));
-    $('body').toggleClass(common.getClassName('dark'));
+    $('body').toggleClass(common.pkng_get_class_name('light'));
+    $('body').toggleClass(common.pkng_get_class_name('dark'));
 }
 
 export function autoToggleMode() {
     //用户自己系统是黑暗模式
     if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        common.web_log_push('Dark Media Mode Detect.');
+        common.pkng_web_log('Dark Media Mode Detect.');
         if (!storage.hasKey('puock-ng-mode') || (storage.get('puock-ng-mode') != 'night')) {
             //不是夜晚模式，不符合系统设置值
-            common.web_log_push('Exec Auto Dark Mode');
+            common.pkng_web_log('Exec Auto Dark Mode');
             toggleMode();
-            toastr.success("检测到系统级黑暗设置，已为您自动切换模式！");
+            common.pkng_push_notify("检测到系统级黑暗设置，已为您自动切换模式！");
         }
     }
 }
 
 export function saveAndToggleMode() {
     //手动切换
-    common.web_log_push('Manual Mode Toggle');
-    toastr.success("切换成功！");
+    common.pkng_web_log('Manual Mode Toggle');
+    common.pkng_push_notify("切换成功！");
 
     //切换
     toggleMode();
 
-    common.web_log_push('Chunk Loaded!');
+    common.pkng_web_log('Chunk Loaded!');
     //储存下来
     if (storage.hasKey('puock-ng-mode')) {
         //获取当前的状态
@@ -65,7 +63,7 @@ export function saveAndToggleMode() {
         //存回去
         if (storage.set('puock-ng-mode', mode) === false) {
             //储存失败
-            common.web_log_push('Mode Storage Failed!');
+            common.pkng_web_log('Mode Storage Failed!');
         }
     }
     else {

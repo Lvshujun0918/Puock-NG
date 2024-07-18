@@ -25,55 +25,31 @@ import stickySidebar from 'sticky-sidebar';
 import { Tooltip } from 'bootstrap';
 import 'bootstrap/scss/bootstrap.scss';
 
-//toast
-import toastr from 'toastr';
-import 'toastr/build/toastr.css';
-
 //导入智能对象
 window.i = intelligent_obj;
 
 //输出一下webpack模式
-common.web_log_push('Using Webpack (exp) ' + intelligent_obj.ver);
+common.pkng_web_log('Using Webpack (exp) ' + intelligent_obj.ver);
 
 //判断调试模式
 if (intelligent_obj.debug === "1") {
-    common.web_log_push('Debug Mode On');
+    common.pkng_web_log('Debug Mode On');
 }
 
 //首页路由
 if (intelligent_obj.route === 'index') {
-    common.web_log_push('Index Route');
+    common.pkng_web_log('Index Route');
 }
 
 //文章路由
 if (intelligent_obj.route === 'post' || intelligent_obj.route === 'single') {
-    common.web_log_push('Post Route');
+    common.pkng_web_log('Post Route');
     import('./chunk/post');
 }
 
 
 $(function () {
-    //配置toast
-    toastr.options = {
-        "closeButton": false,
-        "debug": false,
-        "newestOnTop": false,
-        "progressBar": false,
-        "positionClass": "toast-bottom-left",
-        "preventDuplicates": false,
-        "onclick": null,
-        "showDuration": "300",
-        "hideDuration": "1000",
-        "timeOut": "5000",
-        "extendedTimeOut": "1000",
-        "showEasing": "swing",
-        "hideEasing": "linear",
-        "showMethod": "fadeIn",
-        "hideMethod": "fadeOut"
-    }
-    common.web_log_push('Toastr Config Done');
-
-    common.web_log_push('Load Func Start');
+    common.pkng_web_log('Load Func Start');
     //检测并且自动切换黑暗模式
     nightmode.autoToggleMode();
     //黑暗模式切换按钮
@@ -83,7 +59,7 @@ $(function () {
 
     //搜索按钮
     $(document).on("click", ".search-modal-btn", function () {
-        common.web_log_push("Click Search Btn");
+        common.pkng_web_log("Click Search Btn");
         import('./chunk/search').then((search) => {
             search.searchToggle();
         });
@@ -99,7 +75,7 @@ $(function () {
         e.preventDefault();
         const el = $(e.currentTarget);
         //跳转地址
-        common.goUrl(intelligent_obj.homeurl + "/?" + el.serialize())
+        common.pkng_redirect(intelligent_obj.homeurl + "/?" + el.serialize())
     })
 
     //初始化涟漪效果
@@ -109,7 +85,7 @@ $(function () {
     }
     //设置涟漪
     $('.btn,.ww').on('mousedown', function () {
-        common.web_log_push('Ripple Start');
+        common.pkng_web_log('Ripple Start');
         ripplet(arguments[0], args);
     });
 
@@ -124,7 +100,7 @@ $(function () {
     //提示初始化
     let el = $("[data-bs-toggle=\"tooltip\"]");
     el.each(function (e) {
-        common.web_log_push('Tooltip Start');
+        common.pkng_web_log('Tooltip Start');
         new Tooltip($(this), {
             placement: 'bottom', trigger: 'hover'
         });

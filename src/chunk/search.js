@@ -2,7 +2,7 @@ import $ from 'jquery';
 import * as common from '../common';
 
 export function searchToggle() {
-    common.web_log_push('Toggle Search');
+    common.pkng_web_log('Toggle Search');
     //找到搜索框
     const search = $("#search");
     //看一下数据, 判断是否开启了

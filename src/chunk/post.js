@@ -8,11 +8,8 @@ import * as hljsln from '../inc/hljsline-number';
 //引入主题
 import 'highlight.js/styles/base16/humanoid-dark.css';
 
-//toastr
-import toastr from 'toastr';
-
 $(function () {
-    common.web_log_push('Post Chunk Loaded');
+    common.pkng_web_log('Post Chunk Loaded');
 
     //高亮时避免转义
     hljs.configure({ ignoreUnescapedHTML: true });
@@ -36,7 +33,7 @@ $(function () {
 
     //复制提示
     document.body.oncopy = function () {
-        toastr.success("复制成功，转载请保留原文链接哦！");
+        common.pkng_push_notify("复制成功，转载请保留原文链接哦！");
     };
 
     //github短代码
@@ -44,7 +41,7 @@ $(function () {
         const el = $(_el);
         const repo = el.attr("data-repo");
         if (repo) {
-            common.web_log_push("Get A Github Card. Start Convert.");
+            common.pkng_web_log("Get A Github Card. Start Convert.");
             $.get(`https://api.github.com/repos/${repo}`, (res) => {
                 const link_html = `class="hide-hover" href="${res.html_url}" target="_blank" rel="noreferrer"`;
                 el.html(`<div class="card-header"><i class="ift kbk-github"></i><a ${link_html}>${res.full_name}</a></div>
