@@ -46,10 +46,10 @@
     "bootstrap": "^5.3.3",
     "highlight.js": "^11.9.0",
     "jquery": "^3.7.1",
+    "notyf": "^3.10.0",
     "ripplet.js": "^1.1.0",
     "simplestorage.js": "^0.2.1",
     "sticky-sidebar": "^3.3.1",
-    "toastr": "^2.1.4",
     "waves": "^0.1.1",
     "yarn": "^1.22.22"
   }
